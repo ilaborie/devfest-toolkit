@@ -1,0 +1,11 @@
+{
+  "remove": [],
+  "add": [
+    { "key": "open", "name": "Ouverture" },
+    { "key": "keynote", "name": "Keynote" },
+    { "key": "pause", "name": "Pause" },
+    { "key": "lunch", "name": "Lunch" },
+    { "key": "party", "name": "Party" },
+    { "key": "office-hours", "name": "Office Hours" }
+  ]
+}

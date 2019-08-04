@@ -1,0 +1,10 @@
+{
+  "main": "trace",
+  "command": "info",
+  "command.diff": "info",
+  "cache.file": "warn",
+  "site": "trace",
+  "site.repo": "info",
+  "patch": "debug",
+  "bridge": "debug"
+}

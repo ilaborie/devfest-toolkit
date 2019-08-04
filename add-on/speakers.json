@@ -1,0 +1,77 @@
+{
+  "featured": [
+    "corentin_wallez",
+    "erik_rasmussen",
+    "fs0c131y",
+    "steve_klabnik",
+    "marie_viley"
+  ],
+  "add": {
+    "adrien_anceau": { "company": "Airbus", "city": "Toulouse, France" },
+    "aleksey_kladov": {
+      "company": "Ferrous Systems",
+      "city": "St Petersburg, Russia"
+    },
+    "alessio_coltellacci": {
+      "company": "Clever Cloud",
+      "city": "Toulouse, France"
+    },
+    "andrew_radev": { "city": "Sofia, Bulgaria" },
+    "christophe_jollivet": { "company": "Apside", "city": "Tours, France" },
+    "clement_duffau": { "company": "Stack Labs", "city": "Toulouse, France" },
+    "corentin_wallez": { "company": "Google", "city": "Paris, France" },
+    "cyril_delmas": { "company": "Lectra", "city": "Mérignac, France" },
+    "erik_rasmussen": { "city": "Cantabria, Spain" },
+    "estelle_landry_": { "company": "Elium", "city": "Montpellier, France" },
+    "francois_guillaume_ribreau": {
+      "company": "Ouest-France/Image-Charts",
+      "city": "Rennes, France"
+    },
+    "francois_teychene": { "company": "Saagie", "city": "Montpellier, France" },
+    "fs0c131y": { "city": "Toulouse, France" },
+    "gautier_mechling": { "company": "Nilhcem", "city": "Paris, France" },
+    "gilles_debunne": { "company": "Freelance", "city": "Toulouse, France" },
+    "guillaume_andrieu": {
+      "company": "MonkeyPatch",
+      "city": "Toulouse, France"
+    },
+    "guillaume_smet": { "company": "Red Hat", "city": "Lyon, France" },
+    "horacio_gonzalez__lostinbrittany_": {
+      "company": "OVH",
+      "city": "Brest, France"
+    },
+    "jeremy_voisin": { "company": "Apside", "city": "Le Mans, France" },
+    "juliane_blier": { "company": "SchoolMouv", "city": "Toulouse, France" },
+    "kfnue96dm9g1zobctf4gvzdolrp2": {
+      "company": "Open",
+      "city": "Aix-en-Provence, France"
+    },
+    "loic_ortola": { "company": "Takima", "city": "Paris, France" },
+    "marie_viley": { "company": "Zenika", "city": "Nantes, France" },
+    "mathieu_passenaud": {
+      "company": "please-open.it",
+      "city": "Toulouse, France"
+    },
+    "melanie_ducoffe": { "company": "Airbus", "city": "Toulouse, France" },
+    "nicolas_decoster": { "company": "Magellium", "city": "Toulouse, France" },
+    "noel_mace": { "company": "BonitaSoft", "city": "Toulouse, France" },
+    "olivier_leplus": { "company": "Microsoft", "city": "Paris, France" },
+    "piotr_przybyl": { "company": "@piotrprz", "city": "Wroclaw, Poland" },
+    "qj7nbl6wiyug1rhqtxf818a46po1": {
+      "company": "Continental Digital Service France",
+      "city": "Toulouse, France"
+    },
+    "richard_fagot": { "city": "Toulouse, France" },
+    "sebastien_brault": { "company": "Orange", "city": "Trégastel, France" },
+    "steve_klabnik": { "company": "Cloudflare", "city": "Austin, TX" },
+    "sylvain_wallez": { "company": "Elastic", "city": "Toulouse, France" },
+    "theophile_wallez": { "company": "ENS Ulm", "city": "Paris, France" },
+    "tiffany_souterre": {
+      "company": "JEMS Datafactory",
+      "city": "Paris, France"
+    },
+    "valeriane_venance": { "company": "Clever Cloud", "city": "Paris, France" },
+    "vincent_ogloblinsky": { "company": "SII Ouest", "city": "Rennes, France" },
+    "wassim_chegham": { "company": "Microsoft", "city": "Paris, France" }
+  }
+}

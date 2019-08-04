@@ -1,0 +1,8 @@
+[
+  { "op": "test", "path": "/key", "value": "fabien_tregan" },
+  {
+    "op": "replace",
+    "path": "/draft",
+    "value": true
+  }
+]

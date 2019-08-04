@@ -1,0 +1,17 @@
+[
+  { "op": "test", "path": "/key", "value": "fs0c131y" },
+  {
+    "op": "add",
+    "path": "/socials/0",
+    "value": {
+      "icon": "twitter",
+      "link": "https://twitter.com/fs0c131y",
+      "name": "fs0c131y"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "- French security researcher.\n- Worst nightmare of Oneplus, Wiko, UIDAI, Kimbho, Donald Daters and others.\n- Not completely schizophrenic.\n- Not related to USANetwork.\n\n<https://fs0c131y.com/>"
+  }
+]

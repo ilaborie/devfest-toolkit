@@ -1,0 +1,8 @@
+[
+  { "op": "test", "path": "/key", "value": "corentin_wallez" },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Graphics plumber @google\n\nCorentin is an engineer working on Chrome's GPU team in Google Paris. \nHe leads development of the WebGPU API and chairs the \"GPU for the Web\" W3C group."
+  }
+]

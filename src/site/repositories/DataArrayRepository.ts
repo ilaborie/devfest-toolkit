@@ -1,0 +1,40 @@
+import * as path from "path";
+import * as yaml from "js-yaml";
+import { Logger } from "../../logger";
+import { mkdir, writeFile } from "../../fs-utils";
+import { Repository } from "./index";
+import { readFileCache } from "../../cache";
+import { compareKey, KeyElement } from "../models";
+import { SiteConfig } from "../../config";
+
+export abstract class DataArrayRepository<T extends KeyElement>
+  implements Repository<T[]> {
+  protected logger: Logger;
+  protected readonly parentFile: string;
+
+  protected constructor(readonly config: SiteConfig, readonly name: string) {
+    this.logger = Logger.getLogger("site.repo." + name);
+    this.parentFile = path.join(config.siteDir, "data", this.name + ".yml");
+  }
+
+  async readAll(): Promise<T[]> {
+    this.logger.info("read all", this.parentFile);
+    try {
+      const data = await readFileCache.get(this.parentFile);
+      const result = yaml.safeLoad(data) as T[];
+      result.sort(compareKey);
+      return result;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  async saveAll(values: T[], force: boolean): Promise<void> {
+    this.logger.info("save all");
+    const file = this.parentFile;
+    await mkdir(path.dirname(file), { recursive: true });
+    const flag = force ? "w" : "wx";
+    let data = yaml.safeDump(values);
+    return await writeFile(file, data, { flag });
+  }
+}

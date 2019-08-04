@@ -1,0 +1,8 @@
+[
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "rust__webassembly__and_the_future_of_serverless"
+  },
+  { "op": "add", "path": "/type", "value": "conference" }
+]

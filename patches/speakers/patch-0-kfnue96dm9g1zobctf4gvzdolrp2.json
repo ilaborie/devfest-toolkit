@@ -1,0 +1,8 @@
+[
+  { "op": "test", "path": "/key", "value": "kfnue96dm9g1zobctf4gvzdolrp2" },
+  {
+    "op": "replace",
+    "path": "/name",
+    "value": "Cédric Moulard"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  { "op": "test", "path": "/key", "value": "nicolas_decoster" },
+  {
+    "op": "replace",
+    "path": "/socials/0",
+    "value": {
+      "icon": "twitter",
+      "link": "https://twitter.com/ogadaki",
+      "name": "ogadaki"
+    }
+  }
+]
