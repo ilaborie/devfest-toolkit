@@ -1,0 +1,12 @@
+[
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "estelle_landry"
+  },
+  {
+    "op": "replace",
+    "path": "/photoURL",
+    "value": "https://sunny-tech.io/images/people/estelle_landry.jpg"
+  }
+]

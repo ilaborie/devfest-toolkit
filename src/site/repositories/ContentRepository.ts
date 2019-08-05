@@ -100,7 +100,7 @@ export abstract class ContentRepository<
       const flag = force ? "w" : "wx";
       const { description: md, ...fm } = value;
       const yml = yaml.safeDump(JSON.parse(JSON.stringify(fm)));
-      const data = ["---", yml, "---", md].join("\n");
+      const data = ["---", yml + "---", md].join("\n");
       return await writeFile(file, data, { flag });
     } catch (err) {
       this.logger.error(() => "fail to write file: " + file, err);
