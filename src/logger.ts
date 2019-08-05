@@ -23,7 +23,7 @@ function logLevel(s: string): LogLevel | null {
     case "error":
       return LogLevel.Error;
     default:
-      return LogLevel.Info;
+      return null;
   }
 }
 

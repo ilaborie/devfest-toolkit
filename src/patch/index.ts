@@ -22,10 +22,10 @@ async function loadPatch(
 }
 
 async function loadPatches(
+  logger: Logger,
   config: PatchConfig,
   type: string
 ): Promise<Patch[]> {
-  const logger = Logger.getLogger("patch." + type);
   logger.trace(() => "Lookup patches", type);
   const dir = path.join(config.patchDir, type);
   try {
@@ -33,7 +33,7 @@ async function loadPatches(
       .filter(f => f.startsWith("patch"))
       .filter(f => f.endsWith(".json"));
     let patches = await Promise.all(files.map(file => loadPatch(dir, file)));
-    logger.trace("Found patches", patches.length);
+    logger.info("Found patches", patches.length);
     return patches;
   } catch (err) {
     logger.warn("Oops", err);
@@ -47,11 +47,11 @@ interface ListPatch<T extends KeyElement> {
 }
 
 async function loadListPatches<T extends KeyElement>(
+  logger: Logger,
   config: PatchConfig,
   type: string
 ): Promise<ListPatch<T>> {
   const file = path.join(config.patchDir, type, "listdiff.json");
-  const logger = Logger.getLogger("patch." + type);
   logger.trace("Load list patch", type);
   try {
     let result = await readFileCache.getAsJson<ListPatch<T>>(file);
@@ -74,7 +74,7 @@ export async function applyAllPatch<T extends KeyElement>(
   data: T[]
 ): Promise<T[]> {
   const logger = Logger.getLogger("patch." + type);
-  let listPatch = await loadListPatches<T>(config, type);
+  let listPatch = await loadListPatches<T>(logger, config, type);
   let result = [...data];
   if (listPatch.remove.length) {
     result = result.filter(it => !listPatch.remove.includes(it.key));
@@ -91,17 +91,14 @@ export async function applyAllPatch<T extends KeyElement>(
     );
   }
   let list: T[] = result;
-  let patches = await loadPatches(config, type);
+  let patches = await loadPatches(logger, config, type);
   return list.map(elt =>
     patches.reduce((acc, patch) => {
       try {
         const { file, operations } = patch;
         logger.trace("apply patch", file);
         const patchResult = applyPatch(acc, operations);
-        logger.debug(
-          () => `applied patch for '${acc.key}'`,
-          JSON.stringify(operations)
-        );
+        logger.debug(() => `applied patch for '${acc.key}'`, file);
         return patchResult.newDocument;
       } catch (e) {
         logger.trace("applied patch fail");

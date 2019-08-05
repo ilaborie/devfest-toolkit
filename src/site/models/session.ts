@@ -14,12 +14,12 @@ export interface Session {
   key: SessionKey;
   title: string;
   level?: SessionLevel;
-  type: FormatKey;
+  format: FormatKey;
   speakers: SpeakerKey[];
   tags: CategoryKey[];
   language?: string;
-  videoId?: string;
-  presentation?: string;
+  videoId?: string | null;
+  presentation?: string | null;
   draft?: boolean;
 
   description: Markdown;

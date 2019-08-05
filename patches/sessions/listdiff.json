@@ -6,7 +6,7 @@
     {
       "key": "keynote_open",
       "title": "Keynote d'ouverture",
-      "type": "keynote",
+      "format": "keynote",
       "speakers": [],
       "tags": ["keynote"],
       "description": "Surprise!"
@@ -14,7 +14,7 @@
     {
       "key": "keynote_close",
       "title": "Keynote de fermeture",
-      "type": "keynote",
+      "format": "keynote",
       "speakers": [],
       "tags": ["keynote"],
       "description": "Surprise!"
@@ -22,7 +22,7 @@
     {
       "key": "__pause",
       "title": "Pause",
-      "type": "pause",
+      "format": "pause",
       "speakers": [],
       "tags": ["pause"],
       "description": "Pause"
@@ -30,7 +30,7 @@
     {
       "key": "__open",
       "title": "Acceuil, Thé, Café et Chocolatines",
-      "type": "open",
+      "format": "open",
       "speakers": [],
       "tags": ["open"],
       "description": "Acceuil, Thé, Café et Chocolatines"
@@ -38,7 +38,7 @@
     {
       "key": "__lunch",
       "title": "Déjeuner",
-      "type": "lunch",
+      "format": "lunch",
       "speakers": [],
       "tags": ["lunch"],
       "description": "Bon appétit"
@@ -46,7 +46,7 @@
     {
       "key": "__party",
       "title": "Party time...",
-      "type": "party",
+      "format": "party",
       "speakers": [],
       "tags": ["party"],
       "description": "🎉 Party time"
@@ -54,7 +54,7 @@
     {
       "key": "office-hour-01",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -62,7 +62,7 @@
     {
       "key": "office-hour-02",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -70,7 +70,7 @@
     {
       "key": "office-hour-03",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -78,7 +78,7 @@
     {
       "key": "office-hour-04",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -86,7 +86,7 @@
     {
       "key": "office-hour-05",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -94,7 +94,7 @@
     {
       "key": "office-hour-06",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -102,7 +102,7 @@
     {
       "key": "office-hour-11",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
@@ -110,7 +110,7 @@
     {
       "key": "office-hour-12",
       "title": "Office Hours",
-      "type": "office-hours",
+      "format": "office-hours",
       "speakers": [],
       "tags": ["office-hours"],
       "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"

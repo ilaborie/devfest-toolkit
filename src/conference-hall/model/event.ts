@@ -47,7 +47,7 @@ export interface Event {
 
 const logger = Logger.getLogger("conference-hall.event");
 
-function findSessionType(event: Event, id: FormatId): string | null {
+function findSessionFormat(event: Event, id: FormatId): string | null {
   const found = event.formats.find(elt => elt.id == id);
   return found ? buildKey(found.name) : null;
 }
@@ -77,10 +77,10 @@ export function talkToSession(event: Event, talk: Talk): SiteSession {
   const key = buildKey(talk.title);
 
   // type
-  let type = findSessionType(event, formats);
-  if (!type) {
+  let format = findSessionFormat(event, formats);
+  if (!format) {
     logger.warn(() => "Format not found", `talk ${key}, format: '${formats}'`);
-    type = "";
+    format = "";
   }
 
   // category
@@ -108,13 +108,13 @@ export function talkToSession(event: Event, talk: Talk): SiteSession {
     key: buildKey(talk.title),
     title,
     level,
-    type,
+    format,
     tags: category ? [category] : [],
     speakers: siteSpeakers,
     draft: !(state == "confirmed"),
     description: (abstract || "").trim(),
-    videoId: "",
-    presentation: ""
+    videoId: null,
+    presentation: null
   };
   if (language) {
     session.language = language;

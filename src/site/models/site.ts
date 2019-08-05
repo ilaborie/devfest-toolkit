@@ -73,8 +73,8 @@ class SiteValidator extends ValidationService<Site> {
         });
 
         // format
-        if (!site.formats.some(it => it.key === session.type)) {
-          result.push(warn<Site>("sessions", "Unknown format", session.type));
+        if (!site.formats.some(it => it.key === session.format)) {
+          result.push(warn<Site>("sessions", "Unknown format", session.format));
         }
 
         return result;

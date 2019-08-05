@@ -4,5 +4,5 @@
     "path": "/key",
     "value": "monitoring_ovh__300k_serveurs__27_dcs_une_plateforme_de_metriques"
   },
-  { "op": "add", "path": "/type", "value": "conference" }
+  { "op": "add", "path": "/format", "value": "conference" }
 ]
