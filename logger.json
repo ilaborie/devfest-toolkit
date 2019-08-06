@@ -6,5 +6,5 @@
   "site": "trace",
   "site.repo": "info",
   "patch": "debug",
-  "bridge": "debug"
+  "bridge": "info"
 }

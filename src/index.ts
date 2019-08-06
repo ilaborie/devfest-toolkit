@@ -6,7 +6,7 @@ import * as Parser from "@oclif/parser";
 import { Config } from "./config";
 
 // noinspection JSUnusedGlobalSymbols
-class DevfestToolkit extends Command {
+export default class DevfestToolkit extends Command {
   static description =
     "Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and publish these data to a Web Site or Konfetti) data, and publish these data to a Web Site";
 
@@ -63,5 +63,3 @@ class DevfestToolkit extends Command {
     logger.info("✅ all done");
   }
 }
-
-export = DevfestToolkit;

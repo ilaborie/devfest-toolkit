@@ -6,7 +6,7 @@ export type SpeakerKey = string;
 
 export interface Speaker {
   key: SpeakerKey;
-  id: SpeakerId;
+  id?: SpeakerId;
   feature: boolean;
   name: string;
   company?: string;

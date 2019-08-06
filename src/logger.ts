@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import * as fs from "fs";
 import { Console } from "inspector";
+import { canRead } from "../lib/fs-utils";
 
 enum LogLevel {
   Trace,
@@ -84,9 +85,11 @@ interface LoggerLevels {
   [index: string]: string;
 }
 
-const loggerLevels: LoggerLevels = JSON.parse(
-  fs.readFileSync("logger.json", "utf-8") || "{}"
-) as LoggerLevels;
+const loggerLevels: LoggerLevels = canRead("logger.json")
+  ? (JSON.parse(
+      fs.readFileSync("logger.json", "utf-8") || "{}"
+    ) as LoggerLevels)
+  : {};
 
 function defaultFindLevel(name: string, defaultLevel: LogLevel): LogLevel {
   const names = name.split(".");

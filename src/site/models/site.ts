@@ -55,64 +55,67 @@ class SiteValidator extends ValidationService<Site> {
   }
 
   private validateSession(site: Site): ValidationResult<Site>[] {
-    const res = site.sessions
-      .map(session => {
-        const result: ValidationResult<Site>[] = [];
-        // speakers
-        session.speakers.forEach(speaker => {
-          if (!site.speakers.some(it => it.key === speaker)) {
-            result.push(warn<Site>("sessions", "Unknown speaker", speaker));
-          }
-        });
-
-        // categories
-        session.tags.forEach(cat => {
-          if (!site.categories.some(it => it.key === cat)) {
-            result.push(warn<Site>("sessions", "Unknown category", cat));
-          }
-        });
-
-        // format
-        if (!site.formats.some(it => it.key === session.format)) {
-          result.push(warn<Site>("sessions", "Unknown format", session.format));
+    const result: ValidationResult<Site>[] = [];
+    site.sessions.forEach(session => {
+      // speakers
+      session.speakers.forEach(speaker => {
+        if (!site.speakers.some(it => it.key === speaker)) {
+          result.push(
+            warn<Site>(
+              "sessions",
+              "Unknown speaker for " + session.key,
+              speaker
+            )
+          );
         }
+      });
 
-        return result;
-      })
-      .flat();
-    return res.length ? res : [ok<Site>("schedule", "✅ sessions")];
+      // categories
+      session.tags.forEach(cat => {
+        if (!site.categories.some(it => it.key === cat)) {
+          result.push(
+            warn<Site>("sessions", "Unknown category for " + session.key, cat)
+          );
+        }
+      });
+
+      // format
+      if (!site.formats.some(it => it.key === session.format)) {
+        result.push(
+          warn<Site>(
+            "sessions",
+            "Unknown format for " + session.key,
+            session.format
+          )
+        );
+      }
+    });
+    return result.length ? result : [ok<Site>("schedule", "✅ sessions")];
   }
 
   private validateSchedule(site: Site): ValidationResult<Site>[] {
-    const res = site.schedule
-      .map(day =>
-        day.rooms
-          .map(schRoom => {
-            const result: ValidationResult<Site>[] = [];
-            // check rooms
-            if (!site.rooms.some(it => it.key === schRoom.room)) {
-              result.push(warn<Site>("schedule", "Unknown room", schRoom.room));
-            }
-            schRoom.slots.forEach(slotTalk => {
-              // check slot
-              if (!site.slots.some(it => it.key == slotTalk.slot)) {
-                result.push(
-                  warn<Site>("schedule", "Unknown slot", slotTalk.slot)
-                );
-              }
-              // check sessions
-              if (!site.sessions.some(it => it.key == slotTalk.talk)) {
-                result.push(
-                  warn<Site>("schedule", "Unknown session", slotTalk.talk)
-                );
-              }
-            });
-            return result;
-          })
-          .flat()
-      )
-      .flat();
-    return res.length ? res : [ok<Site>("schedule", "✅ schedule")];
+    const result: ValidationResult<Site>[] = [];
+    site.schedule.forEach(day =>
+      day.rooms.forEach(schRoom => {
+        // check rooms
+        if (!site.rooms.some(it => it.key === schRoom.room)) {
+          result.push(warn<Site>("schedule", "Unknown room", schRoom.room));
+        }
+        schRoom.slots.forEach(slotTalk => {
+          // check slot
+          if (!site.slots.some(it => it.key == slotTalk.slot)) {
+            result.push(warn<Site>("schedule", "Unknown slot", slotTalk.slot));
+          }
+          // check sessions
+          if (!site.sessions.some(it => it.key == slotTalk.talk)) {
+            result.push(
+              warn<Site>("schedule", "Unknown session", slotTalk.talk)
+            );
+          }
+        });
+      })
+    );
+    return result.length ? result : [ok<Site>("schedule", "✅ schedule")];
   }
 }
 
