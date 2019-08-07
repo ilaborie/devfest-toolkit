@@ -2,6 +2,7 @@ import { Change, diffWordsWithSpace, diffJson } from "diff";
 
 import { memoize } from "./cache";
 import chalk from "chalk";
+import { KeyElement } from "./site/models";
 
 export const buildKey = memoize((s: string): string => {
   return s
@@ -50,3 +51,9 @@ export function diffString(a: any, b: any): string {
     }
   }, "");
 }
+
+export const compareString = (a: string, b: string): number => {
+  if (a > b) return 1;
+  else if (a < b) return -1;
+  else return 0;
+};

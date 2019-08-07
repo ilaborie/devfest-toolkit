@@ -2,7 +2,7 @@ import { Category, CategoryId } from "./category";
 import { Format, FormatId } from "./format";
 import { Talk } from "./talk";
 import { Speaker, SpeakerId } from "./speaker";
-import { buildKey, cleanSocialKey } from "../../strings";
+import { buildKey, cleanSocialKey, compareString } from "../../strings";
 import { Logger } from "../../logger";
 import { Session as SiteSession } from "../../site/models/session";
 import { Speaker as SiteSpeaker, SpeakerKey } from "../../site/models/speaker";
@@ -102,6 +102,7 @@ export function talkToSession(event: Event, talk: Talk): SiteSession {
       return speaker;
     })
     .filter(elt => elt !== null) as SpeakerKey[];
+  siteSpeakers.sort(compareString);
 
   const session: SiteSession = {
     id,

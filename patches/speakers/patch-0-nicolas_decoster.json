@@ -1,5 +1,9 @@
 [
-  { "op": "test", "path": "/key", "value": "nicolas_decoster" },
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "nicolas_decoster"
+  },
   {
     "op": "replace",
     "path": "/socials/0",
@@ -8,5 +12,10 @@
       "link": "https://twitter.com/ogadaki",
       "name": "ogadaki"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/photoURL",
+    "value": "/images/speakers/nicolas_decoster.png"
   }
 ]
