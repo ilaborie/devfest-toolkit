@@ -1,0 +1,8 @@
+[
+  { "op": "test", "path": "/key", "value": "qJ7nBL6wIyUg1RHqtxF818a46po1\n" },
+  {
+    "op": "replace",
+    "path": "/name",
+    "value": "Yves Boyez"
+  }
+]
