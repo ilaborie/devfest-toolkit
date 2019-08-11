@@ -4,5 +4,4 @@ public/
 lib/
 config.json
 
-diff.sh
-generate.sh
+*.sh
