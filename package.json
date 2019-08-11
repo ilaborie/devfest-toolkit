@@ -31,7 +31,7 @@
     "build": "npx tsc --declaration",
     "prelint-staged": "npm run build",
     "start": "npx ts-node src/index.ts",
-    "prerelease": "build",
+    "prerelease": "npm run  build",
     "release": "np"
   },
   "dependencies": {

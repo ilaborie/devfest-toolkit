@@ -16,6 +16,8 @@ Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and
 
 - `generate`: Generate site from conference hall and extra data
 
+- `stats`: Display some stats
+
 ## Options
 
 - `-h`, `--help`: show CLI help

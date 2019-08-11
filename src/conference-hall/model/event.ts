@@ -10,8 +10,6 @@ import { Speaker as SiteSpeaker, SpeakerKey } from "../../site/models/speaker";
 import { bridgeSpeaker } from "../../bridge/bridgeSpeaker";
 import { Socials } from "../../site/models/socials";
 import { AddOnConfig } from "../../config";
-import * as path from "path";
-import { downloadToFile } from "../../fs-utils";
 
 export type EventId = string;
 
