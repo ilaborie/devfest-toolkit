@@ -1,8 +1,7 @@
 import { Change, diffWordsWithSpace, diffJson } from "diff";
+import colors from "ansi-colors";
 
 import { memoize } from "./cache";
-import chalk from "chalk";
-import { KeyElement } from "./site/models";
 
 export const buildKey = memoize((s: string): string => {
   return s
@@ -43,11 +42,11 @@ export function diffString(a: any, b: any): string {
   }
   return diffResult.reduce((acc, change) => {
     if (change.added) {
-      return acc + chalk.green(change.value);
+      return acc + colors.green(change.value);
     } else if (change.removed) {
-      return acc + chalk.red(change.value);
+      return acc + colors.red(change.value);
     } else {
-      return acc + chalk.grey(change.value);
+      return acc + colors.grey(change.value);
     }
   }, "");
 }

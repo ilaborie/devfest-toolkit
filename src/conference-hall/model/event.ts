@@ -1,14 +1,17 @@
+import { Logger } from "plop-logger";
+
 import { Category, CategoryId } from "./category";
 import { Format, FormatId } from "./format";
 import { Talk } from "./talk";
 import { Speaker, SpeakerId } from "./speaker";
 import { buildKey, cleanSocialKey, compareString } from "../../strings";
-import { Logger } from "../../logger";
 import { Session as SiteSession } from "../../site/models/session";
 import { Speaker as SiteSpeaker, SpeakerKey } from "../../site/models/speaker";
 import { bridgeSpeaker } from "../../bridge/bridgeSpeaker";
 import { Socials } from "../../site/models/socials";
 import { AddOnConfig } from "../../config";
+import * as path from "path";
+import { downloadToFile } from "../../fs-utils";
 
 export type EventId = string;
 

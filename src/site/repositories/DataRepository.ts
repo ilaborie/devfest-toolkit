@@ -1,7 +1,8 @@
 import * as path from "path";
 import * as yaml from "js-yaml";
-import { Logger } from "../../logger";
-import { mkdir, writeFile } from "../../fs-utils";
+import { Logger } from "plop-logger";
+
+import { createParentDir, writeFile } from "../../fs-utils";
 import { Repository } from "./index";
 import { readFileCache } from "../../cache";
 import { SiteConfig } from "../../config";
@@ -29,7 +30,7 @@ export abstract class DataRepository<T> implements Repository<T> {
   async saveAll(values: T, force: boolean): Promise<void> {
     this.logger.info("save all");
     const file = this.parentFile;
-    await mkdir(path.dirname(file), { recursive: true });
+    await createParentDir(file);
     const flag = force ? "w" : "wx";
     let data = yaml.safeDump(values);
     return await writeFile(file, data, { flag });

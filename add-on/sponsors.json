@@ -688,6 +688,107 @@
     "description": "Partant du constat que chaque année près de 660 millions de tonnes de CO2 sont émises par les avions, soit plus de 20 000 kilos de CO2 par seconde, cette clean-tech a décidé d’agir en développant des solutions innovantes pour aider les compagnies aériennes à réduire leurs coûts et leur impact environnemental.\n\nFruit de 7 ans de R&D, le logiciel d’éco-pilotage SkyBreathe® Fuel Efficiency sort sur le marché en 2013. S’appuyant sur des algorithmes de Big Data, d’Intelligence Artificielle et de Machine Learning, le logiciel analyse automatiquement les très nombreuses données disponibles dans les boites noires des avions afin d’évaluer l’efficacité énergétique des vols et émettre des recommandations permettant de réduire la consommation de carburant et les émissions de CO2 des avions. \n\nOpenAirlines est aujourd’hui leader sur son marché et emploie actuellement une quarantaine de collaborateurs à Toulouse et dans ses filiales à Hong Kong et à Miami.\n",
     "key": "openairlines"
   },
+
+  {
+    "title": "commit42",
+    "type": "soutien",
+    "category": "soutien",
+    "order": 29,
+    "logo": "/images/partners/logo-commit42.png",
+    "website": "https://www.commit42.com/",
+    "lang": "fr",
+    "why": "C'est notre manière de vous remercier pour ce que vous faites.",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/commit42",
+        "name": "commit42"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/commit42",
+        "name": "commit42"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/commit42",
+        "name": "commit42"
+      }
+    ],
+    "draft": false,
+    "description": "Studio d'innovation web\ncommit42 est spécialisé dans les technologies React, PHP, NodeJS, Magento et PWA.\n\nNos projets peuvent varier de la maintenance d’une boutique en ligne à la réalisation d’applications métiers spécifiques dont des Web App PWA.\n",
+    "key": "commit42"
+  },
+  {
+    "title": "GitHub",
+    "type": "gold",
+    "category": "gold",
+    "order": 27,
+    "logo": "/images/partners/logo-github.png",
+    "website": "https://github.com/",
+    "lang": "en",
+    "why": "GitHub is focused on developers, the people who code and create software. For this reason, we decided to sponsor DevFest Toulouse. We want to be part of this collaborative community that can come together —as individuals and in teams— to create the future of software and make a difference in the world.  ",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/github",
+        "name": "github"
+      }
+    ],
+    "draft": false,
+    "description": "GitHub is the developer company. We make it easier for developers to be developers: to work together, to solve challenging problems, and to create the world’s most important technologies.\n\n",
+    "key": "github"
+  },
+  {
+    "title": "Infotel",
+    "type": "gold",
+    "category": "gold",
+    "order": 26,
+    "logo": "/images/partners/logo-infotel.png",
+    "website": "https://www.infotel.com/",
+    "lang": "fr",
+    "why": "Notre passion pour l'innovation ainsi que notre cœur de métier en lien direct avec le DevFest nous pousse à devenir une nouvelle fois sponsor.  Le DevFest est un événement incontournable sur l'IT et une opportunité de rencontrer et d'échanger avec des talents autours des nouvelles technologies. Mais également, d'assister à des conférences de qualités. ",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/groupeInfotel",
+        "name": "Groupe Infotel"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/Infotel_",
+        "name": "Infotel"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/Infotel",
+        "name": "Infotel"
+      }
+    ],
+    "draft": false,
+    "description": "Acteur européen de la transformation numérique des entreprises, le groupe Infotel est l’interlocuteur privilégié des directions Informatiques et Métiers de Grands Comptes depuis près de 40 ans.\nInfotel leur apporte son expertise reconnue dans la gestion et l’évolution de leur patrimoine informatique mais aussi le conseil auprès des métiers et services innovants intégrant les technologies digitales ainsi qu’une expertise Big Data et mobile.\nInfotel développe son savoir-faire dans les secteurs de la Banque, de l’Assurance, de la Retraite, de l’Industrie et des Transports en s’appuyant sur l’innovation et la R&D.\n\nEditeur de logiciels, Infotel déploie par ailleurs toute une gamme de produits pour les grands serveurs, que ce soit en Europe, aux USA ou dans le reste du Monde.\nEmployant plus de 2 500 personnes, le Groupe, coté sur Euronext Paris, a réalisé en 2018 un chiffre d’affaires de 231 M€ et est en croissance constante.\n\nPour plus d’informations, rendez-vous sur : http://www.infotel.com\nLe groupe est resté fidèle aux valeurs humaines qui ont fait sa réussite : \n\tun recrutement sélectif basé sur les compétences ;\n\tun suivi rigoureux des collaborateurs par des commerciaux-managers ;\n\tune gestion dynamique de la progression de carrière grâce à des missions valorisantes ;\n\n",
+    "key": "infotel"
+  },
+  {
+    "title": "Sycomore Technologies",
+    "type": "gold",
+    "category": "gold",
+    "order": 32,
+    "logo": "/images/partners/logo-sycomore-technologie.png",
+    "website": "https://sycomore-tech.com",
+    "lang": "fr",
+    "why": "This an opportunity to contribute to a very exciting and friendly event to meet new talents and share our enthusiasm on the development of innovative technologies.",
+    "socials": [
+      {
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/company/sycomore-technologies/",
+        "name": " Sycomore-Technologies "
+      }
+    ],
+    "draft": false,
+    "description": "Sycomore-Technologies offers proprietary and custom software solutions.\n\nOur seasoned team is experienced in new generation technologies as cloud, microservices architectures as well as big data technologies to transform yours data into smart data.",
+    "key": "sycomore-technologie"
+  },
   {
     "title": "Programmez",
     "type": "media",

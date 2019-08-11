@@ -23,6 +23,7 @@ import { Sponsor } from "../site/models/sponsor";
 import { Member } from "../site/models/member";
 import { getEvent } from "../conference-hall/api";
 import { compareKey } from "../site/models";
+import { downloadToFile } from "../fs-utils";
 
 export abstract class AbstractSiteTool extends Tool {
   protected async generateSessions(
@@ -37,11 +38,7 @@ export abstract class AbstractSiteTool extends Tool {
     const sessions: SiteSession[] = selected.map(talk =>
       talkToSession(event, talk)
     );
-    let patchedSession = await applyAllPatch(
-      config,
-      "sessions",
-      sessions
-    );
+    let patchedSession = await applyAllPatch(config, "sessions", sessions);
     patchedSession.sort(compareKey);
     this.logger.info("Found", () => `${patchedSession.length} session(s)`);
     return { talks: selected, site: patchedSession };
@@ -65,7 +62,34 @@ export abstract class AbstractSiteTool extends Tool {
     const speakers = await Promise.all(speakersPromise);
     const result = await applyAllPatch(config, "speakers", speakers);
     result.sort(compareKey);
-    return result;
+
+    const withPhoto = result.map(speaker =>
+      AbstractSiteTool.downloadPhoto(config, speaker)
+    );
+    return await Promise.all(withPhoto);
+  }
+
+  private static async downloadPhoto(
+    config: Config,
+    speaker: SiteSpeaker
+  ): Promise<SiteSpeaker> {
+    try {
+      if (!speaker.photoURL) {
+        return speaker;
+      }
+      const imgDest = path.join(
+        config.siteDir,
+        "static",
+        "images",
+        "speakers",
+        speaker.key
+      );
+      const file = await downloadToFile(speaker.photoURL, imgDest);
+      const photoURL = ["", "images", "speakers", file].join("/");
+      return { ...speaker, photoURL };
+    } catch (_) {
+      return speaker;
+    }
   }
 
   protected async generateCategories(

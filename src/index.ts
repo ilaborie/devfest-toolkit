@@ -1,9 +1,12 @@
 import { Command, flags } from "@oclif/command";
+import { Logger, LoggerLevels } from "plop-logger";
+import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 
-import { Logger } from "./logger";
 import { commands } from "./tools";
 import * as Parser from "@oclif/parser";
 import { Config } from "./config";
+import { canRead } from "./fs-utils";
+import { readFileSync } from "fs";
 
 // noinspection JSUnusedGlobalSymbols
 export default class DevfestToolkit extends Command {
@@ -45,7 +48,21 @@ export default class DevfestToolkit extends Command {
     }
   ];
 
+  private static getLoggerLevels(): LoggerLevels {
+    if (canRead("logger.json")) {
+      const data = readFileSync("logger.json", "UTF-8");
+      return JSON.parse(data) as LoggerLevels;
+    } else {
+      return {};
+    }
+  }
+
   async run(): Promise<void> {
+    Logger.config = {
+      ...colorEmojiConfig,
+      levels: DevfestToolkit.getLoggerLevels()
+    };
+
     const logger = Logger.getLogger("main");
     const { args, flags } = this.parse(DevfestToolkit);
 

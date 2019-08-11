@@ -1,5 +1,5 @@
-import { Logger } from "./logger";
-import chalk from "chalk";
+import { Logger } from "plop-logger";
+import colors from "ansi-colors";
 
 enum ValidationLevel {
   OK,
@@ -50,7 +50,7 @@ export abstract class ValidationService<T> {
   validateAndLog(t: T): void {
     this.validate(t).forEach(entry => {
       const msgBuilder = (): string =>
-        chalk.yellow(entry.attribute.toString()) + " " + entry.message;
+        colors.yellow(entry.attribute.toString()) + " " + entry.message;
       switch (entry.level) {
         case ValidationLevel.OK:
           this.logger.info(msgBuilder, entry.arg);

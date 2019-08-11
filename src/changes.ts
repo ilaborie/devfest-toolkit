@@ -1,6 +1,6 @@
-import chalk from "chalk";
+import colors from "ansi-colors";
+import { Logger } from "plop-logger";
 
-import { Logger } from "./logger";
 import { diffString, indent } from "./strings";
 
 export enum ChangeType {
@@ -28,8 +28,8 @@ export interface ArrayChanges<T> {
   updated: KeyChanges;
 }
 
-export const indentPlus = " " + chalk.bgGreen.black("+") + " ";
-export const indentMinus = " " + chalk.bgRed.black("-") + " ";
+export const indentPlus = " " + colors.bgGreen.black("+") + " ";
+export const indentMinus = " " + colors.bgRed.black("-") + " ";
 
 export function displayChange(logger: Logger, change: ChangeObject): void {
   const { path, oldValue, newValue } = change;
@@ -37,13 +37,13 @@ export function displayChange(logger: Logger, change: ChangeObject): void {
   const msgBuilder = (): string => {
     switch (change.type) {
       case ChangeType.ADDED:
-        return `\t${chalk.green("+" + attribute)}
-${indent(chalk.green(JSON.stringify(newValue)), indentPlus)}`;
+        return `\t${colors.green("+" + attribute)}
+${indent(colors.green(JSON.stringify(newValue)), indentPlus)}`;
       case ChangeType.REMOVED:
-        return `\t${chalk.red("-" + attribute)}
-${indent(chalk.red(JSON.stringify(oldValue)), indentMinus)}`;
+        return `\t${colors.red("-" + attribute)}
+${indent(colors.red(JSON.stringify(oldValue)), indentMinus)}`;
       case ChangeType.UPDATED:
-        return `\t${chalk.yellow("-" + attribute)}
+        return `\t${colors.yellow("-" + attribute)}
 ${indent(diffString(oldValue, newValue))}`;
       default:
         return `\t??? ${path}

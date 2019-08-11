@@ -5,6 +5,7 @@
   "cache.file": "warn",
   "site": "trace",
   "site.repo": "info",
-  "patch": "debug",
-  "bridge": "info"
+  "patch": "info",
+  "bridge": "info",
+  "download": "info"
 }

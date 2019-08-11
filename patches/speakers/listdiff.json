@@ -5,13 +5,13 @@
       "key": "liliia_abdulina",
       "feature": false,
       "name": "Liliia Abdulina",
-      "photoURL": "/images/speakers/liliia_abdulina.jpg",
+      "photoURL": "https://pbs.twimg.com/profile_images/1051804551437852674/UJUUDZVo_400x400.jpg",
       "company": "JetBrains",
       "city": "Munich, Germany",
       "socials": [
         {
           "icon": "twitter",
-          "link": "https://github.com/var_lynx",
+          "link": "https://twitter.com/var_lynx",
           "name": "@var_lynx"
         }
       ],

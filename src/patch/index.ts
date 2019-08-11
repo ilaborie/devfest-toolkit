@@ -1,10 +1,10 @@
 import * as path from "path";
 import { applyPatch, Operation } from "fast-json-patch";
+import { Logger } from "plop-logger";
 
 import { KeyElement } from "../site/models";
-import { readdir } from "../fs-utils";
+import { createParentDir, readdir } from "../fs-utils";
 import { readFileCache } from "../cache";
-import { Logger } from "../logger";
 import { PatchConfig } from "../config";
 
 export interface Patch {
@@ -52,6 +52,7 @@ async function loadListPatches<T extends KeyElement>(
   type: string
 ): Promise<ListPatch<T>> {
   const file = path.join(config.patchDir, type, "listdiff.json");
+  await createParentDir(file);
   logger.trace("Load list patch", type);
   try {
     let result = await readFileCache.getAsJson<ListPatch<T>>(file);

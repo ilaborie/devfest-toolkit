@@ -1,6 +1,7 @@
+import { Logger } from "plop-logger";
+
 import { Event } from "./model/event";
 import { fetchCache } from "../cache";
-import { Logger } from "../logger";
 import { ConferenceHallConfig } from "../config";
 
 const logger = Logger.getLogger("conference-hall.api");

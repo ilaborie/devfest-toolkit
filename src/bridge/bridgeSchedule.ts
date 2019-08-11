@@ -1,5 +1,6 @@
+import { Logger } from "plop-logger";
+
 import { Slot, SlotKey } from "../site/models/slot";
-import { Logger } from "../logger";
 import { Time, timePlusDuration } from "../times";
 
 export interface LocalSlot {

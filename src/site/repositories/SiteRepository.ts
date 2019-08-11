@@ -1,6 +1,7 @@
 import * as path from "path";
-import { Logger } from "../../logger";
-import { mkdir, writeFile } from "../../fs-utils";
+import { Logger } from "plop-logger";
+
+import { createParentDir, writeFile } from "../../fs-utils";
 import { Site } from "../models/site";
 import {
   CategoryRepository,
@@ -107,7 +108,7 @@ export class SiteRepository implements Repository<Site> {
 
     // Site as JSON
     const siteFile = path.join(this.config.siteDir, "static/api/site.json");
-    await mkdir(path.dirname(siteFile), { recursive: true });
+    await createParentDir(siteFile);
     await writeFile(siteFile, JSON.stringify(site, null, 2));
     return;
   }

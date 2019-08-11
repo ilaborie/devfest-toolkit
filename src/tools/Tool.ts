@@ -1,4 +1,5 @@
-import { Logger } from "../logger";
+import { Logger } from "plop-logger";
+
 import { Config } from "../config";
 
 export abstract class Tool {

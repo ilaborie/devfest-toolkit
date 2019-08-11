@@ -2,7 +2,7 @@ import { Config } from "../config";
 
 import { AbstractSiteTool } from "./AbstractSiteTool";
 import { SiteRepository } from "../site/repositories";
-import { siteValidator } from "../site/models/site";
+import { SiteValidator } from "../site/validation";
 
 export class GenerateSiteTool extends AbstractSiteTool {
   constructor() {
@@ -16,6 +16,7 @@ export class GenerateSiteTool extends AbstractSiteTool {
     const site = await this.generateSite(config);
 
     // validate
+    const siteValidator = new SiteValidator(config);
     siteValidator.validateAndLog(site);
 
     const siteRepo = new SiteRepository(config);

@@ -2,9 +2,9 @@ import * as path from "path";
 import * as yaml from "js-yaml";
 import * as matter from "gray-matter";
 import { GrayMatterFile, Input } from "gray-matter";
+import { Logger } from "plop-logger";
 
-import { Logger } from "../../logger";
-import { mkdir, readdir, writeFile } from "../../fs-utils";
+import { createParentDir, readdir, writeFile } from "../../fs-utils";
 import { Repository } from "./index";
 import { compareKey, DescriptionElement, KeyElement } from "../models";
 import { SiteConfig } from "../../config";
@@ -18,11 +18,6 @@ export abstract class ContentRepository<
   protected constructor(readonly config: SiteConfig, readonly name: string) {
     this.logger = Logger.getLogger("site.repo." + name);
     this.parentPath = path.join(config.siteDir, "content", this.name);
-  }
-
-  read(key: string): Promise<T> {
-    const file = path.join(this.parentPath, `${key}.md`);
-    return this.readContentFile(file);
   }
 
   private readContentFile(file: string): Promise<T> {
@@ -53,7 +48,7 @@ export abstract class ContentRepository<
   protected async readDirFiles(dir: string): Promise<string[]> {
     let files = await readdir(dir);
     return files
-      .filter(file => !file.startsWith("_"))
+      .filter(file => !file.startsWith("_index"))
       .filter(file => file.endsWith(".md"))
       .map(file => path.join(dir, file));
   }
@@ -94,9 +89,8 @@ export abstract class ContentRepository<
     value: T
   ): Promise<void> {
     this.logger.debug("save to", file);
-    const parent = path.dirname(file);
     try {
-      await mkdir(parent, { recursive: true });
+      await createParentDir(file);
       const flag = force ? "w" : "wx";
       const { description: md, ...fm } = value;
       const yml = yaml.safeDump(JSON.parse(JSON.stringify(fm)));

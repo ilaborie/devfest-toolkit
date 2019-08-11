@@ -1,11 +1,11 @@
 import { compare, getValueByPointer, Operation } from "fast-json-patch";
-import chalk from "chalk";
+import colors from "ansi-colors";
+import { Logger } from "plop-logger";
 
 import { Config } from "../config";
 import { AbstractSiteTool } from "./AbstractSiteTool";
 import { SiteRepository } from "../site/repositories";
-import { Site, siteValidator } from "../site/models/site";
-import { Logger } from "../logger";
+import { Site } from "../site/models/site";
 import { indent } from "../strings";
 import {
   ArrayChanges,
@@ -17,6 +17,7 @@ import {
   indentPlus,
   KeyChanges
 } from "../changes";
+import { SiteValidator } from "../site/validation";
 
 interface AttributeKey<T> {
   attribute: keyof T;
@@ -48,8 +49,8 @@ export class DiffSiteTool extends AbstractSiteTool {
         return (
           "Changes for all" +
           [
-            ...changes.added.map(it => indent(chalk.green(it), indentPlus)),
-            ...changes.removed.map(it => indent(chalk.red(it), indentMinus))
+            ...changes.added.map(it => indent(colors.green(it), indentPlus)),
+            ...changes.removed.map(it => indent(colors.red(it), indentMinus))
           ].join("\n")
         );
       };
@@ -132,6 +133,14 @@ export class DiffSiteTool extends AbstractSiteTool {
       targetSite[attribute]
     );
     this.displayArrayChanges(attribute, changes);
+
+    const keyChanges = (Object.values(changes.updated) as Changes[]).reduce(
+      (acc, elt) => acc + elt.length,
+      0
+    );
+    if (keyChanges == 0) {
+      this.logger.info("No attribute change for", attribute);
+    }
   }
 
   async run(config: Config): Promise<void> {
@@ -139,6 +148,8 @@ export class DiffSiteTool extends AbstractSiteTool {
     const siteRepo = new SiteRepository(config);
     const current = await siteRepo.readAll();
     const generated = await this.generateSite(config);
+
+    const siteValidator = new SiteValidator(config);
     siteValidator.validateAndLog(generated);
 
     // Info

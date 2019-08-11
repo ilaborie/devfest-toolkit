@@ -1,6 +1,7 @@
-import { readFile, stat } from "./fs-utils";
 import * as rp from "request-promise-native";
-import { Logger } from "./logger";
+import { Logger } from "plop-logger";
+
+import { readFile, stat } from "./fs-utils";
 
 export interface Cache<K, V> {
   get(key: K): Promise<V>;

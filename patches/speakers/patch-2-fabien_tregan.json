@@ -4,5 +4,10 @@
     "op": "replace",
     "path": "/draft",
     "value": true
+  },
+  {
+    "op": "replace",
+    "path": "/photoURL",
+    "value": "https://pbs.twimg.com/profile_images/1127679784434262018/ol6YNR11_400x400.png"
   }
 ]

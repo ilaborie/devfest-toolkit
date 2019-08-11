@@ -3,6 +3,14 @@
   "version": "1.1.2",
   "description": "Tooling for Devfest",
   "author": "Igor Laborie <ilaborie@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilaborie/devfest-toolkit"
+  },
+  "keywords": [
+    "cli",
+    "devfest"
+  ],
   "license": "Apache-2.0",
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
@@ -13,45 +21,44 @@
   "oclif": {
     "bin": "devfest-toolkit"
   },
-  "keywords": [
-    "cli",
-    "devfest"
-  ],
   "files": [
     "/bin",
-    "/lib",
-    "/logger.json"
+    "/lib"
   ],
   "scripts": {
     "clean": "npx rimraf lib/",
     "prebuild": "npm run clean",
     "build": "npx tsc --declaration",
     "prelint-staged": "npm run build",
-    "start": "npx ts-node src/index.ts"
+    "start": "npx ts-node src/index.ts",
+    "prerelease": "build",
+    "release": "np"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "diff": "^4.0.1",
-    "fast-json-patch": "^2.2.0",
-    "gray-matter": "^4.0.2",
-    "js-yaml": "^3.13.1",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.2",
     "@oclif/plugin-help": "^2.2.0",
+    "ansi-colors": "^4.1.1",
+    "diff": "^4.0.1",
+    "fast-json-patch": "^2.2.1",
+    "gray-matter": "^4.0.2",
+    "js-yaml": "^3.13.1",
+    "plop-logger": "^2.2.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
+    "@types/ansi-colors": "^3.2.0",
     "@types/diff": "^4.0.2",
     "@types/js-yaml": "^3.12.1",
-    "@types/node": "^12.6.9",
+    "@types/node": "^12.7.1",
     "@types/request-promise-native": "^1.0.16",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^6.0.0",
-    "husky": "^3.0.2",
+    "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
     "ncp": "^2.0.0",
     "prettier": "^1.18.2",

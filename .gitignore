@@ -1,6 +1,7 @@
 node_modules/
 public/
 .vscode/
+lib/
 config.json
 
 diff.sh
