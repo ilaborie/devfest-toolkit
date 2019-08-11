@@ -8,7 +8,6 @@ import { Config } from "./config";
 import { canRead } from "./fs-utils";
 import { readFileSync } from "fs";
 
-// noinspection JSUnusedGlobalSymbols
 export default class DevfestToolkit extends Command {
   static description =
     "Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and publish these data to a Web Site or Konfetti) data, and publish these data to a Web Site";
@@ -37,7 +36,17 @@ export default class DevfestToolkit extends Command {
     addonDir: flags.string({
       description: "the add-on directory",
       default: "./add-on"
-    })
+    }),
+    sponsorTypes: flags.build<string[]>({
+      description: "the sponsor types (gold, silver, ...)",
+      parse: input => input.split(",").map(it => it.trim()),
+      default: ["platinium", "gold", "soutien", "startup"]
+    })(),
+    sponsorLangs: flags.build<string[]>({
+      description: "the sponsor lang (en, fr, ...)",
+      parse: input => input.split(",").map(it => it.trim()),
+      default: ["en", "fr"]
+    })()
   };
 
   static args: Parser.args.IArg[] = [

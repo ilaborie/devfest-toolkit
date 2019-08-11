@@ -16,6 +16,8 @@ Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and
 
 - `generate`: Generate site from conference hall and extra data
 
+- `add-sponsor`: Append a new sponsors to add-on
+
 - `stats`: Display some stats
 
 ## Options
@@ -28,3 +30,5 @@ Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and
 - `--addonDir=addonDir`: the add-on directory (default: `./add-on`)
 - `--patchDir=patchDir`: the patch directory (default: `./patches`)
 - `--force`: override file if required
+- `--sponsorTypes=gold,silver,...`: define types of sponsor, should be a coma-separated list.
+- `--sponsorLang=fr,en,...`: define language of sponsor, should be a coma-separated list.

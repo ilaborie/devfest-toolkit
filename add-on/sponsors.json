@@ -30,81 +30,6 @@
     "key": "airbus"
   },
   {
-    "title": "Cenareo",
-    "type": "platinium",
-    "category": "platinium",
-    "order": 7,
-    "logo": "/images/partners/logo-cenareo.png",
-    "website": "https://cenareo.com/fr/",
-    "lang": "fr",
-    "why": "Dev Fest is the best place to meet future “tech heroes” that share our values and will help us to shape the future of our ‘state-of-the-art’ technology. #ProductExcellence  #CustomerSatisfaction  #TeamSpirits #Inventiveness #Daring & #Ambition",
-    "socials": [
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/Cenareo",
-        "name": "https://twitter.com/Cenareo"
-      }
-    ],
-    "draft": false,
-    "description": "Cenareo, previously CityMeo, is a real “French Tech” success story. Located in Labège within the IoT Valley, we develop a best-in-class digital signage CMS (SaaS mode) to create, manage and broadcast content on remote displays in real-time, from any PC, tablet or smartphone.\nCreated by 4 engineers, Cenareo has experienced exponential growth and rapid development since its inception in 2012, posting triple-digit growth and now counting upwards of 30 employees.\nThe company has ambitious targets and a Global outlook. We promote diversity and welcome multi-cultural and foreign applicants.\n",
-    "key": "cenareo"
-  },
-  {
-    "title": "SII",
-    "type": "platinium",
-    "category": "platinium",
-    "order": 1,
-    "logo": "/images/partners/logo-sii.png",
-    "website": "http://toulouse.groupe-sii.com/fr",
-    "lang": "fr",
-    "why": "It appeared essential to us to bring our support to this « don’t miss » event. We are quite pleased and proud to be able to play a concrete part in its success.  ",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/GroupeSII",
-        "name": "Groupe SII"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/SIISudOuest",
-        "name": "SIISudOuest"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/sii",
-        "name": "Groupe SII"
-      }
-    ],
-    "draft": false,
-    "description": "After 40 years of partnering with corporations for their engineering needs, the SII Group finds itself at the forefront of innovation and digital transformation. It relies on teams of expert engineers and on methods at the cutting-edge of quality standards for its business centered on engineering consulting (information technology, electronics and telecommunications) and digital services (engineering and network information technology).\nWith nine field offices in France, the Group has built close relationships with local firms and offers a wide spectrum of career opportunities. Its presence in 18 countries and four continents also gives SII the ability to provide support for the international operations of major corporations.\n\n",
-    "key": "sii"
-  },
-  {
-    "title": "STACK LABS",
-    "type": "platinium",
-    "category": "platinium",
-    "order": 0,
-    "logo": "/images/partners/logo-stack_labs.svg",
-    "website": "https://stack-labs.com",
-    "lang": "fr",
-    "why": "We want to share and meet cool & passionated developers during this incredible event !",
-    "socials": [
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/stack_labs",
-        "name": "stack_labs"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/stacklabs",
-        "name": "stacklabs"
-      }
-    ],
-    "draft": false,
-    "description": "The new generation tech company. We ❤️ code, and building powerful & secured cloud architectures. We invest in tech watch & work with companies like Google & Amazon as partners.\n",
-    "key": "stack_labs"
-  },
-  {
     "title": "APSIDE",
     "type": "gold",
     "category": "gold",
@@ -185,6 +110,26 @@
     "key": "berger_levrault"
   },
   {
+    "title": "Cenareo",
+    "type": "platinium",
+    "category": "platinium",
+    "order": 7,
+    "logo": "/images/partners/logo-cenareo.png",
+    "website": "https://cenareo.com/fr/",
+    "lang": "fr",
+    "why": "Dev Fest is the best place to meet future “tech heroes” that share our values and will help us to shape the future of our ‘state-of-the-art’ technology. #ProductExcellence  #CustomerSatisfaction  #TeamSpirits #Inventiveness #Daring & #Ambition",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/Cenareo",
+        "name": "https://twitter.com/Cenareo"
+      }
+    ],
+    "draft": false,
+    "description": "Cenareo, previously CityMeo, is a real “French Tech” success story. Located in Labège within the IoT Valley, we develop a best-in-class digital signage CMS (SaaS mode) to create, manage and broadcast content on remote displays in real-time, from any PC, tablet or smartphone.\nCreated by 4 engineers, Cenareo has experienced exponential growth and rapid development since its inception in 2012, posting triple-digit growth and now counting upwards of 30 employees.\nThe company has ambitious targets and a Global outlook. We promote diversity and welcome multi-cultural and foreign applicants.\n",
+    "key": "cenareo"
+  },
+  {
     "title": "Cirruseo part of Accenture",
     "type": "gold",
     "category": "gold",
@@ -213,6 +158,56 @@
     "draft": false,
     "description": "Créé en 2011, Cirruseo est l’un des principaux partenaires de Google Cloud en France et l’un des plus importants acteurs français spécialisés exclusivement dans les services Google Cloud. Cirruseo accompagne ses clients dans leur transformation numérique, de l’expérience collaborateur autour des solutions Chrome et G Suite, à celle des métiers avec les services de Google Cloud Platform. Les solutions digitales de Cirruseo sont mobiles, intègrent la Data et l’Analytics by design, et sont conçues pour et par le Cloud. En 2019, Cirruseo a été classé parmi les 1 000 entreprises les plus dynamiques en Europe par le Financial Times. Depuis sa création, Cirruseo a réalisé 48% de croissance moyenne par an. Elle compte aujourd’hui plus de 600 clients, plus de 100 collaborateurs et deux bureaux à Paris et Toulouse. \n",
     "key": "cirruseo_part_of_accenture"
+  },
+  {
+    "title": "CNES",
+    "type": "soutien",
+    "category": "soutien",
+    "order": 5,
+    "logo": "/images/partners/logo-cnes.svg",
+    "website": "https://cnes.fr",
+    "lang": "fr",
+    "why": "Les métiers du CNES reposent de plus en plus sur l'informatique et le développement logiciel, que ce soit pour les logiciels bord ou les traitements au sol. Ces derniers utilisent de plus en plus les technologies issues du Big Data et du Machine Learning.",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/CNES",
+        "name": "CNES"
+      }
+    ],
+    "draft": false,
+    "description": "Le CNES propose aux pouvoirs publics la politique spatiale de la France et la met en oeuvre dans 5 grands domaines stratégiques : Ariane, les Sciences, l’Observation, les Télécommunications et la Défense.\n",
+    "key": "cnes"
+  },
+  {
+    "title": "commit42",
+    "type": "soutien",
+    "category": "soutien",
+    "order": 29,
+    "logo": "/images/partners/logo-commit42.png",
+    "website": "https://www.commit42.com/",
+    "lang": "fr",
+    "why": "C'est notre manière de vous remercier pour ce que vous faites.",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/commit42",
+        "name": "commit42"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/commit42",
+        "name": "commit42"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/commit42",
+        "name": "commit42"
+      }
+    ],
+    "draft": false,
+    "description": "Studio d'innovation web\ncommit42 est spécialisé dans les technologies React, PHP, NodeJS, Magento et PWA.\n\nNos projets peuvent varier de la maintenance d’une boutique en ligne à la réalisation d’applications métiers spécifiques dont des Web App PWA.\n",
+    "key": "commit42"
   },
   {
     "title": "Continental",
@@ -245,6 +240,46 @@
     "key": "continental"
   },
   {
+    "title": "DECASOFT",
+    "type": "soutien",
+    "category": "soutien",
+    "order": 8,
+    "logo": "/images/partners/logo-decasoft.jpg",
+    "website": "http://www.decasoft.fr/",
+    "lang": "fr",
+    "why": "Pour rencontrer les acteurs du marché et s'investir sur l'avenir du numérique",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/decasoft",
+        "name": "decasoft"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/Decasoft_SSII",
+        "name": "Decasoft_SSII"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/decasoft",
+        "name": "decasoft"
+      }
+    ],
+    "draft": false,
+    "description": "Une société à taille humaine spécialisée en développement web et mobile implantée sur la ville lumière et la ville rose – Paris et Toulouse.\nNous assurons l’évolution professionnelle de nos collaborateurs vers de nouvelles technologies afin de calibrer nos postes selon leurs envies.\nPour casser la routine, retrouvez-nous au baby-foot et aux soirées afterwork. Nous pouvons par ailleurs vous garantir une ambiance dynamique et 100% conviviale.  \n",
+    "key": "decasoft"
+  },
+  {
+    "title": "Duchess FR",
+    "type": "communautes",
+    "category": "communautes",
+    "website": "https://www.duchess-france.org/",
+    "logo": "/images/partners/community/duchess_fr.svg",
+    "socials": [],
+    "description": "\nFind Duchess FR on [https://www.duchess-france.org/](https://www.duchess-france.org/)\n\n![Duchess FR](/images/partners/community/duchess_fr.svg)\n",
+    "key": "duchess-fr"
+  },
+  {
     "title": "Elastic",
     "type": "gold",
     "category": "gold",
@@ -263,6 +298,36 @@
     "draft": false,
     "description": "Nous sommes les créateurs de la suite Elastic: Elasticsearch, Kibana, Beats et Logstash. Recherchez, analysez et visualisez vos données da façon sécurisée et fiable.\n",
     "key": "elastic"
+  },
+  {
+    "title": "GDG Toulouse",
+    "type": "communautes",
+    "category": "communautes",
+    "website": "https://www.gdgtoulouse.fr/",
+    "logo": "/images/partners/community/gdgtoulouse.svg",
+    "socials": [],
+    "description": "\nFind GDG Toulouse on [https://www.gdgtoulouse.fr/](https://www.gdgtoulouse.fr/)\n\n![GDG Toulouse](/images/partners/community/gdgtoulouse.svg)\n",
+    "key": "gdg-toulouse"
+  },
+  {
+    "title": "GitHub",
+    "type": "gold",
+    "category": "gold",
+    "order": 27,
+    "logo": "/images/partners/logo-github.png",
+    "website": "https://github.com/",
+    "lang": "en",
+    "why": "GitHub is focused on developers, the people who code and create software. For this reason, we decided to sponsor DevFest Toulouse. We want to be part of this collaborative community that can come together —as individuals and in teams— to create the future of software and make a difference in the world.  ",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/github",
+        "name": "github"
+      }
+    ],
+    "draft": false,
+    "description": "GitHub is the developer company. We make it easier for developers to be developers: to work together, to solve challenging problems, and to create the world’s most important technologies.\n\n",
+    "key": "github"
   },
   {
     "title": "Groupe Pierre Fabre",
@@ -308,6 +373,66 @@
     "draft": false,
     "description": "Informatique Banque Populaire, filiale du groupe bancaire BPCE, assure le développement informatique du système d’information des Banques Populaires.\n",
     "key": "informatique_banque_populaire"
+  },
+  {
+    "title": "Infotel",
+    "type": "gold",
+    "category": "gold",
+    "order": 26,
+    "logo": "/images/partners/logo-infotel.png",
+    "website": "https://www.infotel.com/",
+    "lang": "fr",
+    "why": "Notre passion pour l'innovation ainsi que notre cœur de métier en lien direct avec le DevFest nous pousse à devenir une nouvelle fois sponsor.  Le DevFest est un événement incontournable sur l'IT et une opportunité de rencontrer et d'échanger avec des talents autours des nouvelles technologies. Mais également, d'assister à des conférences de qualités. ",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/groupeInfotel",
+        "name": "Groupe Infotel"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/Infotel_",
+        "name": "Infotel"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/Infotel",
+        "name": "Infotel"
+      }
+    ],
+    "draft": false,
+    "description": "Acteur européen de la transformation numérique des entreprises, le groupe Infotel est l’interlocuteur privilégié des directions Informatiques et Métiers de Grands Comptes depuis près de 40 ans.\nInfotel leur apporte son expertise reconnue dans la gestion et l’évolution de leur patrimoine informatique mais aussi le conseil auprès des métiers et services innovants intégrant les technologies digitales ainsi qu’une expertise Big Data et mobile.\nInfotel développe son savoir-faire dans les secteurs de la Banque, de l’Assurance, de la Retraite, de l’Industrie et des Transports en s’appuyant sur l’innovation et la R&D.\n\nEditeur de logiciels, Infotel déploie par ailleurs toute une gamme de produits pour les grands serveurs, que ce soit en Europe, aux USA ou dans le reste du Monde.\nEmployant plus de 2 500 personnes, le Groupe, coté sur Euronext Paris, a réalisé en 2018 un chiffre d’affaires de 231 M€ et est en croissance constante.\n\nPour plus d’informations, rendez-vous sur : http://www.infotel.com\nLe groupe est resté fidèle aux valeurs humaines qui ont fait sa réussite : \n\tun recrutement sélectif basé sur les compétences ;\n\tun suivi rigoureux des collaborateurs par des commerciaux-managers ;\n\tune gestion dynamique de la progression de carrière grâce à des missions valorisantes ;\n\n",
+    "key": "infotel"
+  },
+  {
+    "title": "Intuiface",
+    "type": "startup",
+    "category": "startup",
+    "order": 18,
+    "logo": "/images/partners/logo-intuiface.png",
+    "website": "https://www.intuiface.com",
+    "lang": "en",
+    "why": "In 2011, we started as a small team of developers from Toulouse that is dedicated to the creation of technology that would make interactivity accessible to the masses, releasing a software platform infused with its DNA. Ever since, we have been aspiring to deliver a solution that gives everyone the power to create interactive experiences. With our Dev team in the heart of our evolution, we are excited to support this event organized for like-minded people who are also our inspiration.",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/Intuiface",
+        "name": "Intuiface"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/Intuiface",
+        "name": "Intuiface"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/Intuiface",
+        "name": "Intuiface"
+      }
+    ],
+    "draft": false,
+    "description": "Intuiface is the world’s premier platform for creating, deploying, measuring and managing deeply interactive digital experiences without writing code. Over 1500 companies across 70+ countries are connecting people to place using interactive options such as touch, RFID/NFC, beacons, Web APIs, Internet of Things, and much more. For any industry – including retail, hospitality, real estate, tourism, education – and for any intent – from digital signs to self-service kiosks and assisted selling.\n",
+    "key": "intuiface"
   },
   {
     "title": "Ippon",
@@ -364,6 +489,36 @@
     "key": "jfrog"
   },
   {
+    "title": "Liberty Rider",
+    "type": "soutien",
+    "category": "soutien",
+    "order": 17,
+    "logo": "/images/partners/logo-liberty_rider.svg",
+    "website": "https://liberty-rider.com",
+    "lang": "fr",
+    "why": "Les membres de la team Liberty sont à Toulouse, donc le DevFest on le connait bien. Entre les différentes conférences auquelles on va, c'est celle où l'on croise le plus de copains. Nos sujets de talk préférés ? Développement mobile natif, cloud, devops, et Node.js, GraphQL ou React quand il y en a ! Le DevFest Toulouse c'est une super occasion pour élargir son champ de connaissance et discuter avec des passionnés.",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/LibertyRiderApp",
+        "name": "LibertyRiderApp"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/_LibertyRider_",
+        "name": "_LibertyRider_"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/liberty-rider",
+        "name": "liberty-rider"
+      }
+    ],
+    "draft": false,
+    "description": "Sauver des vies !\nL'application Liberty Rider est pensée comme un guide sherpa, un carnet de route, un passeport. Elle permet au motard de gagner sa liberté en toute sérénité. Préparation, accompagnement, suivi, et plus que tout, protection. \nNous mettons l’intelligence artificielle au service de l’utilisateur. Grâce à des algorithmes inédits, nous sommes capable d’appeler les secours en cas d’accident et d'émettre une alerte à l’approche d’un virage dangereux pour signaler un danger.\nNotre centre d'assistance couvre 10 pays européens et est ouvert 24/7.\nEn interne nous encourageons une ambiance de travail bienveillante, collaborative, et transparente. Nous progressons ensemble car nous nous faisons confiance. Nous sommes une vingtaine de passionnés, et nous t'attendons.\n",
+    "key": "liberty_rider"
+  },
+  {
     "title": "Lyra Network",
     "type": "gold",
     "category": "gold",
@@ -414,141 +569,6 @@
     "key": "monkeypatch"
   },
   {
-    "title": "NEO-SOFT Groupe",
-    "type": "gold",
-    "category": "gold",
-    "order": 12,
-    "logo": "/images/partners/logo-neo_soft_groupe.png",
-    "website": "https://www.neo-soft.fr/",
-    "lang": "fr",
-    "why": "Parce nous sommes passionnés et toulousains et que le DevFest c'est LE regroupement des passionnées de la Ville Rose et d'ailleurs ! Parce que notre job ne s'arrête pas à satisfaire un client mais à apprendre et partager nos connaissances .",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/neo.soft.groupe",
-        "name": "Néo-Soft Groupe"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/neosoft_",
-        "name": "NeoSoft"
-      },
-      {
-        "icon": "linkedin",
-        "link": "http://www.linkedin.com/company/neo-soft-services",
-        "name": "Néo-Soft Groupe"
-      }
-    ],
-    "draft": false,
-    "description": "Créé en 2005 à Rennes par son PDG actuel Soïg, le Groupe Néo-Soft est aujourd’hui reconnu pour l’expertise de ses 1 300 consultants et ses 16 implantations.\nNéo-Soft est une société de Conseil en Informatique et Technologies spécialisée dans 5 domaines : \n- Conseil & Gestion de projet \n- Domaine applicatif\n- Infrastructures & Réseaux \n- Cybersécurité grâce notre filiale dédiée Cogital \n- Data\nIntégrer Néo-Soft c'est la possibilité de développer son expertise dans une entreprise innovante et responsable où la proximité est une réalité.\nNous recrutons sur toute la France et dans divers secteurs d'activités (Banques & Assurances, Aéronautique, Domotique, Télécoms & Médias etc.). \nClient grands comptes, PME ou start-up innovantes, évoluez dans l'environnement de votre choix.\n\n",
-    "key": "neo_soft_groupe"
-  },
-  {
-    "title": "SMILE",
-    "type": "gold",
-    "category": "gold",
-    "order": 13,
-    "logo": "/images/partners/logo-smile.png",
-    "website": "https://www.smile.eu/",
-    "lang": "fr",
-    "why": "Nous avons toujours été proche des développeurs, puisque ce sont 4 d'entre eux qui nous ont fondés. Notre ADN repose donc sur la technique, et la passion pour la contribution, le collectif. Il est donc dans notre culture d'être partie prenante sur les événements auxquels nous croyons. Implanté en Occitanie depuis quelques temps, SMILE a pour souhait de se développer, et pour cela, nous souhaitons renforcer notre proximité avec les acteurs de l'écosystème IT Toulousain.",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/smileopensource",
-        "name": "Smile - Open Source Solutions"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/GroupeSmile",
-        "name": "GroupeSmile"
-      }
-    ],
-    "draft": false,
-    "description": "Avec de l’audace et des beaux projets, ajoutez une pincée de culture visionnaire, une bonne dose d’innovation, saupoudrez le tout d’une expertise technique pluridisciplinaire et vous obtenez Smile, le leader européen de l’intégration et de l’infogérance de solutions open source.\n\nAgiles, open et engagés, chez Smile, nous adorons avoir un coup d’avance pour garder notre place sur le podium des acteurs majeurs du digital. Pour cela, nous avons développé 4 offres pour vous accompagner dans votre transformation numérique : Digital, Business App, Embedded & IoT et Infra.\n\nPour finir cette première présentation, une question primordiale… « Que serions-nous sans les femmes et les hommes qui font tourner la jolie machinerie Smile ? ». Au quotidien, ce sont 1700 smiliens présents dans 7 pays qui s’agitent et cogitent pour mener à bien les projets stratégiques de nombreux grands comptes français et européens.\n",
-    "key": "smile"
-  },
-  {
-    "title": "CNES",
-    "type": "soutien",
-    "category": "soutien",
-    "order": 5,
-    "logo": "/images/partners/logo-cnes.svg",
-    "website": "https://cnes.fr",
-    "lang": "fr",
-    "why": "Les métiers du CNES reposent de plus en plus sur l'informatique et le développement logiciel, que ce soit pour les logiciels bord ou les traitements au sol. Ces derniers utilisent de plus en plus les technologies issues du Big Data et du Machine Learning.",
-    "socials": [
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/CNES",
-        "name": "CNES"
-      }
-    ],
-    "draft": false,
-    "description": "Le CNES propose aux pouvoirs publics la politique spatiale de la France et la met en oeuvre dans 5 grands domaines stratégiques : Ariane, les Sciences, l’Observation, les Télécommunications et la Défense.\n",
-    "key": "cnes"
-  },
-  {
-    "title": "DECASOFT",
-    "type": "soutien",
-    "category": "soutien",
-    "order": 8,
-    "logo": "/images/partners/logo-decasoft.jpg",
-    "website": "http://www.decasoft.fr/",
-    "lang": "fr",
-    "why": "Pour rencontrer les acteurs du marché et s'investir sur l'avenir du numérique",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/decasoft",
-        "name": "decasoft"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/Decasoft_SSII",
-        "name": "Decasoft_SSII"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/decasoft",
-        "name": "decasoft"
-      }
-    ],
-    "draft": false,
-    "description": "Une société à taille humaine spécialisée en développement web et mobile implantée sur la ville lumière et la ville rose – Paris et Toulouse.\nNous assurons l’évolution professionnelle de nos collaborateurs vers de nouvelles technologies afin de calibrer nos postes selon leurs envies.\nPour casser la routine, retrouvez-nous au baby-foot et aux soirées afterwork. Nous pouvons par ailleurs vous garantir une ambiance dynamique et 100% conviviale.  \n",
-    "key": "decasoft"
-  },
-  {
-    "title": "Liberty Rider",
-    "type": "soutien",
-    "category": "soutien",
-    "order": 17,
-    "logo": "/images/partners/logo-liberty_rider.svg",
-    "website": "https://liberty-rider.com",
-    "lang": "fr",
-    "why": "Les membres de la team Liberty sont à Toulouse, donc le DevFest on le connait bien. Entre les différentes conférences auquelles on va, c'est celle où l'on croise le plus de copains. Nos sujets de talk préférés ? Développement mobile natif, cloud, devops, et Node.js, GraphQL ou React quand il y en a ! Le DevFest Toulouse c'est une super occasion pour élargir son champ de connaissance et discuter avec des passionnés.",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/LibertyRiderApp",
-        "name": "LibertyRiderApp"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/_LibertyRider_",
-        "name": "_LibertyRider_"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/liberty-rider",
-        "name": "liberty-rider"
-      }
-    ],
-    "draft": false,
-    "description": "Sauver des vies !\nL'application Liberty Rider est pensée comme un guide sherpa, un carnet de route, un passeport. Elle permet au motard de gagner sa liberté en toute sérénité. Préparation, accompagnement, suivi, et plus que tout, protection. \nNous mettons l’intelligence artificielle au service de l’utilisateur. Grâce à des algorithmes inédits, nous sommes capable d’appeler les secours en cas d’accident et d'émettre une alerte à l’approche d’un virage dangereux pour signaler un danger.\nNotre centre d'assistance couvre 10 pays européens et est ouvert 24/7.\nEn interne nous encourageons une ambiance de travail bienveillante, collaborative, et transparente. Nous progressons ensemble car nous nous faisons confiance. Nous sommes une vingtaine de passionnés, et nous t'attendons.\n",
-    "key": "liberty_rider"
-  },
-  {
     "title": "Morning",
     "type": "soutien",
     "category": "soutien",
@@ -579,59 +599,34 @@
     "key": "morning"
   },
   {
-    "title": "Squoring Technologies",
-    "type": "soutien",
-    "category": "soutien",
-    "order": 4,
-    "logo": "/images/partners/logo-squoring_technologies.jpg",
-    "website": "www.squoring.com / www.vector.com/",
+    "title": "NEO-SOFT Groupe",
+    "type": "gold",
+    "category": "gold",
+    "order": 12,
+    "logo": "/images/partners/logo-neo_soft_groupe.png",
+    "website": "https://www.neo-soft.fr/",
     "lang": "fr",
-    "why": "En tant qu'éditeur de logiciel à la pointe de l'innovation, notre participation au DevFest nous permet d'échanger avec tous les acteurs de notre écosystème sur les dernières avancées technologiques. A ce titre, tous les ingénieurs de notre équipe R&D sont invités à participer à l'événement pour partager et rester connectés avec la grande communauté des développeurs !",
-    "socials": [
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/squoring",
-        "name": "squoring"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/squoring-technologies",
-        "name": "squoring-technologies"
-      }
-    ],
-    "draft": false,
-    "description": "Créé à Toulouse en 2010, Squoring Technologies s’est imposé comme le spécialiste des solutions de pilotage de la qualité et de la performance des développements logiciels. Son tableau de bord d’analyse décisionnelle « Squore for Software Analytics », collecte, analyse et agrège en indicateurs pertinents et exploitables l’ensemble des données produites pendant le cycle de vie de production des logiciels pour évaluer et optimiser la performance des projets, le respect des processus et la qualité des livrables. Les solutions de Squoring Technologies sont utilisées par de nombreux grands groupes industriels en France et dans le monde. Depuis juin 2018, Squoring Technologies fait partie du groupe Vector Informatik, qui regroupe plus de 2, 500 employés dans le monde.\n",
-    "key": "squoring_technologies"
-  },
-  {
-    "title": "Intuiface",
-    "type": "startup",
-    "category": "startup",
-    "order": 18,
-    "logo": "/images/partners/logo-intuiface.png",
-    "website": "https://www.intuiface.com",
-    "lang": "en",
-    "why": "In 2011, we started as a small team of developers from Toulouse that is dedicated to the creation of technology that would make interactivity accessible to the masses, releasing a software platform infused with its DNA. Ever since, we have been aspiring to deliver a solution that gives everyone the power to create interactive experiences. With our Dev team in the heart of our evolution, we are excited to support this event organized for like-minded people who are also our inspiration.",
+    "why": "Parce nous sommes passionnés et toulousains et que le DevFest c'est LE regroupement des passionnées de la Ville Rose et d'ailleurs ! Parce que notre job ne s'arrête pas à satisfaire un client mais à apprendre et partager nos connaissances .",
     "socials": [
       {
         "icon": "facebook",
-        "link": "https://facebook.com/Intuiface",
-        "name": "Intuiface"
+        "link": "https://facebook.com/neo.soft.groupe",
+        "name": "Néo-Soft Groupe"
       },
       {
         "icon": "twitter",
-        "link": "https://twitter.com/Intuiface",
-        "name": "Intuiface"
+        "link": "https://twitter.com/neosoft_",
+        "name": "NeoSoft"
       },
       {
         "icon": "linkedin",
-        "link": "https://linkedin.com/company/Intuiface",
-        "name": "Intuiface"
+        "link": "http://www.linkedin.com/company/neo-soft-services",
+        "name": "Néo-Soft Groupe"
       }
     ],
     "draft": false,
-    "description": "Intuiface is the world’s premier platform for creating, deploying, measuring and managing deeply interactive digital experiences without writing code. Over 1500 companies across 70+ countries are connecting people to place using interactive options such as touch, RFID/NFC, beacons, Web APIs, Internet of Things, and much more. For any industry – including retail, hospitality, real estate, tourism, education – and for any intent – from digital signs to self-service kiosks and assisted selling.\n",
-    "key": "intuiface"
+    "description": "Créé en 2005 à Rennes par son PDG actuel Soïg, le Groupe Néo-Soft est aujourd’hui reconnu pour l’expertise de ses 1 300 consultants et ses 16 implantations.\nNéo-Soft est une société de Conseil en Informatique et Technologies spécialisée dans 5 domaines : \n- Conseil & Gestion de projet \n- Domaine applicatif\n- Infrastructures & Réseaux \n- Cybersécurité grâce notre filiale dédiée Cogital \n- Data\nIntégrer Néo-Soft c'est la possibilité de développer son expertise dans une entreprise innovante et responsable où la proximité est une réalité.\nNous recrutons sur toute la France et dans divers secteurs d'activités (Banques & Assurances, Aéronautique, Domotique, Télécoms & Médias etc.). \nClient grands comptes, PME ou start-up innovantes, évoluez dans l'environnement de votre choix.\n\n",
+    "key": "neo_soft_groupe"
   },
   {
     "title": "OneStock",
@@ -688,107 +683,6 @@
     "description": "Partant du constat que chaque année près de 660 millions de tonnes de CO2 sont émises par les avions, soit plus de 20 000 kilos de CO2 par seconde, cette clean-tech a décidé d’agir en développant des solutions innovantes pour aider les compagnies aériennes à réduire leurs coûts et leur impact environnemental.\n\nFruit de 7 ans de R&D, le logiciel d’éco-pilotage SkyBreathe® Fuel Efficiency sort sur le marché en 2013. S’appuyant sur des algorithmes de Big Data, d’Intelligence Artificielle et de Machine Learning, le logiciel analyse automatiquement les très nombreuses données disponibles dans les boites noires des avions afin d’évaluer l’efficacité énergétique des vols et émettre des recommandations permettant de réduire la consommation de carburant et les émissions de CO2 des avions. \n\nOpenAirlines est aujourd’hui leader sur son marché et emploie actuellement une quarantaine de collaborateurs à Toulouse et dans ses filiales à Hong Kong et à Miami.\n",
     "key": "openairlines"
   },
-
-  {
-    "title": "commit42",
-    "type": "soutien",
-    "category": "soutien",
-    "order": 29,
-    "logo": "/images/partners/logo-commit42.png",
-    "website": "https://www.commit42.com/",
-    "lang": "fr",
-    "why": "C'est notre manière de vous remercier pour ce que vous faites.",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/commit42",
-        "name": "commit42"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/commit42",
-        "name": "commit42"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/commit42",
-        "name": "commit42"
-      }
-    ],
-    "draft": false,
-    "description": "Studio d'innovation web\ncommit42 est spécialisé dans les technologies React, PHP, NodeJS, Magento et PWA.\n\nNos projets peuvent varier de la maintenance d’une boutique en ligne à la réalisation d’applications métiers spécifiques dont des Web App PWA.\n",
-    "key": "commit42"
-  },
-  {
-    "title": "GitHub",
-    "type": "gold",
-    "category": "gold",
-    "order": 27,
-    "logo": "/images/partners/logo-github.png",
-    "website": "https://github.com/",
-    "lang": "en",
-    "why": "GitHub is focused on developers, the people who code and create software. For this reason, we decided to sponsor DevFest Toulouse. We want to be part of this collaborative community that can come together —as individuals and in teams— to create the future of software and make a difference in the world.  ",
-    "socials": [
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/github",
-        "name": "github"
-      }
-    ],
-    "draft": false,
-    "description": "GitHub is the developer company. We make it easier for developers to be developers: to work together, to solve challenging problems, and to create the world’s most important technologies.\n\n",
-    "key": "github"
-  },
-  {
-    "title": "Infotel",
-    "type": "gold",
-    "category": "gold",
-    "order": 26,
-    "logo": "/images/partners/logo-infotel.png",
-    "website": "https://www.infotel.com/",
-    "lang": "fr",
-    "why": "Notre passion pour l'innovation ainsi que notre cœur de métier en lien direct avec le DevFest nous pousse à devenir une nouvelle fois sponsor.  Le DevFest est un événement incontournable sur l'IT et une opportunité de rencontrer et d'échanger avec des talents autours des nouvelles technologies. Mais également, d'assister à des conférences de qualités. ",
-    "socials": [
-      {
-        "icon": "facebook",
-        "link": "https://facebook.com/groupeInfotel",
-        "name": "Groupe Infotel"
-      },
-      {
-        "icon": "twitter",
-        "link": "https://twitter.com/Infotel_",
-        "name": "Infotel"
-      },
-      {
-        "icon": "linkedin",
-        "link": "https://linkedin.com/company/Infotel",
-        "name": "Infotel"
-      }
-    ],
-    "draft": false,
-    "description": "Acteur européen de la transformation numérique des entreprises, le groupe Infotel est l’interlocuteur privilégié des directions Informatiques et Métiers de Grands Comptes depuis près de 40 ans.\nInfotel leur apporte son expertise reconnue dans la gestion et l’évolution de leur patrimoine informatique mais aussi le conseil auprès des métiers et services innovants intégrant les technologies digitales ainsi qu’une expertise Big Data et mobile.\nInfotel développe son savoir-faire dans les secteurs de la Banque, de l’Assurance, de la Retraite, de l’Industrie et des Transports en s’appuyant sur l’innovation et la R&D.\n\nEditeur de logiciels, Infotel déploie par ailleurs toute une gamme de produits pour les grands serveurs, que ce soit en Europe, aux USA ou dans le reste du Monde.\nEmployant plus de 2 500 personnes, le Groupe, coté sur Euronext Paris, a réalisé en 2018 un chiffre d’affaires de 231 M€ et est en croissance constante.\n\nPour plus d’informations, rendez-vous sur : http://www.infotel.com\nLe groupe est resté fidèle aux valeurs humaines qui ont fait sa réussite : \n\tun recrutement sélectif basé sur les compétences ;\n\tun suivi rigoureux des collaborateurs par des commerciaux-managers ;\n\tune gestion dynamique de la progression de carrière grâce à des missions valorisantes ;\n\n",
-    "key": "infotel"
-  },
-  {
-    "title": "Sycomore Technologies",
-    "type": "gold",
-    "category": "gold",
-    "order": 32,
-    "logo": "/images/partners/logo-sycomore-technologie.png",
-    "website": "https://sycomore-tech.com",
-    "lang": "fr",
-    "why": "This an opportunity to contribute to a very exciting and friendly event to meet new talents and share our enthusiasm on the development of innovative technologies.",
-    "socials": [
-      {
-        "icon": "linkedin",
-        "link": "https://www.linkedin.com/company/sycomore-technologies/",
-        "name": " Sycomore-Technologies "
-      }
-    ],
-    "draft": false,
-    "description": "Sycomore-Technologies offers proprietary and custom software solutions.\n\nOur seasoned team is experienced in new generation technologies as cloud, microservices architectures as well as big data technologies to transform yours data into smart data.",
-    "key": "sycomore-technologie"
-  },
   {
     "title": "Programmez",
     "type": "media",
@@ -799,26 +693,6 @@
     "draft": true,
     "description": "\nFind Programmez on [https://www.programmez.com/](https://www.programmez.com/)\n\n![Programmez](/images/partners/media/logo_programmez.svg)\n",
     "key": "programmez"
-  },
-  {
-    "title": "Duchess FR",
-    "type": "communautes",
-    "category": "communautes",
-    "website": "https://www.duchess-france.org/",
-    "logo": "/images/partners/community/duchess_fr.svg",
-    "socials": [],
-    "description": "\nFind Duchess FR on [https://www.duchess-france.org/](https://www.duchess-france.org/)\n\n![Duchess FR](/images/partners/community/duchess_fr.svg)\n",
-    "key": "duchess-fr"
-  },
-  {
-    "title": "GDG Toulouse",
-    "type": "communautes",
-    "category": "communautes",
-    "website": "https://www.gdgtoulouse.fr/",
-    "logo": "/images/partners/community/gdgtoulouse.svg",
-    "socials": [],
-    "description": "\nFind GDG Toulouse on [https://www.gdgtoulouse.fr/](https://www.gdgtoulouse.fr/)\n\n![GDG Toulouse](/images/partners/community/gdgtoulouse.svg)\n",
-    "key": "gdg-toulouse"
   },
   {
     "title": "Python Toulouse",
@@ -839,6 +713,131 @@
     "socials": [],
     "description": "\nFind Rust Toulouse on [meetup](https://www.meetup.com/Toulouse-Rust-Meetup/)\n\n![GDG Toulouse](/images/partners/community/rust.png)\n",
     "key": "rust-toulouse"
+  },
+  {
+    "title": "SII",
+    "type": "platinium",
+    "category": "platinium",
+    "order": 1,
+    "logo": "/images/partners/logo-sii.png",
+    "website": "http://toulouse.groupe-sii.com/fr",
+    "lang": "fr",
+    "why": "It appeared essential to us to bring our support to this « don’t miss » event. We are quite pleased and proud to be able to play a concrete part in its success.  ",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/GroupeSII",
+        "name": "Groupe SII"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/SIISudOuest",
+        "name": "SIISudOuest"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/sii",
+        "name": "Groupe SII"
+      }
+    ],
+    "draft": false,
+    "description": "After 40 years of partnering with corporations for their engineering needs, the SII Group finds itself at the forefront of innovation and digital transformation. It relies on teams of expert engineers and on methods at the cutting-edge of quality standards for its business centered on engineering consulting (information technology, electronics and telecommunications) and digital services (engineering and network information technology).\nWith nine field offices in France, the Group has built close relationships with local firms and offers a wide spectrum of career opportunities. Its presence in 18 countries and four continents also gives SII the ability to provide support for the international operations of major corporations.\n\n",
+    "key": "sii"
+  },
+  {
+    "title": "SMILE",
+    "type": "gold",
+    "category": "gold",
+    "order": 13,
+    "logo": "/images/partners/logo-smile.png",
+    "website": "https://www.smile.eu/",
+    "lang": "fr",
+    "why": "Nous avons toujours été proche des développeurs, puisque ce sont 4 d'entre eux qui nous ont fondés. Notre ADN repose donc sur la technique, et la passion pour la contribution, le collectif. Il est donc dans notre culture d'être partie prenante sur les événements auxquels nous croyons. Implanté en Occitanie depuis quelques temps, SMILE a pour souhait de se développer, et pour cela, nous souhaitons renforcer notre proximité avec les acteurs de l'écosystème IT Toulousain.",
+    "socials": [
+      {
+        "icon": "facebook",
+        "link": "https://facebook.com/smileopensource",
+        "name": "Smile - Open Source Solutions"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/GroupeSmile",
+        "name": "GroupeSmile"
+      }
+    ],
+    "draft": false,
+    "description": "Avec de l’audace et des beaux projets, ajoutez une pincée de culture visionnaire, une bonne dose d’innovation, saupoudrez le tout d’une expertise technique pluridisciplinaire et vous obtenez Smile, le leader européen de l’intégration et de l’infogérance de solutions open source.\n\nAgiles, open et engagés, chez Smile, nous adorons avoir un coup d’avance pour garder notre place sur le podium des acteurs majeurs du digital. Pour cela, nous avons développé 4 offres pour vous accompagner dans votre transformation numérique : Digital, Business App, Embedded & IoT et Infra.\n\nPour finir cette première présentation, une question primordiale… « Que serions-nous sans les femmes et les hommes qui font tourner la jolie machinerie Smile ? ». Au quotidien, ce sont 1700 smiliens présents dans 7 pays qui s’agitent et cogitent pour mener à bien les projets stratégiques de nombreux grands comptes français et européens.\n",
+    "key": "smile"
+  },
+  {
+    "title": "Squoring Technologies",
+    "type": "soutien",
+    "category": "soutien",
+    "order": 4,
+    "logo": "/images/partners/logo-squoring_technologies.jpg",
+    "website": "www.squoring.com / www.vector.com/",
+    "lang": "fr",
+    "why": "En tant qu'éditeur de logiciel à la pointe de l'innovation, notre participation au DevFest nous permet d'échanger avec tous les acteurs de notre écosystème sur les dernières avancées technologiques. A ce titre, tous les ingénieurs de notre équipe R&D sont invités à participer à l'événement pour partager et rester connectés avec la grande communauté des développeurs !",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/squoring",
+        "name": "squoring"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/squoring-technologies",
+        "name": "squoring-technologies"
+      }
+    ],
+    "draft": false,
+    "description": "Créé à Toulouse en 2010, Squoring Technologies s’est imposé comme le spécialiste des solutions de pilotage de la qualité et de la performance des développements logiciels. Son tableau de bord d’analyse décisionnelle « Squore for Software Analytics », collecte, analyse et agrège en indicateurs pertinents et exploitables l’ensemble des données produites pendant le cycle de vie de production des logiciels pour évaluer et optimiser la performance des projets, le respect des processus et la qualité des livrables. Les solutions de Squoring Technologies sont utilisées par de nombreux grands groupes industriels en France et dans le monde. Depuis juin 2018, Squoring Technologies fait partie du groupe Vector Informatik, qui regroupe plus de 2, 500 employés dans le monde.\n",
+    "key": "squoring_technologies"
+  },
+  {
+    "title": "STACK LABS",
+    "type": "platinium",
+    "category": "platinium",
+    "order": 0,
+    "logo": "/images/partners/logo-stack_labs.svg",
+    "website": "https://stack-labs.com",
+    "lang": "fr",
+    "why": "We want to share and meet cool & passionated developers during this incredible event !",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/stack_labs",
+        "name": "stack_labs"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://linkedin.com/company/stacklabs",
+        "name": "stacklabs"
+      }
+    ],
+    "draft": false,
+    "description": "The new generation tech company. We ❤️ code, and building powerful & secured cloud architectures. We invest in tech watch & work with companies like Google & Amazon as partners.\n",
+    "key": "stack_labs"
+  },
+  {
+    "title": "Sycomore Technologies",
+    "type": "gold",
+    "category": "gold",
+    "order": 32,
+    "logo": "/images/partners/logo-sycomore-technologie.png",
+    "website": "https://sycomore-tech.com",
+    "lang": "fr",
+    "why": "This an opportunity to contribute to a very exciting and friendly event to meet new talents and share our enthusiasm on the development of innovative technologies.",
+    "socials": [
+      {
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/company/sycomore-technologies/",
+        "name": " Sycomore-Technologies "
+      }
+    ],
+    "draft": false,
+    "description": "Sycomore-Technologies offers proprietary and custom software solutions.\n\nOur seasoned team is experienced in new generation technologies as cloud, microservices architectures as well as big data technologies to transform yours data into smart data.",
+    "key": "sycomore-technologie"
   },
   {
     "title": "Toulouse Data Science",

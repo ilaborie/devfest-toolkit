@@ -1,4 +1,4 @@
-import { Change, diffWordsWithSpace, diffJson } from "diff";
+import { Change, diffJson, diffWordsWithSpace } from "diff";
 import colors from "ansi-colors";
 
 import { memoize } from "./cache";
@@ -56,3 +56,6 @@ export const compareString = (a: string, b: string): number => {
   else if (a < b) return -1;
   else return 0;
 };
+
+const urlPatterm = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
+export const isUrl = (s: string): boolean => urlPatterm.test(s);

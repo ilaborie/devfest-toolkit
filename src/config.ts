@@ -5,6 +5,9 @@ export interface Config {
   patchDir: string;
   addonDir: string;
   force: boolean;
+  // Add list
+  sponsorTypes: string[];
+  sponsorLangs: string[];
 }
 
 export type SiteConfig = Pick<Config, "siteDir">;
