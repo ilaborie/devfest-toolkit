@@ -97,8 +97,9 @@ export abstract class AbstractSiteTool extends Tool {
     event: Event
   ): Promise<SiteCategory[]> {
     const categories = event.categories.map(c => {
+      const { id, name, description } = c;
       const key = buildKey(c.name);
-      return { ...c, key };
+      return { key, name, description, id };
     });
     this.logger.info("Found", () => `${categories.length} categories`);
     const result = await applyAllPatch(config, "categories", categories);
@@ -111,8 +112,9 @@ export abstract class AbstractSiteTool extends Tool {
     event: Event
   ): Promise<SiteFormat[]> {
     const formats = event.formats.map(f => {
+      const { id, name, description } = f;
       const key = buildKey(f.name);
-      return { ...f, key };
+      return { key, name, description, id };
     });
     this.logger.info("Found", () => `${formats.length} format(s)`);
     const result = await applyAllPatch(config, "formats", formats);
