@@ -38,7 +38,7 @@ export abstract class ContentRepository<
   private transform({ content, data }: GrayMatterFile<Input>): T {
     this.logger.trace("Read", () => JSON.stringify({ content, data }, null, 2));
     const partial = data as Omit<T, "description">;
-    // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {
       ...partial,
       description: (content || "").trim()
@@ -46,7 +46,7 @@ export abstract class ContentRepository<
   }
 
   protected async readDirFiles(dir: string): Promise<string[]> {
-    let files = await readdir(dir);
+    const files = await readdir(dir);
     return files
       .filter(file => !file.startsWith("_index"))
       .filter(file => file.endsWith(".md"))
@@ -60,8 +60,8 @@ export abstract class ContentRepository<
 
   async readAll(): Promise<T[]> {
     this.logger.info("read all");
-    let files = await this.getAllFiles();
-    let elements: T[][] = await Promise.all(
+    const files = await this.getAllFiles();
+    const elements: T[][] = await Promise.all(
       files.map(file => this.getAllData(file))
     );
     const result = elements.flat();
@@ -71,7 +71,7 @@ export abstract class ContentRepository<
 
   private async getAllData(file: string): Promise<T[]> {
     try {
-      let elt = await this.readContentFile(file);
+      const elt = await this.readContentFile(file);
       return [elt];
     } catch (e) {
       return [];

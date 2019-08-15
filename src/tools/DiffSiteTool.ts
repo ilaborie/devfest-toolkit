@@ -113,7 +113,7 @@ export class DiffSiteTool extends AbstractSiteTool {
         acc[key] = this.diffObject(src, trg);
         return acc;
       },
-      // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
       {} as KeyChanges
     );
 
@@ -134,6 +134,7 @@ export class DiffSiteTool extends AbstractSiteTool {
     );
     this.displayArrayChanges(attribute, changes);
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     const keyChanges = (Object.values(changes.updated) as Changes[]).reduce(
       (acc, elt) => acc + elt.length,
       0

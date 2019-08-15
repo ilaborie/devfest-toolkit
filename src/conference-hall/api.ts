@@ -12,7 +12,7 @@ export async function getEvent(config: ConferenceHallConfig): Promise<Event> {
   logger.info("Get event", eventId);
   cli.action.start("Fetching from conference-hall");
   const url = `https://conference-hall.io/api/v1/event/${eventId}?key=${apiKey}`;
-  let result: Event = await fetchCache.get(url);
+  const result: Event = await fetchCache.get(url);
   cli.action.stop();
   logger.info("Event loaded", result.name);
   return result;

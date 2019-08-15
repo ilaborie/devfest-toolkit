@@ -57,7 +57,7 @@ export abstract class TypeContentRepository<
   ): T {
     this.logger.trace("Read", () => JSON.stringify({ content, data }, null, 2));
     const partial = data as Omit<T, "description">;
-    // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return { ...partial, type, description: content } as T;
   }
 
@@ -70,14 +70,14 @@ export abstract class TypeContentRepository<
       )
     );
 
-    let arr = await Promise.all(promises);
+    const arr = await Promise.all(promises);
     return arr.flat();
   }
 
   async readAll(): Promise<T[]> {
     this.logger.info("read all");
-    let files = await this.getAllTypeFiles();
-    let elements: T[][] = await Promise.all(
+    const files = await this.getAllTypeFiles();
+    const elements: T[][] = await Promise.all(
       files.map(({ file, type }) => this.getAllTypeData(type, file))
     );
     const result = elements.flat();
@@ -87,7 +87,7 @@ export abstract class TypeContentRepository<
 
   private async getAllTypeData(type: string, file: string): Promise<T[]> {
     try {
-      let elt = await this.readTypeContentFile(type, file);
+      const elt = await this.readTypeContentFile(type, file);
       return [elt];
     } catch (e) {
       return [];

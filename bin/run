@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const project = path.join(__dirname, '../tsconfig.json');
+const dev = fs.existsSync(project);
+
+let root = `../lib`;
+if (dev) {
+  console.info('DEV mode');
+  require('ts-node')
+    .register({project});
+  root = `../src`
+}
+
+let command = require(root).default;
+if(typeof command.default === 'function') {
+  command = command.default;
+}
+
+command.run()
+  .catch(require('@oclif/errors/handle'));

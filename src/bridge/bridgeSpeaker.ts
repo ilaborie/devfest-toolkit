@@ -22,7 +22,7 @@ export async function bridgeSpeaker(
   key: SpeakerKey
 ): Promise<SiteSpeakerMissing> {
   const speakerAddOnFile = path.join(config.addonDir, "speakers.json");
-  let speakersAddOn = await readFileCache.getAsJson<SpeakersAddOn>(
+  const speakersAddOn = await readFileCache.getAsJson<SpeakersAddOn>(
     speakerAddOnFile
   );
   const result: SiteSpeakerMissing = {

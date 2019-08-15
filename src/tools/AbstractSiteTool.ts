@@ -38,7 +38,7 @@ export abstract class AbstractSiteTool extends Tool {
     const sessions: SiteSession[] = selected.map(talk =>
       talkToSession(event, talk)
     );
-    let patchedSession = await applyAllPatch(config, "sessions", sessions);
+    const patchedSession = await applyAllPatch(config, "sessions", sessions);
     patchedSession.sort(compareKey);
     this.logger.info("Found", () => `${patchedSession.length} session(s)`);
     return { talks: selected, site: patchedSession };

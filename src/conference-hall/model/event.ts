@@ -131,7 +131,7 @@ export async function toSiteSpeaker(
   const name = speaker.displayName || speaker.uid;
   const key = buildKey(name);
 
-  let siteSpeakerMissing = await bridgeSpeaker(config, key);
+  const siteSpeakerMissing = await bridgeSpeaker(config, key);
   const { isFeatured, company, city } = siteSpeakerMissing;
   const socials: Socials = [];
   if (speaker.twitter) {

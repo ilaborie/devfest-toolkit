@@ -35,7 +35,7 @@ export abstract class DataArrayRepository<T extends KeyElement>
     const file = this.parentFile;
     await createParentDir(file);
     const flag = force ? "w" : "wx";
-    let data = yaml.safeDump(values);
+    const data = yaml.safeDump(values);
     return await writeFile(file, data, { flag });
   }
 }

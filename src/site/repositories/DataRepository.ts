@@ -22,7 +22,7 @@ export abstract class DataRepository<T> implements Repository<T> {
       const data = await readFileCache.get(this.parentFile);
       return yaml.safeLoad(data) as T;
     } catch (e) {
-      // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
       return {} as T;
     }
   }
@@ -32,7 +32,7 @@ export abstract class DataRepository<T> implements Repository<T> {
     const file = this.parentFile;
     await createParentDir(file);
     const flag = force ? "w" : "wx";
-    let data = yaml.safeDump(values);
+    const data = yaml.safeDump(values);
     return await writeFile(file, data, { flag });
   }
 }

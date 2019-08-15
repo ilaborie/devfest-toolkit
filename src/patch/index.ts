@@ -29,10 +29,10 @@ async function loadPatches(
   logger.trace(() => "Lookup patches", type);
   const dir = path.join(config.patchDir, type);
   try {
-    let files = (await readdir(dir))
+    const files = (await readdir(dir))
       .filter(f => f.startsWith("patch"))
       .filter(f => f.endsWith(".json"));
-    let patches = await Promise.all(files.map(file => loadPatch(dir, file)));
+    const patches = await Promise.all(files.map(file => loadPatch(dir, file)));
     logger.info("Found patches", patches.length);
     return patches;
   } catch (err) {
@@ -55,7 +55,7 @@ async function loadListPatches<T extends KeyElement>(
   await createParentDir(file);
   logger.trace("Load list patch", type);
   try {
-    let result = await readFileCache.getAsJson<ListPatch<T>>(file);
+    const result = await readFileCache.getAsJson<ListPatch<T>>(file);
     if (result.add.length) {
       logger.trace("Found list patch add", result.add.length);
     }
@@ -75,7 +75,7 @@ export async function applyAllPatch<T extends KeyElement>(
   data: T[]
 ): Promise<T[]> {
   const logger = Logger.getLogger("patch." + type);
-  let listPatch = await loadListPatches<T>(logger, config, type);
+  const listPatch = await loadListPatches<T>(logger, config, type);
   let result = [...data];
   if (listPatch.remove.length) {
     result = result.filter(it => !listPatch.remove.includes(it.key));
@@ -91,8 +91,8 @@ export async function applyAllPatch<T extends KeyElement>(
       () => listPatch.add.map(it => it.key).join(", ")
     );
   }
-  let list: T[] = result;
-  let patches = await loadPatches(logger, config, type);
+  const list: T[] = result;
+  const patches = await loadPatches(logger, config, type);
   return list.map(elt =>
     patches.reduce((acc, patch) => {
       try {

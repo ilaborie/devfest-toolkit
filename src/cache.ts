@@ -23,7 +23,7 @@ abstract class MapCache<K, V> implements Cache<K, V> {
   private readonly map: Map<K, Promise<V>> = new Map<K, Promise<V>>();
 
   async get(key: K): Promise<V> {
-    let upToDate = await this.upToDateFn(key);
+    const upToDate = await this.upToDateFn(key);
     if (upToDate) {
       return this.map.get(key) || this.loadFn(key);
     }
@@ -55,8 +55,8 @@ class ReadFileCache extends MapCache<string, string> {
 
   protected async upToDateFn(key: string): Promise<boolean> {
     this.logger.trace("check up-to-date", key);
-    let stats = await stat(key);
-    let lastModified: number = stats.mtimeMs;
+    const stats = await stat(key);
+    const lastModified: number = stats.mtimeMs;
     if (this.modified.get(key) === lastModified) {
       this.logger.trace("Hooray, it is up-to-date", key);
       return true;
