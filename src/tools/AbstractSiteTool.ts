@@ -16,14 +16,14 @@ import { applyAllPatch } from "../patch";
 import { Site } from "../site/models/site";
 import { readFileCache } from "../cache";
 import * as path from "path";
-import { Room } from "../site/models/room";
-import { Schedule } from "../site/models/schedule";
-import { LocalSlot, toSiteSlot } from "../bridge/bridgeSchedule";
-import { Sponsor } from "../site/models/sponsor";
+import { loadSchedule } from "../addon/addonSchedule";
 import { Member } from "../site/models/member";
 import { getEvent } from "../conference-hall/api";
 import { compareKey } from "../site/models";
 import { downloadToFile } from "../fs-utils";
+import { loadSponsors } from "../addon/addonSponsor";
+import { loadExtraSessions } from "../addon/addonSession";
+import { loadExtraSpeakers } from "../addon/addonSpeaker";
 
 export abstract class AbstractSiteTool extends Tool {
   protected async generateSessions(
@@ -35,13 +35,45 @@ export abstract class AbstractSiteTool extends Tool {
       keepStatus.includes(talk.state)
     );
 
-    const sessions: SiteSession[] = selected.map(talk =>
-      talkToSession(event, talk)
-    );
+    const baseSessions = selected.map(talk => talkToSession(event, talk));
+    const extraSessions = await loadExtraSessions(config);
+    const sessions = [...baseSessions, ...extraSessions];
+
     const patchedSession = await applyAllPatch(config, "sessions", sessions);
-    patchedSession.sort(compareKey);
-    this.logger.info("Found", () => `${patchedSession.length} session(s)`);
-    return { talks: selected, site: patchedSession };
+    const result = patchedSession.map(session => {
+      const {
+        key,
+        title,
+        id,
+        language,
+        format,
+        tags,
+        level,
+        speakers,
+        videoId,
+        presentation,
+        draft,
+        description
+      } = session;
+      return {
+        key,
+        title,
+        id,
+        language,
+        format,
+        tags,
+        level,
+        speakers,
+        videoId,
+        presentation,
+        draft,
+        description
+      };
+    });
+    result.sort(compareKey);
+
+    this.logger.info("Found", () => `${result.length} session(s)`);
+    return { talks: selected, site: result };
   }
 
   protected async generateSpeakers(
@@ -55,12 +87,39 @@ export abstract class AbstractSiteTool extends Tool {
     }, new Set<SpeakerId>());
     this.logger.info("Found", () => `${speakerIds.size} speaker(s)`);
 
-    const speakersPromise: Promise<SiteSpeaker>[] = event.speakers
+    const baseSpeakers: SiteSpeaker[] = event.speakers
       .filter(speaker => speakerIds.has(speaker.uid))
-      .map(speakers => toSiteSpeaker(config, speakers));
+      .map(speaker => toSiteSpeaker(speaker));
+    const extraSpeakers = await loadExtraSpeakers(config);
+    const speakers = [...baseSpeakers, ...extraSpeakers];
 
-    const speakers = await Promise.all(speakersPromise);
-    const result = await applyAllPatch(config, "speakers", speakers);
+    const patched = await applyAllPatch(config, "speakers", speakers);
+    const result = patched.map(speaker => {
+      const {
+        key,
+        name,
+        id,
+        feature,
+        company,
+        city,
+        photoURL,
+        socials,
+        draft,
+        description
+      } = speaker;
+      return {
+        key,
+        name,
+        id,
+        feature,
+        company,
+        city,
+        photoURL,
+        socials,
+        draft,
+        description
+      };
+    });
     result.sort(compareKey);
 
     const withPhoto = result.map(speaker =>
@@ -97,9 +156,9 @@ export abstract class AbstractSiteTool extends Tool {
     event: Event
   ): Promise<SiteCategory[]> {
     const categories = event.categories.map(c => {
-      const { id, name, description } = c;
+      const { id, name } = c;
       const key = buildKey(c.name);
-      return { key, name, description, id };
+      return { key, name, id };
     });
     this.logger.info("Found", () => `${categories.length} categories`);
     const result = await applyAllPatch(config, "categories", categories);
@@ -112,9 +171,9 @@ export abstract class AbstractSiteTool extends Tool {
     event: Event
   ): Promise<SiteFormat[]> {
     const formats = event.formats.map(f => {
-      const { id, name, description } = f;
+      const { id, name } = f;
       const key = buildKey(f.name);
-      return { key, name, description, id };
+      return { key, name, id };
     });
     this.logger.info("Found", () => `${formats.length} format(s)`);
     const result = await applyAllPatch(config, "formats", formats);
@@ -125,7 +184,7 @@ export abstract class AbstractSiteTool extends Tool {
   protected async generateDataFromEvent(
     config: Config,
     event: Event
-  ): Promise<Partial<Site>> {
+  ): Promise<Pick<Site, "sessions" | "speakers" | "categories" | "formats">> {
     const { site: sessions, talks } = await this.generateSessions(
       config,
       event
@@ -134,34 +193,6 @@ export abstract class AbstractSiteTool extends Tool {
     const categories = await this.generateCategories(config, event);
     const formats = await this.generateFormats(config, event);
     return { sessions, speakers, categories, formats };
-  }
-
-  protected async generateSchedule(config: Config): Promise<Partial<Site>> {
-    // Rooms
-    const roomsFile = path.join(config.addonDir, "rooms.json");
-    const rooms = await readFileCache.getAsJson<Room[]>(roomsFile);
-    this.logger.info("Found", () => `${rooms.length} room(s)`);
-
-    // Slots
-    const slotsFile = path.join(config.addonDir, "slots.json");
-    const slotBases = await readFileCache.getAsJson<LocalSlot[]>(slotsFile);
-    const slots = toSiteSlot(slotBases);
-    this.logger.info("Found", () => `${slots.length} slot(s)`);
-
-    // schedule
-    const scheduleFile = path.join(config.addonDir, "schedule.json");
-    const schedule = await readFileCache.getAsJson<Schedule>(scheduleFile);
-    this.logger.info("Found some schedule", () => `${schedule.length} day(s)`);
-
-    return { rooms, slots, schedule };
-  }
-
-  protected async generateSponsors(config: Config): Promise<Sponsor[]> {
-    const sponsorsFile = path.join(config.addonDir, "sponsors.json");
-    const sponsors = await readFileCache.getAsJson<Sponsor[]>(sponsorsFile);
-    this.logger.info("Found", () => `${sponsors.length} sponsor(s)`);
-    sponsors.sort(compareKey);
-    return sponsors;
   }
 
   protected async generateTeam(config: Config): Promise<Member[]> {
@@ -185,8 +216,8 @@ export abstract class AbstractSiteTool extends Tool {
       categories,
       formats
     } = await this.generateDataFromEvent(config, event);
-    const { rooms, slots, schedule } = await this.generateSchedule(config);
-    const sponsors = await this.generateSponsors(config);
+    const { rooms, slots, schedule } = await loadSchedule(config);
+    const sponsors = await loadSponsors(config);
     const team = await this.generateTeam(config);
 
     return {

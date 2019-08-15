@@ -37,12 +37,12 @@ export default class DevfestToolkit extends Command {
       description: "the add-on directory",
       default: "./add-on"
     }),
-    sponsorTypes: flags.build<string[]>({
-      description: "the sponsor types (gold, silver, ...)",
+    sponsorCategories: flags.build<string[]>({
+      description: "the sponsor categories (gold, silver, ...)",
       parse: input => input.split(",").map(it => it.trim()),
       default: ["platinium", "gold", "soutien", "startup"]
     })(),
-    sponsorLangs: flags.build<string[]>({
+    languages: flags.build<string[]>({
       description: "the sponsor lang (en, fr, ...)",
       parse: input => input.split(",").map(it => it.trim()),
       default: ["en", "fr"]

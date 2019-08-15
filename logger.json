@@ -6,6 +6,6 @@
   "site": "trace",
   "site.repo": "info",
   "patch": "info",
-  "bridge": "info",
+  "addon": "info",
   "download": "info"
 }

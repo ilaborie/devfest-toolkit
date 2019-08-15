@@ -1,8 +1,14 @@
 [
-  { "op": "test", "path": "/key", "value": "qJ7nBL6wIyUg1RHqtxF818a46po1\n" },
+  { "op": "test", "path": "/key", "value": "qj7nbl6wiyug1rhqtxf818a46po1" },
   {
     "op": "replace",
     "path": "/name",
     "value": "Yves Boyez"
-  }
+  },
+  {
+    "op": "replace",
+    "path": "/company",
+    "value": "Continental Digital Service France"
+  },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
 ]

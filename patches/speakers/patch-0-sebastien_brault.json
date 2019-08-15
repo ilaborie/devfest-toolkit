@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "sebastien_brault" },
+  { "op": "replace", "path": "/company", "value": "Orange" },
+  { "op": "replace", "path": "/city", "value": "Trégastel, France" }
+]

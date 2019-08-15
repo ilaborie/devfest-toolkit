@@ -1,0 +1,9 @@
+[
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "horacio_gonzalez__lostinbrittany_"
+  },
+  { "op": "replace", "path": "/company", "value": "OVH" },
+  { "op": "replace", "path": "/city", "value": "Brest, France" }
+]

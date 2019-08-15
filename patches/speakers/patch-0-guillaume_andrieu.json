@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "guillaume_andrieu" },
+  { "op": "replace", "path": "/company", "value": "MonkeyPatch" },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
+]

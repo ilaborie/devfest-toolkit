@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "erik_rasmussen" },
+  { "op": "replace", "path": "/feature", "value": true },
+  { "op": "replace", "path": "/city", "value": "Cantabria, Spain" }
+]

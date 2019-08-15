@@ -4,16 +4,11 @@ import { GrayMatterFile, Input } from "gray-matter";
 
 import { ContentRepository } from "./ContentRepository";
 import { canRead } from "../../fs-utils";
-import {
-  compareKey,
-  DescriptionElement,
-  KeyElement,
-  TypeElement
-} from "../models";
+import { compareKey, DescriptionElement, KeyElement } from "../models";
 import { SiteConfig } from "../../config";
 
 export abstract class TypeContentRepository<
-  T extends TypeElement & KeyElement & DescriptionElement
+  T extends KeyElement & DescriptionElement
 > extends ContentRepository<T> {
   protected constructor(config: SiteConfig, name: string) {
     super(config, name);
@@ -36,6 +31,8 @@ export abstract class TypeContentRepository<
 
   abstract getAllTypes(): string[];
 
+  abstract getTypeKey(): keyof T;
+
   private readTypeContentFile(type: string, file: string): Promise<T> {
     this.logger.debug("Read file", file);
     try {
@@ -56,9 +53,10 @@ export abstract class TypeContentRepository<
     { content, data }: GrayMatterFile<Input>
   ): T {
     this.logger.trace("Read", () => JSON.stringify({ content, data }, null, 2));
-    const partial = data as Omit<T, "description">;
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-    return { ...partial, type, description: content } as T;
+    const result: any = { ...data, description: content };
+    result[this.getTypeKey()] = type;
+    return result as T;
   }
 
   private async getAllTypeFiles(): Promise<{ type: string; file: string }[]> {
@@ -95,7 +93,8 @@ export abstract class TypeContentRepository<
   }
 
   save(value: T, force: boolean = false): Promise<void> {
-    const file = path.join(this.parentPath, value.type, `${value.key}.md`);
+    const type = `${value[this.getTypeKey()]}`;
+    const file = path.join(this.parentPath, type, `${value.key}.md`);
     return this.saveTo(file, force, value);
   }
 }

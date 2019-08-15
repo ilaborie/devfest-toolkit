@@ -4,5 +4,7 @@
     "op": "replace",
     "path": "/name",
     "value": "Cédric Moulard"
-  }
+  },
+  { "op": "replace", "path": "/company", "value": "Open" },
+  { "op": "replace", "path": "/city", "value": "Aix-en-Provence, France" }
 ]

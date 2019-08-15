@@ -11,7 +11,7 @@ export type SponsorCategory = string;
 export interface Sponsor {
   key: SponsorKey;
   title: string;
-  type: SponsorCategory;
+  category: SponsorCategory;
   order?: number;
   logo: string;
   website?: string;

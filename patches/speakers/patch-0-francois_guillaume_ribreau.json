@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "francois_guillaume_ribreau" },
+  { "op": "replace", "path": "/company", "value": "Ouest-France/Image-Charts" },
+  { "op": "replace", "path": "/city", "value": "Rennes, France" }
+]

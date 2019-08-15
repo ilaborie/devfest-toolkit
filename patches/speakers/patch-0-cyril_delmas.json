@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "cyril_delmas" },
+  { "op": "replace", "path": "/company", "value": "Lectra" },
+  { "op": "replace", "path": "/city", "value": "Mérignac, France" }
+]

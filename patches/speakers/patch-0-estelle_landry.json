@@ -8,5 +8,7 @@
     "op": "replace",
     "path": "/photoURL",
     "value": "https://sunny-tech.io/images/people/estelle_landry.jpg"
-  }
+  },
+  { "op": "replace", "path": "/company", "value": "Elium" },
+  { "op": "replace", "path": "/city", "value": "Montpellier, France" }
 ]

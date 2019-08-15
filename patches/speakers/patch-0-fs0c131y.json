@@ -13,5 +13,7 @@
     "op": "replace",
     "path": "/description",
     "value": "- French security researcher.\n- Worst nightmare of Oneplus, Wiko, UIDAI, Kimbho, Donald Daters and others.\n- Not completely schizophrenic.\n- Not related to USANetwork.\n\n<https://fs0c131y.com/>"
-  }
+  },
+  { "op": "replace", "path": "/feature", "value": true },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
 ]

@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "piotr_przybyl" },
+  { "op": "replace", "path": "/company", "value": "@piotrprz" },
+  { "op": "replace", "path": "/city", "value": "Wroclaw, Poland" }
+]

@@ -41,6 +41,10 @@ export class SponsorRepository extends TypeContentRepository<Sponsor> {
   getAllTypes(): string[] {
     return ["platinium", "gold", "soutien", "startup", "media", "communautes"];
   }
+
+  getTypeKey(): keyof Sponsor {
+    return "category";
+  }
 }
 
 export class TeamRepository extends DataArrayRepository<Member> {

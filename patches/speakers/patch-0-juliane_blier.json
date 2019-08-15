@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "juliane_blier" },
+  { "op": "replace", "path": "/company", "value": "SchoolMouv" },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
+]

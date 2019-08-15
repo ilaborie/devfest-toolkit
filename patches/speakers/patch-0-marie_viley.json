@@ -1,0 +1,6 @@
+[
+  { "op": "test", "path": "/key", "value": "marie_viley" },
+  { "op": "replace", "path": "/feature", "value": true },
+  { "op": "replace", "path": "/company", "value": "Zenika" },
+  { "op": "replace", "path": "/city", "value": "Nantes, France" }
+]

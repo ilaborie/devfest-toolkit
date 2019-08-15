@@ -7,9 +7,7 @@ import { Speaker, SpeakerId } from "./speaker";
 import { buildKey, cleanSocialKey, compareString } from "../../strings";
 import { Session as SiteSession } from "../../site/models/session";
 import { Speaker as SiteSpeaker, SpeakerKey } from "../../site/models/speaker";
-import { bridgeSpeaker } from "../../bridge/bridgeSpeaker";
 import { Socials } from "../../site/models/socials";
-import { AddOnConfig } from "../../config";
 
 export type EventId = string;
 
@@ -124,15 +122,10 @@ export function talkToSession(event: Event, talk: Talk): SiteSession {
   return session;
 }
 
-export async function toSiteSpeaker(
-  config: AddOnConfig,
-  speaker: Speaker
-): Promise<SiteSpeaker> {
+export function toSiteSpeaker(speaker: Speaker): SiteSpeaker {
   const name = speaker.displayName || speaker.uid;
   const key = buildKey(name);
 
-  const siteSpeakerMissing = await bridgeSpeaker(config, key);
-  const { isFeatured, company, city } = siteSpeakerMissing;
   const socials: Socials = [];
   if (speaker.twitter) {
     socials.push({
@@ -151,10 +144,8 @@ export async function toSiteSpeaker(
   return {
     key,
     id: speaker.uid,
-    feature: isFeatured,
+    feature: false,
     name,
-    company,
-    city,
     photoURL: speaker.photoURL,
     socials,
     description: (speaker.bio || "").trim()

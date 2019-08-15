@@ -2,7 +2,9 @@
 
 ## What
 
-Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and publish these data to a Web Site or Konfetti) data, and publish these data to a Web Site
+Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and publish these data to a Web Site
+
+Note: It's being design to work with the [devfest-theme-hugo](https://github.com/GDGToulouse/devfest-theme-hugo).
 
 ## Usage
 
@@ -16,7 +18,11 @@ Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and
 
 - `generate`: Generate site from conference hall and extra data
 
-- `add-sponsor`: Append a new sponsors to add-on
+- `add-sponsor`: Append a new sponsor to add-on
+
+- `add-speaker`: Append a new speaker to add-on
+
+- `add-session`: Append a new session to add-on
 
 - `stats`: Display some stats
 
@@ -30,5 +36,5 @@ Tools for working with [Confrerence Hall](https://conference-hall.io/) data, and
 - `--addonDir=addonDir`: the add-on directory (default: `./add-on`)
 - `--patchDir=patchDir`: the patch directory (default: `./patches`)
 - `--force`: override file if required
-- `--sponsorTypes=gold,silver,...`: define types of sponsor, should be a coma-separated list.
-- `--sponsorLang=fr,en,...`: define language of sponsor, should be a coma-separated list.
+- `--sponsorCategories=gold,silver,...`: define categories of sponsor, should be a coma-separated list.
+- `--languages=fr,en,...`: define language of sponsor or talk, should be a coma-separated list.

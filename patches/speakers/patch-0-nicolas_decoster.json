@@ -17,5 +17,7 @@
     "op": "replace",
     "path": "/photoURL",
     "value": "https://avatars1.githubusercontent.com/u/30273967?s=400&v=4"
-  }
+  },
+  { "op": "replace", "path": "/company", "value": "Magellium" },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
 ]

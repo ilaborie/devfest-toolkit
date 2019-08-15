@@ -1,0 +1,5 @@
+[
+  { "op": "test", "path": "/key", "value": "noel_mace" },
+  { "op": "replace", "path": "/company", "value": "BonitaSoft" },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
+]

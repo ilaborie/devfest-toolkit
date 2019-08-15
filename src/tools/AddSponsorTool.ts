@@ -7,8 +7,11 @@ import * as path from "path";
 import { writeFile } from "../fs-utils";
 import { buildKey, isUrl } from "../strings";
 import { Social } from "../site/models/socials";
+import { loadSponsors } from "../addon/addonSponsor";
 
-interface SponsorPrompt extends Omit<Sponsor, "key" | "order" | "socials"> {
+interface SponsorPrompt
+  extends Omit<Sponsor, "key" | "order" | "socials" | "photoURL"> {
+  logoType: "svg" | "png";
   twitter?: string;
   linkedin?: string;
   facebook?: string;
@@ -18,13 +21,13 @@ export class AddSponsorTool extends AbstractSiteTool {
   constructor() {
     super(
       "add-sponsor",
-      "Append a new sponsors to add-on (require a generation after)"
+      "Append a new sponsor to add-on (require a generation after)"
     );
   }
 
   async run(config: Config): Promise<void> {
     const sponsorsFile = path.join(config.addonDir, "sponsors.json");
-    const sponsors = await this.generateSponsors(config);
+    const sponsors = await loadSponsors(config);
 
     const newSponsor = await this.createNewSponsor(config, sponsors);
     sponsors.push(newSponsor);
@@ -32,9 +35,9 @@ export class AddSponsorTool extends AbstractSiteTool {
     this.logger.info("Going to add", newSponsor);
     const confirm =
       config.force ||
-      (await prompt([
+      (await prompt<{ question: boolean }>([
         { type: "confirm", name: "question", message: "Confirm creation?" }
-      ]));
+      ])).question;
 
     if (confirm) {
       this.logger.info("store all sponsors", sponsorsFile);
@@ -57,16 +60,16 @@ export class AddSponsorTool extends AbstractSiteTool {
       },
       {
         type: "select",
-        name: "type",
-        message: "Type?",
-        choices: config.sponsorTypes,
+        name: "category",
+        message: "Category?",
+        choices: config.sponsorCategories,
         required: true
       },
       {
-        type: "input",
-        name: "logo",
-        message: "Logo URL? ",
-        validate: isUrl,
+        type: "select",
+        name: "logoType",
+        message: "Logo type? ",
+        choices: ["png", "svg"],
         required: true
       },
       {
@@ -80,7 +83,7 @@ export class AddSponsorTool extends AbstractSiteTool {
         type: "select",
         name: "lang",
         message: "Sponsor choose to communicate in?",
-        choices: config.sponsorLangs,
+        choices: config.languages,
         required: true
       },
       {
@@ -123,29 +126,37 @@ export class AddSponsorTool extends AbstractSiteTool {
     const order =
       1 + sponsors.reduce((acc, elt) => Math.max(elt.order || 0, acc), 0);
 
-    const { title, type, logo, website, lang, why, description } = partial;
-    const socials: Social[] = [];
-    if (partial.twitter) {
-      socials.push({ icon: "twitter", link: partial.twitter });
-    }
-    if (partial.linkedin) {
-      socials.push({ icon: "linkedin", link: partial.linkedin });
-    }
-    if (partial.facebook) {
-      socials.push({ icon: "facebook", link: partial.facebook });
-    }
-
-    return {
+    const {
       title,
-      type,
-      logo,
+      category,
+      logoType,
       website,
       lang,
       why,
-      description,
+      description
+    } = partial;
+    const socials: Social[] = [];
+    if (partial.twitter) {
+      socials.push({ icon: "twitter", link: partial.twitter.trim() });
+    }
+    if (partial.linkedin) {
+      socials.push({ icon: "linkedin", link: partial.linkedin.trim() });
+    }
+    if (partial.facebook) {
+      socials.push({ icon: "facebook", link: partial.facebook.trim() });
+    }
+
+    return {
       key,
+      title,
+      category,
       order,
-      socials
+      logo: `/images/partners/logo-${key}.${logoType}`,
+      website,
+      lang,
+      why,
+      socials,
+      description
     };
   }
 }

@@ -6,8 +6,8 @@ export interface Config {
   addonDir: string;
   force: boolean;
   // Add list
-  sponsorTypes: string[];
-  sponsorLangs: string[];
+  sponsorCategories: string[];
+  languages: string[];
 }
 
 export type SiteConfig = Pick<Config, "siteDir">;
