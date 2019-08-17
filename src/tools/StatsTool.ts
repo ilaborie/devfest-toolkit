@@ -56,7 +56,7 @@ export class StatsTool extends AbstractSiteTool {
 
     const { speakers, sessions } = await this.generateSite(config);
     // Accepted talks
-    this.stats("accepted talks", sessions, ["format", "tags"]);
+    this.stats("accepted talks", sessions, ["format", "tags", "level"]);
 
     // Accepted speakers
     this.stats("speakers", speakers, ["city", "company"]);
