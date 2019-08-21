@@ -102,6 +102,31 @@
     "description": "Berger-Levrault, éditeur de logiciel international et multisectoriel, accompagne les professionnels privés et publics à répondre aux exigences croissantes de performance dans leurs métiers et les citoyens dans leur vie quotidienne.\n\nLe Groupe adresse les secteurs suivants : Secteur public local; Social et médico-social; Sanitaire; Entreprises et industrie; Éducation.\n\nPour l’ensemble de ses secteurs d’activité, Berger-Levrault a développé une gamme de logiciels et de services adaptée aux besoins spécifiques de chaque métier. \n\n"
   },
   {
+    "key": "capgemini",
+    "title": "Capgemini",
+    "category": "platinium",
+    "order": 33,
+    "logo": "/images/partners/logo-capgemini.png",
+    "website": "https://www.capgemini.com/fr-fr/",
+    "lang": "fr",
+    "why": "Leader mondial du conseil, des services informatiques et de la transformation numérique, le groupe Capgemini est heureux d'accompagner cet évènement local qui rassemble les plus grandes communautés de développeurs toulousaines.\n",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/capgeminifrance "
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/company/capgemini/ "
+      },
+      {
+        "icon": "facebook",
+        "link": "https://www.facebook.com/capgeminifrance"
+      }
+    ],
+    "description": "Capgemini est un leader mondial du conseil, des services informatiques et de la transformation numérique. A la pointe de l’innovation, le Groupe aide ses clients à saisir l’ensemble des opportunités que présentent le cloud, le digital et les plateformes. Fort de 50 ans d’expérience et d’une grande expertise des différents secteurs d’activité, il accompagne les entreprises et organisations dans la réalisation de leurs ambitions, de la définition de leur stratégie à la mise en œuvre de leurs opérations. Pour Capgemini, ce sont les hommes et les femmes qui donnent toute sa valeur à la technologie. \n"
+  },
+  {
     "key": "cenareo",
     "title": "Cenareo",
     "category": "platinium",
@@ -810,28 +835,28 @@
     "description": "\nFind ToulouseJS on [https://twitter.com/ToulouseJS](https://twitter.com/ToulouseJS)\n\n![ToulouseJS](/images/partners/community/toulousejs.png)\n"
   },
   {
-    "title": "Capgemini",
-    "category": "platinium",
-    "logo": "/images/partners/logo-capgemini.png",
-    "website": "https://www.capgemini.com/fr-fr/",
+    "key": "welovedevs_com",
+    "title": "WeLoveDevs.com",
+    "category": "soutien",
+    "order": 34,
+    "logo": "/images/partners/logo-welovedevs_com.png",
+    "website": "https://welovedevs.com/",
     "lang": "fr",
-    "why": "Leader mondial du conseil, des services informatiques et de la transformation numérique, le groupe Capgemini est heureux d'accompagner cet évènement local qui rassemble les plus grandes communautés de développeurs toulousaines.\n",
-    "description": "Capgemini est un leader mondial du conseil, des services informatiques et de la transformation numérique. A la pointe de l’innovation, le Groupe aide ses clients à saisir l’ensemble des opportunités que présentent le cloud, le digital et les plateformes. Fort de 50 ans d’expérience et d’une grande expertise des différents secteurs d’activité, il accompagne les entreprises et organisations dans la réalisation de leurs ambitions, de la définition de leur stratégie à la mise en œuvre de leurs opérations. Pour Capgemini, ce sont les hommes et les femmes qui donnent toute sa valeur à la technologie. \n",
-    "key": "capgemini",
-    "order": 33,
+    "why": "Pour supporter la communauté de développeur Toulousaine, leurs partages de connaissance, pour rencontrer plus de personnes fantastiques encore !\n",
     "socials": [
       {
         "icon": "twitter",
-        "link": "https://twitter.com/capgeminifrance "
+        "link": "https://welovedevs.com/"
       },
       {
         "icon": "linkedin",
-        "link": "https://www.linkedin.com/company/capgemini/ "
+        "link": "https://www.linkedin.com/company/welovedevs/"
       },
       {
         "icon": "facebook",
-        "link": "https://www.facebook.com/capgeminifrance"
+        "link": "https://www.facebook.com/welovedevs/"
       }
-    ]
+    ],
+    "description": "WeLoveDevs.com aide les développeurs à définir quelle entreprise leur permettra de s'épanouir.\nNous pensons qu'un développeur devrait pouvoir trouver par lui-même une entreprise où il sera heureux.\nAussi WeLoveDevs.com permet aux entreprises de proposer une vitrine sur la vie de leurs collaborateurs. Nos équipes les accompagnent dans le fait de produire du contenu authentique et transparent, qui donne envie d'être candidat.\n"
   }
 ]
