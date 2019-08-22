@@ -63,11 +63,6 @@
           { "slot": "slot-2", "talk": "le_burn_out_agile" },
           { "slot": "pause-3", "talk": "__pause" },
           { "slot": "slot-3", "talk": "_numerique_et_environnement__ou__on_aurait_pu_sauver_les_abeilles__on_a_prefere_sortir_un_nouvel_iphone_" },
-          { "slot": "pause-4", "talk": "__pause" },
-          {
-            "slot": "slot-4",
-            "talk": "live_coding_musical___vous_savez_coder___devenez_compositeur_avec_webaudio_et_webmidi__"
-          },
           {
             "slot": "slot-lt-1",
             "talk": "machine_learning_avec_des_allumettes_et_des_cotillons"
@@ -77,6 +72,11 @@
             "slot": "slot-lt-2",
             "talk": "applications_de_brainfuck__langage_minimaliste_mais_turing_complet"
           },
+          {
+            "slot": "slot-4",
+            "talk": "live_coding_musical___vous_savez_coder___devenez_compositeur_avec_webaudio_et_webmidi__"
+          },
+          { "slot": "pause-4", "talk": "__pause" },
           {
             "slot": "slot-5",
             "talk": "the_freedom_of_static_typing"
@@ -101,11 +101,6 @@
             "slot": "slot-3",
             "talk": "allo_paris__ici_san_francisco__et_si_on_codait_ensemble_avec_vs_code_"
           },
-          { "slot": "pause-4", "talk": "__pause" },
-          {
-            "slot": "slot-4",
-            "talk": "le_jaillissement_de_l_esprit"
-          },
           {
             "slot": "slot-lt-1",
             "talk": "le_troll_dans_ta_machine_____une_courte_introduction_a_la_pensee_de_jean_yves_girard"
@@ -115,6 +110,11 @@
             "slot": "slot-lt-2",
             "talk": "un_distributeur_automatique_d_argent_de_poche_pour_les_enfants"
           },
+          {
+            "slot": "slot-4",
+            "talk": "le_jaillissement_de_l_esprit"
+          },
+          { "slot": "pause-4", "talk": "__pause" },
           {
             "slot": "slot-5",
             "talk": "comprendre_le_role_du_noyau_d_un_systeme_d_exploitation_en_creant_un_from_scratch"
@@ -139,8 +139,6 @@
           { "slot": "slot-2", "talk": "rockin_in_the_angular_world" },
           { "slot": "pause-3", "talk": "__pause" },
           { "slot": "slot-3", "talk": "premiers_pas_avec_un_microcontroleur_et_google_cloud_iot_core" },
-          { "slot": "pause-4", "talk": "__pause" },
-          { "slot": "slot-4", "talk": "de_java_a_un_executable_natif___graalvm_et_quarkus_changent_la_donne" },
           {
             "slot": "slot-lt-1",
             "talk": "developpeurs_en_reconversion__developpeurs_quand_meme__"
@@ -150,6 +148,8 @@
             "slot": "slot-lt-2",
             "talk": "10_est_une_puissance_de_2"
           },
+          { "slot": "slot-4", "talk": "de_java_a_un_executable_natif___graalvm_et_quarkus_changent_la_donne" },
+          { "slot": "pause-4", "talk": "__pause" },
           {
             "slot": "slot-5",
             "talk": "brace_yourself__vanilla_is_coming__back__"
