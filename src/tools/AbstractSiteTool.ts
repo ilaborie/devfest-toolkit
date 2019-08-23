@@ -208,7 +208,24 @@ export abstract class AbstractSiteTool extends Tool {
 
     const event = await getEvent(config);
     const { name, address, conferenceDates: dates } = event;
-    const info = { id, name, address, dates };
+    const { formattedAddress, locality, country, latLng } = address;
+    const { short_name, long_name } = locality;
+    const { lat, lng } = latLng;
+    const { start, end } = dates;
+    const info = {
+      id,
+      name,
+      address: {
+        formattedAddress,
+        locality: { short_name, long_name },
+        country: {
+          short_name: country.short_name,
+          long_name: country.long_name
+        },
+        latLng: { lat, lng }
+      },
+      dates: { start, end }
+    };
 
     const {
       sessions,
