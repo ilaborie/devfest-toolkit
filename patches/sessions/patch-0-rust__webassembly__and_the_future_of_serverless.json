@@ -4,5 +4,6 @@
     "path": "/key",
     "value": "rust__webassembly__and_the_future_of_serverless"
   },
-  { "op": "add", "path": "/format", "value": "conference" }
+  { "op": "add", "path": "/format", "value": "conference" },
+  { "op": "add", "path": "/language", "value": "English" }
 ]

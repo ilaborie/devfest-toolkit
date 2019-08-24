@@ -5,6 +5,7 @@
     "format": "conference",
     "tags": ["languages"],
     "level": "advanced",
+    "language": "English",
     "speakers": ["liliia_abdulina"],
     "description": "Have you heard of the code-sharing feature in Kotlin, accompanied with \"Write once, run everywhere\" slogan? Among its users not only libraries and frameworks authors; there are some projects which have already adopted multiplatform for production. Their applications, written in Kotlin for *both* iOS and Android, are published in stores. \nWith this talk, you'll get a brief overview of the evolution of multiplatform technology in Kotlin, concerning the tasks it's evolved to solve. How it was and how it is expected to be; what has changed and which tasks can be already solved with it. What are the facilities right now and which real projects already use multiplatform?"
   },
@@ -12,7 +13,6 @@
     "key": "le_jaillissement_de_l_esprit",
     "title": "Le jaillissement de l'esprit",
     "tags": ["method___tools"],
-    "language": "fr",
     "format": "conference",
     "level": "beginner",
     "speakers": ["lois_blanc", "saskia_blanc", "sebastien_blanc"],
