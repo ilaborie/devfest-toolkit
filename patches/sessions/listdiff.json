@@ -12,8 +12,24 @@
       "description": "Surprise!"
     },
     {
+      "key": "keynote_open_overflow",
+      "title": "Keynote d'ouverture (overflow)",
+      "format": "keynote",
+      "speakers": [],
+      "tags": ["keynote"],
+      "description": "Surprise!"
+    },
+    {
       "key": "keynote_close",
       "title": "Keynote de fermeture",
+      "format": "keynote",
+      "speakers": [],
+      "tags": ["keynote"],
+      "description": "Surprise!"
+    },
+    {
+      "key": "keynote_close_overflow",
+      "title": "Keynote de fermeture (overflow)",
       "format": "keynote",
       "speakers": [],
       "tags": ["keynote"],

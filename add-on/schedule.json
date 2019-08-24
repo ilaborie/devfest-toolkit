@@ -28,7 +28,10 @@
             "talk": "3_techniques_faciles_de_manipulation"
           },
           { "slot": "lunch", "talk": "__lunch" },
-          { "slot": "slot-lt-2", "talk": "_47_ans___ils_nont_toujours_pas_remarque__" },
+          {
+            "slot": "slot-lt-2",
+            "talk": "_47_ans___ils_nont_toujours_pas_remarque__"
+          },
           {
             "slot": "slot-4",
             "talk": "rust__webassembly__and_the_future_of_serverless"
@@ -55,6 +58,7 @@
       {
         "room": "room2",
         "slots": [
+          { "slot": "keynote-open", "talk": "keynote_open_overflow" },
           {
             "slot": "slot-1",
             "talk": "a_kotlin_multiplatform_evolution"
@@ -62,7 +66,10 @@
           { "slot": "pause-2", "talk": "__pause" },
           { "slot": "slot-2", "talk": "le_burn_out_agile" },
           { "slot": "pause-3", "talk": "__pause" },
-          { "slot": "slot-3", "talk": "_numerique_et_environnement__ou__on_aurait_pu_sauver_les_abeilles__on_a_prefere_sortir_un_nouvel_iphone_" },
+          {
+            "slot": "slot-3",
+            "talk": "_numerique_et_environnement__ou__on_aurait_pu_sauver_les_abeilles__on_a_prefere_sortir_un_nouvel_iphone_"
+          },
           {
             "slot": "slot-lt-1",
             "talk": "machine_learning_avec_des_allumettes_et_des_cotillons"
@@ -82,9 +89,16 @@
             "talk": "the_freedom_of_static_typing"
           },
           { "slot": "pause-5", "talk": "__pause" },
-          { "slot": "slot-6", "talk": "authentication_authorization_starters_battle" },
+          {
+            "slot": "slot-6",
+            "talk": "authentication_authorization_starters_battle"
+          },
           { "slot": "pause-6", "talk": "__pause" },
-          { "slot": "slot-7", "talk": "mon_p____de_voyant_moteur_est_encore_allume___comment_debugger_mon_moteur___plongeon_dans_les_entrailles_des_calculateurs_moteur" }
+          {
+            "slot": "slot-7",
+            "talk": "mon_p____de_voyant_moteur_est_encore_allume___comment_debugger_mon_moteur___plongeon_dans_les_entrailles_des_calculateurs_moteur"
+          },
+          { "slot": "keynote-close", "talk": "keynote_close_overflow" }
         ]
       },
       {
@@ -138,7 +152,10 @@
           { "slot": "pause-2", "talk": "__pause" },
           { "slot": "slot-2", "talk": "rockin_in_the_angular_world" },
           { "slot": "pause-3", "talk": "__pause" },
-          { "slot": "slot-3", "talk": "premiers_pas_avec_un_microcontroleur_et_google_cloud_iot_core" },
+          {
+            "slot": "slot-3",
+            "talk": "premiers_pas_avec_un_microcontroleur_et_google_cloud_iot_core"
+          },
           {
             "slot": "slot-lt-1",
             "talk": "developpeurs_en_reconversion__developpeurs_quand_meme__"
@@ -148,7 +165,10 @@
             "slot": "slot-lt-2",
             "talk": "10_est_une_puissance_de_2"
           },
-          { "slot": "slot-4", "talk": "de_java_a_un_executable_natif___graalvm_et_quarkus_changent_la_donne" },
+          {
+            "slot": "slot-4",
+            "talk": "de_java_a_un_executable_natif___graalvm_et_quarkus_changent_la_donne"
+          },
           { "slot": "pause-4", "talk": "__pause" },
           {
             "slot": "slot-5",
@@ -160,7 +180,10 @@
             "talk": "four_diseases"
           },
           { "slot": "pause-6", "talk": "__pause" },
-          { "slot": "slot-7", "talk": "introduction_a_la_programmation_par_contraintes" }
+          {
+            "slot": "slot-7",
+            "talk": "introduction_a_la_programmation_par_contraintes"
+          }
         ]
       },
       {
