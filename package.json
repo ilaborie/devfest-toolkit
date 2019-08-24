@@ -1,7 +1,7 @@
 {
   "name": "devfest-toolkit",
   "version": "1.5.0",
-  "description": "Tooling for Devfest",
+  "description": "Tools for working with [Conference Hall](https://conference-hall.io/) data, and publish these data to a Web Site or Konfetti) data, and publish these data to a Web Site",
   "author": "Igor Laborie <ilaborie@gmail.com>",
   "repository": {
     "type": "git",
@@ -22,7 +22,11 @@
     "devfest-toolkit": "./bin/run"
   },
   "oclif": {
-    "bin": "devfest-toolkit"
+    "commands": "./lib/commands",
+    "bin": "devfest-toolkit",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
   "files": [
     "/bin",
@@ -40,6 +44,7 @@
   "dependencies": {
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.3",
+    "@oclif/errors": "^1.2.2",
     "@oclif/plugin-help": "^2.2.1",
     "ansi-colors": "^4.1.1",
     "cli-ux": "^5.3.1",

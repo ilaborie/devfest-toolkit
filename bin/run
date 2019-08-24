@@ -2,6 +2,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const command = require('@oclif/command');
+const flush = require('@oclif/command/flush');
+const errorsHandle = require('@oclif/errors/handle');
+
 const project = path.join(__dirname, '../tsconfig.json');
 const dev = fs.existsSync(project);
 
@@ -13,10 +17,6 @@ if (dev) {
   root = `../src`
 }
 
-let command = require(root).default;
-if(typeof command.default === 'function') {
-  command = command.default;
-}
-
 command.run()
-  .catch(require('@oclif/errors/handle'));
+  .then(flush)
+  .catch(errorsHandle);

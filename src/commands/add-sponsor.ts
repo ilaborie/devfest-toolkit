@@ -1,12 +1,14 @@
+import { Command, flags } from "@oclif/command";
+import { Logger } from "plop-logger";
+import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 import { Config } from "../config";
-import { prompt } from "enquirer";
-
-import { AbstractSiteTool } from "./AbstractSiteTool";
-import { Sponsor } from "../site/models/sponsor";
+import { commonsFlags, loggerLevels } from "../commons";
 import * as path from "path";
+import { prompt } from "enquirer";
 import { writeFile } from "../fs-utils";
 import { buildKey, isUrl } from "../strings";
 import { Social } from "../site/models/socials";
+import { Sponsor } from "../site/models/sponsor";
 import { loadSponsors } from "../addon/addonSponsor";
 
 interface SponsorPrompt
@@ -17,22 +19,49 @@ interface SponsorPrompt
   facebook?: string;
 }
 
-export class AddSponsorTool extends AbstractSiteTool {
-  constructor() {
-    super(
-      "add-sponsor",
-      "Append a new sponsor to add-on (require a generation after)"
-    );
+export default class AddSponsor extends Command {
+  static description =
+    "Append a new sponsor to add-on (require a generation after)";
+
+  static flags: flags.Input<any> = {
+    addonDir: commonsFlags.addonDir,
+    sponsorCategories: flags.build<string[]>({
+      description: "the sponsor categories (gold, silver, ...)",
+      parse: input => input.split(",").map(it => it.trim()),
+      default: ["platinium", "gold", "soutien", "startup"]
+    })(),
+    languages: flags.build<string[]>({
+      description: "the sponsor lang (en, fr, ...)",
+      parse: input => input.split(",").map(it => it.trim()),
+      default: ["en", "fr"]
+    })(),
+    force: flags.boolean({ description: "override file if required" })
+  };
+
+  async run(): Promise<void> {
+    Logger.config = {
+      ...colorEmojiConfig,
+      levels: loggerLevels
+    };
+
+    const logger = Logger.getLogger("main");
+    const { flags } = this.parse(AddSponsor);
+    logger.info(AddSponsor.description);
+    const config = flags as Config;
+
+    await this.runConfig(logger, config);
+
+    logger.info("✅ all done");
   }
 
-  async run(config: Config): Promise<void> {
+  async runConfig(logger: Logger, config: Config): Promise<void> {
     const sponsorsFile = path.join(config.addonDir, "sponsors.json");
     const sponsors = await loadSponsors(config);
 
     const newSponsor = await this.createNewSponsor(config, sponsors);
     sponsors.push(newSponsor);
 
-    this.logger.info("Going to add", newSponsor);
+    logger.info("Going to add", newSponsor);
     const confirm =
       config.force ||
       (await prompt<{ question: boolean }>([
@@ -40,10 +69,10 @@ export class AddSponsorTool extends AbstractSiteTool {
       ])).question;
 
     if (confirm) {
-      this.logger.info("store all sponsors", sponsorsFile);
+      logger.info("store all sponsors", sponsorsFile);
       await writeFile(sponsorsFile, JSON.stringify(sponsors, null, 2), "utf-8");
     } else {
-      this.logger.warn("Cancel sponsor creation");
+      logger.warn("Cancel sponsor creation");
     }
   }
 

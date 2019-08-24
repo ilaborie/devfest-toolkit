@@ -57,5 +57,7 @@ export const compareString = (a: string, b: string): number => {
   else return 0;
 };
 
-const urlPattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
-export const isUrl = (s: string): boolean => urlPattern.test(s);
+export const isUrl = (s: string): boolean => {
+  const clean = (s || "").trim();
+  return !clean || clean.startsWith("http://") || clean.startsWith("https://");
+};

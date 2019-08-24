@@ -2,5 +2,5 @@
 
 source ./env.sh
 
-echo "devfest-toolkit --eventId=$EVENT_ID --apiKey=*** --siteDir=$SITE_DIR add-speaker"
-./bin/run --eventId=$EVENT_ID --apiKey=$API_KEY --siteDir=$SITE_DIR add-speaker
+echo "devfest-toolkit add-speaker"
+./bin/run add-speaker

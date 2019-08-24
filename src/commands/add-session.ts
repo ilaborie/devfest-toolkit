@@ -1,41 +1,69 @@
+import { Command, flags } from "@oclif/command";
+import { Logger } from "plop-logger";
+import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 import { Config } from "../config";
-import { prompt } from "enquirer";
-
-import { AbstractSiteTool } from "./AbstractSiteTool";
+import {
+  commonsFlags,
+  generateCategories,
+  generateFormats,
+  loggerLevels
+} from "../commons";
 import * as path from "path";
-import { writeFile } from "../fs-utils";
-import { buildKey } from "../strings";
-import { Speaker } from "../site/models/speaker";
-import { loadExtraSpeakers } from "../addon/addonSpeaker";
 import { loadExtraSessions } from "../addon/addonSession";
-import { Session } from "../site/models/session";
+import { loadExtraSpeakers } from "../addon/addonSpeaker";
+import { getEvent } from "../conference-hall/api";
+import { prompt } from "enquirer";
+import { writeFile } from "../fs-utils";
+import { Speaker } from "../site/models/speaker";
 import { Format } from "../site/models/format";
 import { Category, CategoryKey } from "../site/models/category";
-import { getEvent } from "../conference-hall/api";
-import { config } from "cli-ux";
+import { Session } from "../site/models/session";
+import { buildKey } from "../strings";
 
 interface SessionPrompt extends Omit<Session, "key" | "tags"> {
   category: CategoryKey;
 }
 
-export class AddSessionTool extends AbstractSiteTool {
-  constructor() {
-    super(
-      "add-session",
-      "Append a new speaker to add-on (require a generation after)"
-    );
+export default class AddSession extends Command {
+  static description =
+    "Append a new session to add-on (require a generation after)";
+
+  static flags: flags.Input<any> = {
+    ...commonsFlags,
+    languages: flags.build<string[]>({
+      description: "the session lang (en, fr, ...)",
+      parse: input => input.split(",").map(it => it.trim()),
+      default: ["English", "Français"]
+    })(),
+    force: flags.boolean({ description: "override file if required" })
+  };
+
+  async run(): Promise<void> {
+    Logger.config = {
+      ...colorEmojiConfig,
+      levels: loggerLevels
+    };
+
+    const logger = Logger.getLogger("main");
+    const { flags } = this.parse(AddSession);
+    logger.info(AddSession.description);
+    const config = flags as Config;
+
+    await this.runConfig(logger, config);
+
+    logger.info("✅ all done");
   }
 
-  async run(config: Config): Promise<void> {
+  async runConfig(logger: Logger, config: Config): Promise<void> {
     const sessionsFile = path.join(config.addonDir, "sessions.json");
     const sessions = await loadExtraSessions(config);
     const speakers = await loadExtraSpeakers(config);
 
     const event = await getEvent(config);
-    const formats = await this.generateFormats(config, event);
-    const categories = await this.generateCategories(config, event);
+    const formats = await generateFormats(logger, config, event);
+    const categories = await generateCategories(logger, config, event);
 
-    const newSession = await this.createNewSession(
+    const newSession = await AddSession.createNewSession(
       config,
       speakers,
       formats,
@@ -43,7 +71,7 @@ export class AddSessionTool extends AbstractSiteTool {
     );
     sessions.push(newSession);
 
-    this.logger.info("Going to add", newSession);
+    logger.info("Going to add", newSession);
     const confirm =
       config.force ||
       (await prompt<{ question: boolean }>([
@@ -51,14 +79,14 @@ export class AddSessionTool extends AbstractSiteTool {
       ])).question;
 
     if (confirm) {
-      this.logger.info("store all extra sessions", sessionsFile);
+      logger.info("store all extra sessions", sessionsFile);
       await writeFile(sessionsFile, JSON.stringify(sessions, null, 2), "utf-8");
     } else {
-      this.logger.warn("Cancel session creation");
+      logger.warn("Cancel session creation");
     }
   }
 
-  private async createNewSession(
+  private static async createNewSession(
     config: Config,
     extraSpeakers: Speaker[],
     formats: Format[],

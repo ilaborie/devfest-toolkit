@@ -1,12 +1,8 @@
-import { compare, getValueByPointer, Operation } from "fast-json-patch";
-import colors from "ansi-colors";
+import { Command, flags } from "@oclif/command";
 import { Logger } from "plop-logger";
-
+import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 import { Config } from "../config";
-import { AbstractSiteTool } from "./AbstractSiteTool";
-import { SiteRepository } from "../site/repositories";
-import { Site } from "../site/models/site";
-import { indent } from "../strings";
+import { commonsFlags, generateSite, loggerLevels } from "../commons";
 import {
   ArrayChanges,
   ChangeObject,
@@ -17,6 +13,11 @@ import {
   indentPlus,
   KeyChanges
 } from "../changes";
+import { indent } from "../strings";
+import colors from "ansi-colors";
+import { compare, getValueByPointer, Operation } from "fast-json-patch";
+import { Site } from "../site/models/site";
+import { SiteRepository } from "../site/repositories";
 import { SiteValidator } from "../site/validation";
 
 interface AttributeKey<T> {
@@ -24,13 +25,19 @@ interface AttributeKey<T> {
   key: string;
 }
 
-export class DiffSiteTool extends AbstractSiteTool {
-  constructor() {
-    super("diff", "Compare with site from conference hall and extra data");
-  }
+export default class Diff extends Command {
+  static description = "Compare with site from conference hall and extra data";
 
-  private displayChanges(attribute: string, changes: Changes): void {
-    const logger = Logger.getLogger(this.logger.name + "." + attribute);
+  static flags: flags.Input<any> = {
+    ...commonsFlags
+  };
+
+  private displayChanges(
+    parentLogger: Logger,
+    attribute: string,
+    changes: Changes
+  ): void {
+    const logger = Logger.getLogger(parentLogger.name + "." + attribute);
     if (changes.length) {
       logger.info("Changes for", attribute);
       changes.forEach(change => displayChange(logger, change));
@@ -40,10 +47,11 @@ export class DiffSiteTool extends AbstractSiteTool {
   }
 
   private displayArrayChanges<T>(
+    parentLogger: Logger,
     attribute: string,
     changes: ArrayChanges<T>
   ): void {
-    const logger = Logger.getLogger(this.logger.name + "." + attribute);
+    const logger = Logger.getLogger(parentLogger.name + "." + attribute);
     if (changes.removed.length + changes.added.length) {
       const msgBuilder = (): string => {
         return (
@@ -66,7 +74,8 @@ export class DiffSiteTool extends AbstractSiteTool {
     });
   }
 
-  private operationToChange(
+  private static operationToChange(
+    logger: Logger,
     source: any,
     target: any,
     operation: Operation
@@ -82,18 +91,19 @@ export class DiffSiteTool extends AbstractSiteTool {
       case "add":
         return { path, type: ChangeType.ADDED, newValue };
       default:
-        this.logger.error("Unhandled operation type", op);
+        logger.error("Unhandled operation type", op);
         throw new Error("Unhandled operation type: " + op);
     }
   }
 
-  private diffObject<T>(source: T, target: T): Changes {
+  private diffObject<T>(logger: Logger, source: T, target: T): Changes {
     return compare(source || {}, target || {}).map(operation =>
-      this.operationToChange(source || {}, target || {}, operation)
+      Diff.operationToChange(logger, source || {}, target || {}, operation)
     );
   }
 
   private diffDataArrayObject<T>(
+    logger: Logger,
     keyAttribute: keyof T,
     source: T[],
     target: T[]
@@ -110,7 +120,7 @@ export class DiffSiteTool extends AbstractSiteTool {
       (acc, key) => {
         const src = source.find(it => "" + it[keyAttribute] === key);
         const trg = target.find(it => "" + it[keyAttribute] === key);
-        acc[key] = this.diffObject(src, trg);
+        acc[key] = this.diffObject(logger, src, trg);
         return acc;
       },
       // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
@@ -121,18 +131,20 @@ export class DiffSiteTool extends AbstractSiteTool {
   }
 
   private displayDataArrayDiff(
+    logger: Logger,
     attributeKey: AttributeKey<Site>,
     sourceSite: Site,
     targetSite: Site
   ): void {
     const { attribute, key } = attributeKey;
     const changes = this.diffDataArrayObject(
+      logger,
       // @ts-ignore
       key,
       sourceSite[attribute],
       targetSite[attribute]
     );
-    this.displayArrayChanges(attribute, changes);
+    this.displayArrayChanges(logger, attribute, changes);
 
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     const keyChanges = (Object.values(changes.updated) as Changes[]).reduce(
@@ -140,22 +152,33 @@ export class DiffSiteTool extends AbstractSiteTool {
       0
     );
     if (keyChanges == 0) {
-      this.logger.info("No attribute change for", attribute);
+      logger.info("No attribute change for", attribute);
     }
   }
 
-  async run(config: Config): Promise<void> {
-    this.logger.debug("site input dir", config.siteDir);
+  async run(): Promise<void> {
+    Logger.config = {
+      ...colorEmojiConfig,
+      levels: loggerLevels
+    };
+
+    const logger = Logger.getLogger("main");
+    const { flags } = this.parse(Diff);
+
+    logger.info(Diff.description);
+    const config = flags as Config;
+    logger.debug("Configuration", config);
+    logger.debug("site input dir", config.siteDir);
     const siteRepo = new SiteRepository(config);
     const current = await siteRepo.readAll();
-    const generated = await this.generateSite(config);
+    const generated = await generateSite(logger, config);
 
     const siteValidator = new SiteValidator(config);
     siteValidator.validateAndLog(generated);
 
     // Info
-    const infoChanges = this.diffObject(current.info, generated.info);
-    this.displayChanges("info", infoChanges);
+    const infoChanges = this.diffObject(logger, current.info, generated.info);
+    this.displayChanges(logger, "info", infoChanges);
 
     const attributes = [
       { attribute: "categories", key: "key" },
@@ -169,7 +192,9 @@ export class DiffSiteTool extends AbstractSiteTool {
       { attribute: "sponsors", key: "key" }
     ] as AttributeKey<Site>[];
     attributes.forEach(attribute =>
-      this.displayDataArrayDiff(attribute, current, generated)
+      this.displayDataArrayDiff(logger, attribute, current, generated)
     );
+
+    logger.info("✅ all done");
   }
 }

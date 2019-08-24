@@ -1,34 +1,53 @@
+import { Command, flags } from "@oclif/command";
+import { Logger } from "plop-logger";
+import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 import { Config } from "../config";
-import { prompt } from "enquirer";
-
-import { AbstractSiteTool } from "./AbstractSiteTool";
+import { commonsFlags, loggerLevels } from "../commons";
 import * as path from "path";
+import { loadExtraSpeakers } from "../addon/addonSpeaker";
+import { prompt } from "enquirer";
 import { writeFile } from "../fs-utils";
+import { Speaker } from "../site/models/speaker";
 import { buildKey, isUrl } from "../strings";
 import { Social } from "../site/models/socials";
-import { Speaker } from "../site/models/speaker";
-import { loadExtraSpeakers } from "../addon/addonSpeaker";
 
 interface SpeakerPrompt extends Omit<Speaker, "key" | "socials"> {
   twitter?: string;
 }
 
-export class AddSpeakerTool extends AbstractSiteTool {
-  constructor() {
-    super(
-      "add-speaker",
-      "Append a new speaker to add-on (require a generation after)"
-    );
+export default class AddSpeaker extends Command {
+  static description =
+    "Append a new speaker to add-on (require a generation after)";
+
+  static flags: flags.Input<any> = {
+    addonDir: commonsFlags.addonDir,
+    force: flags.boolean({ description: "override file if required" })
+  };
+
+  async run(): Promise<void> {
+    Logger.config = {
+      ...colorEmojiConfig,
+      levels: loggerLevels
+    };
+
+    const logger = Logger.getLogger("main");
+    const { flags } = this.parse(AddSpeaker);
+    logger.info(AddSpeaker.description);
+    const config = flags as Config;
+
+    await this.runConfig(logger, config);
+
+    logger.info("✅ all done");
   }
 
-  async run(config: Config): Promise<void> {
+  async runConfig(logger: Logger, config: Config): Promise<void> {
     const speakersFile = path.join(config.addonDir, "speakers.json");
     const speakers = await loadExtraSpeakers(config);
 
-    const newSpeaker = await this.createNewSpeaker();
+    const newSpeaker = await AddSpeaker.createNewSpeaker();
     speakers.push(newSpeaker);
 
-    this.logger.info("Going to add", newSpeaker);
+    logger.info("Going to add", newSpeaker);
     const confirm =
       config.force ||
       (await prompt<{ question: boolean }>([
@@ -36,14 +55,14 @@ export class AddSpeakerTool extends AbstractSiteTool {
       ])).question;
 
     if (confirm) {
-      this.logger.info("store all extra speakers", speakersFile);
+      logger.info("store all extra speakers", speakersFile);
       await writeFile(speakersFile, JSON.stringify(speakers, null, 2), "utf-8");
     } else {
-      this.logger.warn("Cancel speaker creation");
+      logger.warn("Cancel speaker creation");
     }
   }
 
-  private async createNewSpeaker(): Promise<Speaker> {
+  private static async createNewSpeaker(): Promise<Speaker> {
     const partial = await prompt<SpeakerPrompt>([
       {
         type: "input",
