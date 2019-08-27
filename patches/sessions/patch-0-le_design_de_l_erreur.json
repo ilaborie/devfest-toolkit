@@ -1,0 +1,12 @@
+[
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "le_design_de_l_erreur"
+  },
+  {
+    "op": "replace",
+    "path": "/speakers",
+    "value": ["francois_teychene"]
+  }
+]
