@@ -1,8 +1,7 @@
-import { Command, flags } from "@oclif/command";
+import { flags } from "@oclif/command";
 import { Logger } from "plop-logger";
-import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 import { Config } from "../config";
-import { commonsFlags, generateSite, loggerLevels } from "../commons";
+import { commonsFlags, DevfestToolkitCommand, generateSite } from "../commons";
 import {
   ArrayChanges,
   ChangeObject,
@@ -25,12 +24,17 @@ interface AttributeKey<T> {
   key: string;
 }
 
-export default class Diff extends Command {
+export default class Diff extends DevfestToolkitCommand {
   static description = "Compare with site from conference hall and extra data";
 
   static flags: flags.Input<any> = {
     ...commonsFlags
   };
+
+  get configuration(): Config {
+    const { flags } = this.parse(Diff);
+    return flags as Config;
+  }
 
   private displayChanges(
     parentLogger: Logger,
@@ -156,29 +160,23 @@ export default class Diff extends Command {
     }
   }
 
-  async run(): Promise<void> {
-    Logger.config = {
-      ...colorEmojiConfig,
-      levels: loggerLevels
-    };
-
-    const logger = Logger.getLogger("main");
-    const { flags } = this.parse(Diff);
-
-    logger.info(Diff.description);
-    const config = flags as Config;
-    logger.debug("Configuration", config);
-    logger.debug("site input dir", config.siteDir);
+  async runWithConfig(config: Config): Promise<void> {
+    this.logger.debug("Configuration", config);
+    this.logger.debug("site input dir", config.siteDir);
     const siteRepo = new SiteRepository(config);
     const current = await siteRepo.readAll();
-    const generated = await generateSite(logger, config);
+    const generated = await generateSite(this.logger, config);
 
     const siteValidator = new SiteValidator(config);
     siteValidator.validateAndLog(generated);
 
     // Info
-    const infoChanges = this.diffObject(logger, current.info, generated.info);
-    this.displayChanges(logger, "info", infoChanges);
+    const infoChanges = this.diffObject(
+      this.logger,
+      current.info,
+      generated.info
+    );
+    this.displayChanges(this.logger, "info", infoChanges);
 
     const attributes = [
       { attribute: "categories", key: "key" },
@@ -192,9 +190,7 @@ export default class Diff extends Command {
       { attribute: "sponsors", key: "key" }
     ] as AttributeKey<Site>[];
     attributes.forEach(attribute =>
-      this.displayDataArrayDiff(logger, attribute, current, generated)
+      this.displayDataArrayDiff(this.logger, attribute, current, generated)
     );
-
-    logger.info("✅ all done");
   }
 }

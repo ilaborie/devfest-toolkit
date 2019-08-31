@@ -1,8 +1,6 @@
-import { Command, flags } from "@oclif/command";
-import { Logger } from "plop-logger";
-import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
+import { flags } from "@oclif/command";
 import { Config } from "../config";
-import { commonsFlags, loggerLevels } from "../commons";
+import { commonsFlags, DevfestToolkitCommand } from "../commons";
 import * as path from "path";
 import { prompt } from "enquirer";
 import { writeFile } from "../fs-utils";
@@ -19,7 +17,7 @@ interface SponsorPrompt
   facebook?: string;
 }
 
-export default class AddSponsor extends Command {
+export default class AddSponsor extends DevfestToolkitCommand {
   static description =
     "Append a new sponsor to add-on (require a generation after)";
 
@@ -38,30 +36,19 @@ export default class AddSponsor extends Command {
     force: flags.boolean({ description: "override file if required" })
   };
 
-  async run(): Promise<void> {
-    Logger.config = {
-      ...colorEmojiConfig,
-      levels: loggerLevels
-    };
-
-    const logger = Logger.getLogger("main");
+  get configuration(): Config {
     const { flags } = this.parse(AddSponsor);
-    logger.info(AddSponsor.description);
-    const config = flags as Config;
-
-    await this.runConfig(logger, config);
-
-    logger.info("✅ all done");
+    return flags as Config;
   }
 
-  async runConfig(logger: Logger, config: Config): Promise<void> {
+  async runWithConfig(config: Config): Promise<void> {
     const sponsorsFile = path.join(config.addonDir, "sponsors.json");
     const sponsors = await loadSponsors(config);
 
     const newSponsor = await this.createNewSponsor(config, sponsors);
     sponsors.push(newSponsor);
 
-    logger.info("Going to add", newSponsor);
+    this.logger.info("Going to add", newSponsor);
     const confirm =
       config.force ||
       (await prompt<{ question: boolean }>([
@@ -69,10 +56,10 @@ export default class AddSponsor extends Command {
       ])).question;
 
     if (confirm) {
-      logger.info("store all sponsors", sponsorsFile);
+      this.logger.info("store all sponsors", sponsorsFile);
       await writeFile(sponsorsFile, JSON.stringify(sponsors, null, 2), "utf-8");
     } else {
-      logger.warn("Cancel sponsor creation");
+      this.logger.warn("Cancel sponsor creation");
     }
   }
 

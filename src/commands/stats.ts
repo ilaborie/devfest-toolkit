@@ -1,8 +1,7 @@
-import { Command, flags } from "@oclif/command";
+import { flags } from "@oclif/command";
 import { Logger } from "plop-logger";
-import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 import { Config } from "../config";
-import { commonsFlags, generateSite, loggerLevels } from "../commons";
+import { commonsFlags, DevfestToolkitCommand, generateSite } from "../commons";
 import { getEvent } from "../conference-hall/api";
 import colors from "ansi-colors";
 
@@ -10,12 +9,17 @@ interface Distribution {
   [index: string]: number;
 }
 
-export default class Stats extends Command {
+export default class Stats extends DevfestToolkitCommand {
   static description = "Some statistics";
 
   static flags: flags.Input<any> = {
     ...commonsFlags
   };
+
+  get configuration(): Config {
+    const { flags } = this.parse(Stats);
+    return flags as Config;
+  }
 
   private stats<T, A extends keyof T>(
     logger: Logger,
@@ -52,28 +56,20 @@ export default class Stats extends Command {
     );
   }
 
-  async run(): Promise<void> {
-    Logger.config = {
-      ...colorEmojiConfig,
-      levels: loggerLevels
-    };
-
-    const logger = Logger.getLogger("main");
-    const { flags } = this.parse(Stats);
-    logger.info(Stats.description);
-    const config = flags as Config;
-
+  async runWithConfig(config: Config): Promise<void> {
     // Submitted talks
     const { talks } = await getEvent(config);
-    this.stats(logger, "total talks", talks, ["formats", "categories"]);
+    this.stats(this.logger, "total talks", talks, ["formats", "categories"]);
 
-    const { speakers, sessions } = await generateSite(logger, config);
+    const { speakers, sessions } = await generateSite(this.logger, config);
     // Accepted talks
-    this.stats(logger, "accepted talks", sessions, ["format", "tags", "level"]);
+    this.stats(this.logger, "accepted talks", sessions, [
+      "format",
+      "tags",
+      "level"
+    ]);
 
     // Accepted speakers
-    this.stats(logger, "speakers", speakers, ["city", "company"]);
-
-    logger.info("✅ all done");
+    this.stats(this.logger, "speakers", speakers, ["city", "company"]);
   }
 }

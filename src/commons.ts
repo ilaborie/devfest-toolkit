@@ -1,4 +1,4 @@
-import { flags } from "@oclif/command";
+import { Command, flags } from "@oclif/command";
 import { Logger, LoggerLevels } from "plop-logger";
 import { canRead, downloadToFile } from "./fs-utils";
 import { readFileSync } from "fs";
@@ -26,6 +26,7 @@ import { readFileCache } from "./cache";
 import { getEvent } from "./conference-hall/api";
 import { loadSchedule } from "./addon/addonSchedule";
 import { loadSponsors } from "./addon/addonSponsor";
+import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
 
 function readLoggerLevels(): LoggerLevels {
   if (canRead("logger.json")) {
@@ -60,6 +61,32 @@ export const commonsFlags: flags.Input<any> = {
     default: "./add-on"
   })
 };
+
+export abstract class DevfestToolkitCommand extends Command {
+  // Logger
+  private _logger: Logger | null = null;
+  get logger(): Logger {
+    if (this._logger === null) {
+      this._logger = Logger.getLogger("main");
+    }
+    return this._logger;
+  }
+
+  abstract configuration: Config;
+
+  async run(): Promise<void> {
+    Logger.config = {
+      ...colorEmojiConfig,
+      levels: loggerLevels
+    };
+
+    await this.runWithConfig(this.configuration);
+
+    this.logger.info("✅ all done");
+  }
+
+  abstract async runWithConfig(config: Config): Promise<any>;
+}
 
 export async function generateSessions(
   logger: Logger,

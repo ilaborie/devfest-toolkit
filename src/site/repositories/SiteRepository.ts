@@ -168,7 +168,7 @@ export class SiteRepository implements Repository<Site> {
       "site.json"
     );
     await createParentDir(siteFile);
-    await writeFile(siteFile, JSON.stringify(site, null, 2));
+    await writeFile(siteFile, JSON.stringify(site));
 
     // Generate iCal
     const icalFile = path.join(

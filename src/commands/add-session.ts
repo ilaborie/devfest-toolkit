@@ -1,12 +1,10 @@
-import { Command, flags } from "@oclif/command";
-import { Logger } from "plop-logger";
-import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
+import { flags } from "@oclif/command";
 import { Config } from "../config";
 import {
   commonsFlags,
+  DevfestToolkitCommand,
   generateCategories,
-  generateFormats,
-  loggerLevels
+  generateFormats
 } from "../commons";
 import * as path from "path";
 import { loadExtraSessions } from "../addon/addonSession";
@@ -24,7 +22,7 @@ interface SessionPrompt extends Omit<Session, "key" | "tags"> {
   category: CategoryKey;
 }
 
-export default class AddSession extends Command {
+export default class AddSession extends DevfestToolkitCommand {
   static description =
     "Append a new session to add-on (require a generation after)";
 
@@ -38,30 +36,19 @@ export default class AddSession extends Command {
     force: flags.boolean({ description: "override file if required" })
   };
 
-  async run(): Promise<void> {
-    Logger.config = {
-      ...colorEmojiConfig,
-      levels: loggerLevels
-    };
-
-    const logger = Logger.getLogger("main");
+  get configuration(): Config {
     const { flags } = this.parse(AddSession);
-    logger.info(AddSession.description);
-    const config = flags as Config;
-
-    await this.runConfig(logger, config);
-
-    logger.info("✅ all done");
+    return flags as Config;
   }
 
-  async runConfig(logger: Logger, config: Config): Promise<void> {
+  async runWithConfig(config: Config): Promise<void> {
     const sessionsFile = path.join(config.addonDir, "sessions.json");
     const sessions = await loadExtraSessions(config);
     const speakers = await loadExtraSpeakers(config);
 
     const event = await getEvent(config);
-    const formats = await generateFormats(logger, config, event);
-    const categories = await generateCategories(logger, config, event);
+    const formats = await generateFormats(this.logger, config, event);
+    const categories = await generateCategories(this.logger, config, event);
 
     const newSession = await AddSession.createNewSession(
       config,
@@ -71,7 +58,7 @@ export default class AddSession extends Command {
     );
     sessions.push(newSession);
 
-    logger.info("Going to add", newSession);
+    this.logger.info("Going to add", newSession);
     const confirm =
       config.force ||
       (await prompt<{ question: boolean }>([
@@ -79,10 +66,10 @@ export default class AddSession extends Command {
       ])).question;
 
     if (confirm) {
-      logger.info("store all extra sessions", sessionsFile);
+      this.logger.info("store all extra sessions", sessionsFile);
       await writeFile(sessionsFile, JSON.stringify(sessions, null, 2), "utf-8");
     } else {
-      logger.warn("Cancel session creation");
+      this.logger.warn("Cancel session creation");
     }
   }
 

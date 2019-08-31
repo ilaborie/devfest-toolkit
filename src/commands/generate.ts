@@ -1,12 +1,10 @@
-import { Command, flags } from "@oclif/command";
-import { Logger } from "plop-logger";
-import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
+import { flags } from "@oclif/command";
 import { Config } from "../config";
-import { commonsFlags, generateSite, loggerLevels } from "../commons";
+import { commonsFlags, DevfestToolkitCommand, generateSite } from "../commons";
 import { SiteRepository } from "../site/repositories";
 import { SiteValidator } from "../site/validation";
 
-export default class Generate extends Command {
+export default class Generate extends DevfestToolkitCommand {
   static description =
     "Append a new speaker to add-on (require a generation after)";
 
@@ -15,21 +13,16 @@ export default class Generate extends Command {
     force: flags.boolean({ description: "override file if required" })
   };
 
-  async run(): Promise<void> {
-    Logger.config = {
-      ...colorEmojiConfig,
-      levels: loggerLevels
-    };
-
-    const logger = Logger.getLogger("main");
+  get configuration(): Config {
     const { flags } = this.parse(Generate);
-    logger.info(Generate.description);
-    const config = flags as Config;
+    return flags as Config;
+  }
 
+  async runWithConfig(config: Config): Promise<void> {
     const { force, siteDir } = config;
 
-    logger.debug("site output dir", siteDir);
-    const site = await generateSite(logger, config);
+    this.logger.debug("site output dir", siteDir);
+    const site = await generateSite(this.logger, config);
 
     // validate
     const siteValidator = new SiteValidator(config);
@@ -37,7 +30,5 @@ export default class Generate extends Command {
 
     const siteRepo = new SiteRepository(config);
     await siteRepo.saveAll(site, force);
-
-    logger.info("✅ all done");
   }
 }

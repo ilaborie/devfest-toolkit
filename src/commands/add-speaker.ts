@@ -1,8 +1,6 @@
-import { Command, flags } from "@oclif/command";
-import { Logger } from "plop-logger";
-import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
+import { flags } from "@oclif/command";
 import { Config } from "../config";
-import { commonsFlags, loggerLevels } from "../commons";
+import { commonsFlags, DevfestToolkitCommand } from "../commons";
 import * as path from "path";
 import { loadExtraSpeakers } from "../addon/addonSpeaker";
 import { prompt } from "enquirer";
@@ -15,7 +13,7 @@ interface SpeakerPrompt extends Omit<Speaker, "key" | "socials"> {
   twitter?: string;
 }
 
-export default class AddSpeaker extends Command {
+export default class AddSpeaker extends DevfestToolkitCommand {
   static description =
     "Append a new speaker to add-on (require a generation after)";
 
@@ -24,30 +22,19 @@ export default class AddSpeaker extends Command {
     force: flags.boolean({ description: "override file if required" })
   };
 
-  async run(): Promise<void> {
-    Logger.config = {
-      ...colorEmojiConfig,
-      levels: loggerLevels
-    };
-
-    const logger = Logger.getLogger("main");
+  get configuration(): Config {
     const { flags } = this.parse(AddSpeaker);
-    logger.info(AddSpeaker.description);
-    const config = flags as Config;
-
-    await this.runConfig(logger, config);
-
-    logger.info("✅ all done");
+    return flags as Config;
   }
 
-  async runConfig(logger: Logger, config: Config): Promise<void> {
+  async runWithConfig(config: Config): Promise<void> {
     const speakersFile = path.join(config.addonDir, "speakers.json");
     const speakers = await loadExtraSpeakers(config);
 
     const newSpeaker = await AddSpeaker.createNewSpeaker();
     speakers.push(newSpeaker);
 
-    logger.info("Going to add", newSpeaker);
+    this.logger.info("Going to add", newSpeaker);
     const confirm =
       config.force ||
       (await prompt<{ question: boolean }>([
@@ -55,10 +42,10 @@ export default class AddSpeaker extends Command {
       ])).question;
 
     if (confirm) {
-      logger.info("store all extra speakers", speakersFile);
+      this.logger.info("store all extra speakers", speakersFile);
       await writeFile(speakersFile, JSON.stringify(speakers, null, 2), "utf-8");
     } else {
-      logger.warn("Cancel speaker creation");
+      this.logger.warn("Cancel speaker creation");
     }
   }
 
