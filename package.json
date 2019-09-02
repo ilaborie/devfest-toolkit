@@ -1,6 +1,6 @@
 {
   "name": "devfest-toolkit",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Tools for working with [Conference Hall](https://conference-hall.io/) data, and publish these data to a Web Site or Konfetti) data, and publish these data to a Web Site",
   "author": "Igor Laborie <ilaborie@gmail.com>",
   "repository": {
