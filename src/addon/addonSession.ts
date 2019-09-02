@@ -11,7 +11,7 @@ export async function loadExtraSessions(
   const logger = Logger.getLogger("addon.sessions");
   const sessionsFile = path.join(config.addonDir, "sessions.json");
   const sessions = await readFileCache.getAsJson<Session[]>(sessionsFile);
-  logger.info("Found", () => `${sessions.length} sponsor(s)`);
+  logger.info("Found", () => `${sessions.length} extra session(s)`);
 
   const result = sessions.map(session => {
     const {

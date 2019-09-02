@@ -1,4 +1,4 @@
-import { Speaker, SpeakerKey } from "../site/models/speaker";
+import { Speaker } from "../site/models/speaker";
 import { readFileCache } from "../cache";
 import * as path from "path";
 import { AddOnConfig } from "../config";
@@ -13,7 +13,7 @@ export async function loadExtraSpeakers(
   const logger = Logger.getLogger("addon.speakers");
   const speakersFile = path.join(config.addonDir, "speakers.json");
   const speakers = await readFileCache.getAsJson<Speaker[]>(speakersFile);
-  logger.info("Found", () => `${speakers.length} speakers(s)`);
+  logger.info("Found", () => `${speakers.length} extra speakers(s)`);
 
   const result = speakers.map(speaker => {
     const {
