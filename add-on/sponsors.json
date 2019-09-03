@@ -28,6 +28,16 @@
     "description": "Airbus is an international pioneer in the aerospace industry and a leader in designing, manufacturing and delivering aerospace products, services and solutions to customers on a global scale. We believe that it’s not just what we make, but how we make it that counts; promoting responsible, sustainable and inclusive business practices and acting with integrity. Our people work with passion and determination to make the world a more connected, safer and smarter place, on the ground, in the sky and in space.\n"
   },
   {
+    "key": "altran",
+    "title": "Altran",
+    "category": "soutien",
+    "order": 37,
+    "logo": "/images/partners/logo-altran.svg",
+    "website": "https://www.altran.com/fr/fr/",
+    "lang": "fr",
+    "socials": []
+  },
+  {
     "key": "apside",
     "title": "APSIDE",
     "category": "gold",
@@ -302,6 +312,16 @@
     "description": "Nous sommes les créateurs de la suite Elastic: Elasticsearch, Kibana, Beats et Logstash. Recherchez, analysez et visualisez vos données da façon sécurisée et fiable.\n"
   },
   {
+    "key": "epitech",
+    "title": "Epitech",
+    "category": "soutien",
+    "order": 36,
+    "logo": "/images/partners/logo-epitech.png",
+    "website": "https://www.epitech.eu/fr/",
+    "lang": "fr",
+    "socials": []
+  },
+  {
     "key": "gdg-toulouse",
     "title": "GDG Toulouse",
     "category": "communautes",
@@ -342,6 +362,16 @@
         "icon": "twitter",
         "link": "https://twitter.com/PierreFabre",
         "name": "PierreFabre"
+      },
+      {
+        "icon": "facebook",
+        "link": "https://www.facebook.com/laboratoirespierrefabre/",
+        "name": "Laboratoires Pierre Fabre"
+      },
+      {
+        "icon": "linedin",
+        "link": "https://www.linkedin.com/company/pierre-fabre/",
+        "name": "Pierre Fabre"
       }
     ],
     "description": "Créé en 1962 par Pierre Fabre, pharmacien d’officine à Castres (Tarn), le Groupe Pierre Fabre est présent depuis plus de 50 ans sur un continuum d’activités allant des médicaments de prescription aux soins dermo-cosmétiques en passant par la santé grand public.\n2ème laboratoire dermo-cosmétique mondial et 2ème groupe pharmaceutique privé français, Pierre Fabre emploie près de 11 000 collaborateurs, détient des filiales dans 47 pays et distribue ses produits dans plus de 130 pays.\nEn 2019, Ecocert Environnement a évalué la démarche de responsabilité sociétale et environnementale du Groupe selon la norme ISO 26000 et lui a attribué le niveau « Excellence ».\n"
@@ -826,6 +856,16 @@
     "description": "\nFind Toulouse JUG on [https://www.toulousejug.org/](https://www.toulousejug.org/)\n\n![Toulouse JUG](/images/partners/community/toulouse_jug.png)\n"
   },
   {
+    "key": "toulouse_metropole",
+    "title": "Toulouse Métropole",
+    "category": "platinium",
+    "order": 35,
+    "logo": "/images/partners/logo-toulouse_metropole.png",
+    "website": "https://www.toulouse-metropole.fr/",
+    "lang": "fr",
+    "socials": []
+  },
+  {
     "key": "toulousejs",
     "title": "ToulouseJS",
     "category": "communautes",
@@ -858,5 +898,15 @@
       }
     ],
     "description": "WeLoveDevs.com aide les développeurs à définir quelle entreprise leur permettra de s'épanouir.\nNous pensons qu'un développeur devrait pouvoir trouver par lui-même une entreprise où il sera heureux.\nAussi WeLoveDevs.com permet aux entreprises de proposer une vitrine sur la vie de leurs collaborateurs. Nos équipes les accompagnent dans le fait de produire du contenu authentique et transparent, qui donne envie d'être candidat.\n"
+  },
+  {
+    "key": "etincelle_coworking",
+    "title": "Étincelle Coworking",
+    "category": "soutien",
+    "order": 38,
+    "logo": "/images/partners/logo-etincelle_coworking.png",
+    "website": "https://www.coworking-toulouse.com/",
+    "lang": "fr",
+    "socials": []
   }
 ]
