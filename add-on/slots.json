@@ -1,6 +1,7 @@
 [
   { "key": "open", "start": "08:00", "duration": 60, "weight": 2 },
   { "key": "keynote-open", "start": "09:00", "duration": 40, "weight": 3 },
+  { "key": "office-hours-0", "start": "09:40", "duration": 30, "weight": 2 },
   { "key": "pause-1", "start": "09:40", "duration": 20, "weight": 1 },
   { "key": "slot-1", "start": "10:00", "duration": 40, "weight": 3 },
   { "key": "office-hours-1", "start": "10:40", "duration": 30, "weight": 2 },

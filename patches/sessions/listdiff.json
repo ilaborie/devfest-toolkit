@@ -68,6 +68,14 @@
       "description": "🎉 Party time"
     },
     {
+      "key": "office-hour-00",
+      "title": "Office Hours",
+      "format": "office-hours",
+      "speakers": [],
+      "tags": ["office-hours"],
+      "description": "Venez poser vos questions aux speakers de manière plus calme et détendu"
+    },
+    {
       "key": "office-hour-01",
       "title": "Office Hours",
       "format": "office-hours",

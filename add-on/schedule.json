@@ -66,7 +66,10 @@
           { "slot": "pause-2", "talk": "__pause" },
           { "slot": "slot-2", "talk": "le_burn_out_agile" },
           { "slot": "pause-3", "talk": "__pause" },
-          { "slot": "slot-3", "talk": "quand_les_rates_des_ias_nous_renvoient_a_nos_propres_biais_societaux" },
+          {
+            "slot": "slot-3",
+            "talk": "quand_les_rates_des_ias_nous_renvoient_a_nos_propres_biais_societaux"
+          },
           {
             "slot": "slot-lt-1",
             "talk": "machine_learning_avec_des_allumettes_et_des_cotillons"
@@ -186,6 +189,7 @@
       {
         "room": "office-hours",
         "slots": [
+          { "slot": "office-hours-0", "talk": "office-hour-00" },
           { "slot": "office-hours-1", "talk": "office-hour-01" },
           { "slot": "office-hours-2", "talk": "office-hour-02" },
           { "slot": "office-hours-3", "talk": "office-hour-03" },

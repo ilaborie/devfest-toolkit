@@ -1,0 +1,17 @@
+[
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "l_histoire_de_la_decouverte_d_une_backdoor_signe_oneplus"
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "## Résumé\nEn Novembre 2017, j'ai découvert \"une backdoor\" dans tous les téléphones de la marque OnePlus. À l'aide d'une simple ligne de commande, un attaquant ayant un accès physique au téléphone, pouvait devenir root et ainsi obtenir un contrôle total du téléphone de la victime.\n\n## Détails\nDans ce talk, j'expliquerai le processus qui m'a permis de faire cette découverte :\n1. Extraction du build\n2. Récupération des applications dites \"système\"\n3. Détection de la vulnérabilité dans l'application Android \"EngineeringMode\"\n4. Exploitation de la vulnérabilité\n\n## Sujet abordés\nLors de la détection et l'analyse de cette faille, nous aborderons la philosophie du **hacking**, comment faire du **reverse engineering** sur des applications **Android** et une **librairie native**. Nous analyserons du **Java** ainsi que du **C**.\n\n## Categorie\nNative mobile apps\n\n## Format\nUne conférence de 40 min"
+  },
+  {
+    "op": "replace",
+    "path": "/title",
+    "value": "L'histoire de la découverte d'une backdoor signée OnePlus"
+  }
+]

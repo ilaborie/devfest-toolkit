@@ -26,6 +26,8 @@ Note: It's being design to work with the [devfest-theme-hugo](https://github.com
 
 - `stats`: Display some stats
 
+- `patch`: Read data from site, and create patches if necessary
+
 ## Options
 
 - `-h`, `--help`: show CLI help

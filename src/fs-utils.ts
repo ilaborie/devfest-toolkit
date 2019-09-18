@@ -20,6 +20,15 @@ export const canRead = (path: string): boolean => {
   }
 };
 
+export const isFileExist = (path: string): boolean => {
+  try {
+    fs.accessSync(path, fs.constants.F_OK);
+    return true;
+  } catch (_) {
+    return false;
+  }
+};
+
 export const isFileEmpty = (path: string): boolean => {
   try {
     const fileStats = statSync(path);

@@ -1,5 +1,22 @@
 [
-  { "op": "test", "path": "/key", "value": "sebastien_brault" },
-  { "op": "replace", "path": "/company", "value": "Orange" },
-  { "op": "replace", "path": "/city", "value": "Trégastel, France" }
+  {
+    "op": "test",
+    "path": "/key",
+    "value": "sebastien_brault"
+  },
+  {
+    "op": "replace",
+    "path": "/company",
+    "value": "Orange"
+  },
+  {
+    "op": "replace",
+    "path": "/city",
+    "value": "Trégastel, France"
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Développeur mobile sur iOS depuis 2010, je suis le principal développeur du composant d'authentification de l'ensemble des applications Orange France iOS. Depuis plusieurs mois maintenant je me suis penché sur les impacts environnementaux du numérique, les identifier, en mesurer les ordres de grandeur, identifier les leviers d'actions efficaces."
+  }
 ]
