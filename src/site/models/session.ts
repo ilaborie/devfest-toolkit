@@ -21,7 +21,7 @@ export interface Session {
   videoId?: string | null;
   presentation?: string | null;
   draft?: boolean;
-
+  officeHours?: SessionKey[];
   description: Markdown;
 }
 

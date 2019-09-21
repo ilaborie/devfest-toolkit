@@ -3,7 +3,7 @@
     "key": "a_kotlin_multiplatform_evolution",
     "title": "A Kotlin multiplatform evolution",
     "format": "conference",
-    "tags": ["languages"],
+    "tags": ["_languages"],
     "level": "advanced",
     "language": "English",
     "speakers": ["liliia_abdulina"],
@@ -12,7 +12,7 @@
   {
     "key": "le_jaillissement_de_l_esprit",
     "title": "Le jaillissement de l'esprit",
-    "tags": ["method___tools"],
+    "tags": ["_method___tools"],
     "format": "conference",
     "level": "beginner",
     "speakers": ["lois_blanc", "saskia_blanc", "sebastien_blanc"],

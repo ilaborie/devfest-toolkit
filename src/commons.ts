@@ -8,7 +8,11 @@ import {
   talkToSession,
   toSiteSpeaker
 } from "./conference-hall/model/event";
-import { Session as SiteSession } from "./site/models/session";
+import {
+  Session,
+  Session as SiteSession,
+  SessionKey
+} from "./site/models/session";
 import { Talk, TalkStatus } from "./conference-hall/model/talk";
 import { loadExtraSessions } from "./addon/addonSession";
 import { applyAllPatch } from "./patch";
@@ -27,6 +31,7 @@ import { getEvent } from "./conference-hall/api";
 import { loadSchedule } from "./addon/addonSchedule";
 import { loadSponsors } from "./addon/addonSponsor";
 import { colorEmojiConfig } from "plop-logger/lib/extra/colorEmojiConfig";
+import { Slot, SlotKey } from "./site/models/slot";
 
 function readLoggerLevels(): LoggerLevels {
   if (canRead("logger.json")) {
@@ -307,7 +312,7 @@ export async function generateSite(
   const sponsors = await loadSponsors(config);
   const team = await generateTeam(logger, config);
 
-  return {
+  const site = {
     info,
     sessions: sessions || [],
     speakers: speakers || [],
@@ -319,4 +324,62 @@ export async function generateSite(
     sponsors,
     team
   };
+
+  // FIXME compute OfficeHours
+  site.sessions
+    .filter(it => it.tags.includes("office-hours"))
+    .forEach(ohSession => computeOfficeHour(ohSession, site));
+
+  return site;
 }
+
+function findSlotForSessions(key: SessionKey, site: Site): Slot | null {
+  for (const day of site.schedule) {
+    for (const room of day.rooms) {
+      for (const slot of room.slots) {
+        if (slot.talk == key) {
+          return site.slots.find(it => it.key == slot.slot) || null;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+function findSessionsForSlot(key: SlotKey, site: Site): SessionKey[] {
+  const result: SessionKey[] = [];
+  for (const day of site.schedule) {
+    for (const room of day.rooms) {
+      for (const slot of room.slots) {
+        if (slot.slot == key) {
+          result.push(slot.talk);
+        }
+      }
+    }
+  }
+  return result;
+}
+
+const computeOfficeHour = (ohSession: Session, site: Site): void => {
+  const ohSlot = findSlotForSessions(ohSession.key, site);
+  if (ohSlot) {
+    const relatedSessions: SessionKey[] = site.slots
+      // find previous slot
+      .filter(it => it.row.end === ohSlot.row.start)
+      // find sessions for slot
+      .map(it => findSessionsForSlot(it.key, site))
+      .flat(1);
+    const sessions = site.sessions.filter(it =>
+      relatedSessions.includes(it.key)
+    );
+
+    ohSession.officeHours = relatedSessions;
+    ohSession.speakers = sessions.map(it => it.speakers).flat(1);
+    ohSession.description =
+      "Venez poser vos questions aux speakers de manière plus calme et détendue.\n\n" +
+      site.sessions
+        .filter(it => relatedSessions.includes(it.key))
+        .map(it => `* [${it.title}](../${it.key})`)
+        .join("\n");
+  }
+};
