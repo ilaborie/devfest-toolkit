@@ -28,5 +28,5 @@
   { "key": "slot-7", "start": "17:30", "duration": 40, "weight": 3 },
   { "key": "office-hours-7", "start": "18:10", "duration": 30, "weight": 2 },
   { "key": "keynote-close", "start": "18:20", "duration": 40, "weight": 3 },
-  { "key": "party", "start": "19:00", "duration": 240, "weight": 2 }
+  { "key": "party", "start": "19:30", "duration": 240, "weight": 2 }
 ]
