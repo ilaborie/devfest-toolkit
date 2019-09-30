@@ -5,11 +5,11 @@
   "add": [
     {
       "key": "keynote_open",
-      "title": "Keynote d'ouverture",
+      "title": "Une histoire de l'informatique, du métier à tisser à la machine de Babbage...",
       "format": "keynote",
-      "speakers": [],
+      "speakers": ["fabien_tregan"],
       "tags": ["keynote"],
-      "description": "Surprise!"
+      "description": "...où l'on parle aussi de la Pascaline, de table de logarithmes et d'éviter les erreurs. Et d'en faire.\n"
     },
     {
       "key": "keynote_open_overflow",
@@ -17,15 +17,15 @@
       "format": "keynote",
       "speakers": [],
       "tags": ["keynote"],
-      "description": "Surprise!"
+      "description": "[Keynote d'ouverture](../keynote_open)"
     },
     {
       "key": "keynote_close",
-      "title": "Keynote de fermeture",
+      "title": "Une analyse critique des \"Tech Trends\"",
       "format": "keynote",
-      "speakers": [],
+      "speakers": ["christian_faure"],
       "tags": ["keynote"],
-      "description": "Surprise!"
+      "description": " Notre secteur d'activité est régulièrement abreuvé de prévisions et de tendances : quel sera le prochain langage, le prochain framework, la nouvelle architecture, les nouveaux \"use cases\", les prochaines technologies disruptives ? Etc.\n\nDe nombreuses sociétés publient des \"tech trends\" et certaines ont même fait de cette publication un coeur de métier (notamment les grands cabinets d'analystes). En marge du discours très \"marketing oriented\" des entreprises, il y a également l'omni-présence de nombreux gourous, futurologues ou prospectivistes qui jouent aux oracles. Mais il y a aussi de nombreuses personnalités indépendantes qui ont un discours sur l'innovation technologique plus libre, comme par exemple Kevin Kelly ou Simon Wardley.\n\nJe vous propose non pas une vision du futur de plus, mais de vous faire part des résultats d'une étude, que j'ai mené avec d'autres, qui analyse et compare les différentes méthodes et approches utilisées pour prédire l'avenir des technologies informatiques."
     },
     {
       "key": "keynote_close_overflow",
@@ -33,7 +33,7 @@
       "format": "keynote",
       "speakers": [],
       "tags": ["keynote"],
-      "description": "Surprise!"
+      "description": "[Keynote de fermeture](../keynote_close)"
     },
     {
       "key": "__pause",

@@ -1,5 +1,10 @@
 [
   { "op": "test", "path": "/key", "value": "noel_mace" },
-  { "op": "replace", "path": "/company", "value": "BonitaSoft" },
-  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
+  { "op": "replace", "path": "/company", "value": "" },
+  { "op": "replace", "path": "/city", "value": "Toulouse, France" },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Noël est un passionné de DevRel, d’enseignement, et de transmission de compétences en général. Tour à tour developer advocate, ingénieur pédagogique, formateur, architecte et développeur web depuis plus de 10 ans, il consacre aujourd’hui l’essentiel de son temps à accompagner la communauté vers une meilleure maîtrise et adoption des capacités modernes du Web."
+  }
 ]

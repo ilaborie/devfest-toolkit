@@ -52,5 +52,19 @@
     "photoURL": "https://pbs.twimg.com/profile_images/953666904979320832/yExlO-jW_400x400.jpg",
     "socials": [],
     "description": "Loïs est en sixième et a eut son jaillissement de l’esprit en découvrant qu’il pouvait coder un Mario Bros avec Scratch. \n"
+  },
+  {
+    "key": "christian_faure",
+    "name": "Christian Fauré",
+    "feature": true,
+    "city": "Paris, France",
+    "photoURL": "https://pbs.twimg.com/profile_images/418002691466354691/q6vEj0CR_200x200.jpeg",
+    "socials": [
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/ChristianFaure"
+      }
+    ],
+    "description": "IT & Philosophy - [http://www.christian-faure.net/](http://www.christian-faure.net/)"
   }
 ]

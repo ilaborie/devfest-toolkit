@@ -1,5 +1,5 @@
 [
   { "op": "test", "path": "/key", "value": "francois_teychene" },
-  { "op": "replace", "path": "/company", "value": "Saagie" },
+  { "op": "replace", "path": "/company", "value": "Elastic" },
   { "op": "replace", "path": "/city", "value": "Montpellier, France" }
 ]

@@ -261,7 +261,7 @@
     "title": "DECASOFT",
     "category": "soutien",
     "order": 8,
-    "logo": "/images/partners/logo-decasoft.jpg",
+    "logo": "/images/partners/logo-decasoft.png",
     "website": "http://www.decasoft.fr/",
     "lang": "fr",
     "why": "Pour rencontrer les acteurs du marché et s'investir sur l'avenir du numérique",
@@ -709,10 +709,10 @@
     "key": "python-toulouse",
     "title": "Python Toulouse",
     "category": "communautes",
-    "logo": "/images/partners/community/python_toulouse.jpeg",
+    "logo": "/images/partners/community/python_toulouse.png",
     "website": "https://www.meetup.com/Python-Toulouse/",
     "socials": [],
-    "description": "\nFind Python Toulouse on [https://www.meetup.com/Python-Toulouse/](https://www.meetup.com/Python-Toulouse/)\n\n![Python Toulouse](/images/partners/community/python_toulouse.jpeg)"
+    "description": "\nFind Python Toulouse on [https://www.meetup.com/Python-Toulouse/](https://www.meetup.com/Python-Toulouse/)\n\n![Python Toulouse](/images/partners/community/python_toulouse.png)"
   },
   {
     "key": "rust-toulouse",
@@ -779,7 +779,7 @@
     "title": "Squoring Technologies",
     "category": "soutien",
     "order": 4,
-    "logo": "/images/partners/logo-squoring_technologies.jpg",
+    "logo": "/images/partners/logo-squoring_technologies.png",
     "website": "www.squoring.com / www.vector.com/",
     "lang": "fr",
     "why": "En tant qu'éditeur de logiciel à la pointe de l'innovation, notre participation au DevFest nous permet d'échanger avec tous les acteurs de notre écosystème sur les dernières avancées technologiques. A ce titre, tous les ingénieurs de notre équipe R&D sont invités à participer à l'événement pour partager et rester connectés avec la grande communauté des développeurs !",
@@ -851,10 +851,10 @@
     "key": "toulouse-devops",
     "title": "Toulouse Devops",
     "category": "communautes",
-    "logo": "/images/partners/community/toulousedevops.jpg",
+    "logo": "/images/partners/community/toulousedevops.png",
     "website": "http://toulousedevops.org/",
     "socials": [],
-    "description": "\nFind Toulouse Devops on [http://toulousedevops.org/](http://toulousedevops.org/)\n\n![Toulouse Devops](/images/partners/community/toulousedevops.jpg)\n"
+    "description": "\nFind Toulouse Devops on [http://toulousedevops.org/](http://toulousedevops.org/)\n\n![Toulouse Devops](/images/partners/community/toulousedevops.png)\n"
   },
   {
     "key": "toulouse-jug",
