@@ -1,8 +1,0 @@
-[
-  {
-    "op": "test",
-    "path": "/key",
-    "value": "webgpu__next_generation_3d_graphics_on_the_web"
-  },
-  { "op": "add", "path": "/language", "value": "English" }
-]

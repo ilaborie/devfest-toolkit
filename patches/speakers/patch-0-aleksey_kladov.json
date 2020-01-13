@@ -1,5 +1,0 @@
-[
-  { "op": "test", "path": "/key", "value": "aleksey_kladov" },
-  { "op": "replace", "path": "/company", "value": "Ferrous Systems" },
-  { "op": "replace", "path": "/city", "value": "St Petersburg, Russia" }
-]

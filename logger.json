@@ -5,6 +5,7 @@
   "cache.file": "warn",
   "site": "trace",
   "site.repo": "info",
+  "site.repo.team": "trace",
   "patch": "info",
   "addon": "info",
   "download": "info"

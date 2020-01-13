@@ -5,6 +5,7 @@ import { Speakers } from "./models/speaker";
 import { SiteConfig } from "../config";
 import * as path from "path";
 import { canRead, isFileEmpty } from "../fs-utils";
+import { Members } from "./models/member";
 
 export class SiteValidator extends ValidationService<Site> {
   constructor(private config: SiteConfig) {
@@ -17,7 +18,8 @@ export class SiteValidator extends ValidationService<Site> {
       ...this.validateSpeaker(site.speakers),
       ...this.validateSession(site),
       ...this.validateSchedule(site),
-      ...this.validateSponsors(site.sponsors)
+      ...this.validateSponsors(site.sponsors),
+      ...this.validateTeam(site.team)
     ];
   }
 
@@ -118,5 +120,23 @@ export class SiteValidator extends ValidationService<Site> {
       })
     );
     return result.length ? result : [ok<Site>("schedule", "✅")];
+  }
+
+  private validateTeam(team: Members): ValidationResult<Site>[] {
+    const result: ValidationResult<Site>[] = [];
+    // need to have a photo, none empty
+    team.forEach(member => {
+      const photoFile = path.join(
+        this.config.siteDir,
+        "static/images/team",
+        member.photo
+      );
+      if (!canRead(photoFile)) {
+        result.push(warn("team", "Photo not found", member.photo));
+      } else if (isFileEmpty(photoFile)) {
+        result.push(warn("team", "Photo is empty", member.photo));
+      }
+    });
+    return result.length ? result : [ok<Site>("speakers", "✅")];
   }
 }

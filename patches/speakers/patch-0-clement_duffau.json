@@ -1,5 +1,0 @@
-[
-  { "op": "test", "path": "/key", "value": "clement_duffau" },
-  { "op": "replace", "path": "/company", "value": "Stack Labs" },
-  { "op": "replace", "path": "/city", "value": "Toulouse, France" }
-]

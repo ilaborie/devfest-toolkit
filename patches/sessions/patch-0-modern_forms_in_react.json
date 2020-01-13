@@ -1,9 +1,0 @@
-[
-  {
-    "op": "test",
-    "path": "/key",
-    "value": "modern_forms_in_react"
-  },
-  { "op": "add", "path": "/language", "value": "English" },
-  { "op": "replace", "path": "/language", "value": "English" }
-]

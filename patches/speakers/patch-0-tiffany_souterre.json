@@ -1,5 +1,0 @@
-[
-  { "op": "test", "path": "/key", "value": "tiffany_souterre" },
-  { "op": "replace", "path": "/company", "value": "JEMS Datafactory" },
-  { "op": "replace", "path": "/city", "value": "Paris, France" }
-]

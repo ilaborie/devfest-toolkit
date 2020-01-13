@@ -55,10 +55,23 @@
     "key": "thibault_ducret"
   },
   {
+    "title": "Nicolas Decoster",
+    "type": "kids",
+    "subtitle": "",
+    "photo": "nicolas_decoster.png",
+    "socials": [
+      {
+        "link": "https://twitter.com/ogadaki",
+        "name": "Twitter"
+      }
+    ],
+    "key": "nicolas_decoster"
+  },
+  {
     "title": "Aurélie Vache",
-    "type": "core",
+    "type": "kids",
     "subtitle": "Duchess France / Toulouse Data Science",
-    "photo": "aurelie_vache.png",
+    "photo": "aurelie_vache.jpg",
     "socials": [
       {
         "link": "https://www.twitter.com/aurelievache",
@@ -81,7 +94,7 @@
   },
   {
     "title": "Elodie Lerare",
-    "type": "core",
+    "type": "volunteers",
     "subtitle": "",
     "photo": "elodie_lerare.jpg",
     "socials": [
@@ -95,6 +108,53 @@
       }
     ],
     "key": "elodie_lerare"
+  },
+  {
+    "title": "Kevin Segaud",
+    "type": "volunteers",
+    "subtitle": "Flutter's guru",
+    "photo": "kevin_segaud.jpg",
+    "socials": [
+      {
+        "link": "https://twitter.com/kleak_dev",
+        "name": "Twitter"
+      }
+    ],
+    "key": "kevin_segaud"
+  },
+  {
+    "title": "Maxime Warnier",
+    "type": "volunteers",
+    "subtitle": "JavaScript's guru",
+    "photo": "maxime_warnier.jpg",
+    "socials": [
+      {
+        "link": "https://twitter.com/maxdow",
+        "name": "Twitter"
+      }
+    ],
+    "key": "maxime_warnier"
+  },
+  {
+    "title": "Aurelien Baumann",
+    "type": "volunteers",
+    "subtitle": "Go's guru",
+    "photo": "aurelien_baumann.jpg",
+    "socials": [
+      {
+        "link": "https://twitter.com/kendo5731",
+        "name": "Twitter"
+      }
+    ],
+    "key": "aurelien_baumann"
+  },
+  {
+    "title": "Guilhem Demiollis",
+    "type": "kids",
+    "subtitle": "Cloud's guru",
+    "photo": "guilhem_demiollis.jpg",
+    "socials": [],
+    "key": "guilhem_demiollis"
   },
   {
     "title": "Emmanuel Vinas",
@@ -124,7 +184,7 @@
         "name": "LinkedIn"
       }
     ],
-    "key": "hadrien_thomas"
+    "key": "hadrien_toma"
   },
   {
     "title": "Igor Laborie",
@@ -154,7 +214,7 @@
         "name": "Twitter"
       }
     ],
-    "key": "julien_del_rio"
+    "key": "julien_delrio"
   },
   {
     "title": "Julien Renaux",
@@ -175,7 +235,7 @@
   },
   {
     "title": "Kevin Davin",
-    "type": "core",
+    "type": "volunteers",
     "subtitle": "GDG Toulouse & Toulouse JUG",
     "photo": "kevin_davin.png",
     "socials": [
@@ -253,6 +313,40 @@
       }
     ],
     "key": "vincent_ferries"
+  },
+  {
+    "title": "Michaël Bitard",
+    "type": "core",
+    "subtitle": "Electron liiiibre",
+    "photo": "michael_bitard.jpg",
+    "socials": [
+      {
+        "link": "https://twitter.com/bitardmichael",
+        "name": "Twitter"
+      }
+    ],
+    "key": "michael_bitard"
+  },
+  {
+    "title": "Kevin Abrioux",
+    "type": "core",
+    "subtitle": "Mobile native's guru",
+    "photo": "kevin_abrioux.jpg",
+    "socials": [
+      {
+        "link": "https://twitter.com/kevinabrioux",
+        "name": "Twitter"
+      }
+    ],
+    "key": "kevin_abrioux"
+  },
+  {
+    "title": "You",
+    "type": "core",
+    "subtitle": "",
+    "photo": "you.jpg",
+    "socials": [],
+    "key": "you"
   },
   {
     "title": "Alexia Audevart",
