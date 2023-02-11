@@ -51,7 +51,7 @@
     "diff": "^4.0.2",
     "enquirer": "^2.3.6",
     "fast-json-patch": "^2.2.1",
-    "gitmoji-cli": "^3.2.6",
+    "gitmoji-cli": "^7.1.0",
     "globby": "^10.0.2",
     "gray-matter": "^4.0.2",
     "ical.js": "^1.4.0",
